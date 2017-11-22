@@ -51,7 +51,7 @@
     NSLog(@"object_getClass(stu):%@",cls); // object_getClass(stu):ZPZStudentModel
     //下面的循环只会走一次
     while (1) {
-        cls = object_getClass(cls);
+        cls = object_getClass(cls);  //这里拿到的是meta-class
         NSLog(@"2-cls:%p",cls);  //2-cls:0x106259150
         NSLog(@"2-cls:%@",cls);  //2-cls:ZPZStudentModel
         if (class_isMetaClass(cls)) {

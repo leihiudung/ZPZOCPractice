@@ -15,6 +15,10 @@
 		DB708C7E1FC55735009D850B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C7D1FC55735009D850B /* main.m */; };
 		DB708C881FC55735009D850B /* ZPZIsaPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C871FC55735009D850B /* ZPZIsaPracticeTests.m */; };
 		DB708C931FC55735009D850B /* ZPZIsaPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C921FC55735009D850B /* ZPZIsaPracticeUITests.m */; };
+		DB708CA21FC557CD009D850B /* ZPZPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708CA11FC557CD009D850B /* ZPZPersonModel.m */; };
+		DB708CA51FC557F2009D850B /* ZPZChildModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708CA41FC557F2009D850B /* ZPZChildModel.m */; };
+		DB708CA81FC55810009D850B /* ZPZStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708CA71FC55810009D850B /* ZPZStudentModel.m */; };
+		DB708CAA1FC55B0E009D850B /* 结论 in Resources */ = {isa = PBXBuildFile; fileRef = DB708CA91FC55B0E009D850B /* 结论 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 		DB708C8E1FC55735009D850B /* ZPZIsaPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZIsaPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB708C921FC55735009D850B /* ZPZIsaPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZIsaPracticeUITests.m; sourceTree = "<group>"; };
 		DB708C941FC55735009D850B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB708CA01FC557CD009D850B /* ZPZPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZPersonModel.h; sourceTree = "<group>"; };
+		DB708CA11FC557CD009D850B /* ZPZPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPersonModel.m; sourceTree = "<group>"; };
+		DB708CA31FC557F2009D850B /* ZPZChildModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZChildModel.h; sourceTree = "<group>"; };
+		DB708CA41FC557F2009D850B /* ZPZChildModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZChildModel.m; sourceTree = "<group>"; };
+		DB708CA61FC55810009D850B /* ZPZStudentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZStudentModel.h; sourceTree = "<group>"; };
+		DB708CA71FC55810009D850B /* ZPZStudentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZStudentModel.m; sourceTree = "<group>"; };
+		DB708CA91FC55B0E009D850B /* 结论 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "结论"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,7 @@
 		DB708C621FC55735009D850B = {
 			isa = PBXGroup;
 			children = (
+				DB708CA91FC55B0E009D850B /* 结论 */,
 				DB708C6D1FC55735009D850B /* ZPZIsaPractice */,
 				DB708C861FC55735009D850B /* ZPZIsaPracticeTests */,
 				DB708C911FC55735009D850B /* ZPZIsaPracticeUITests */,
@@ -105,6 +117,12 @@
 				DB708C6F1FC55735009D850B /* AppDelegate.m */,
 				DB708C711FC55735009D850B /* ViewController.h */,
 				DB708C721FC55735009D850B /* ViewController.m */,
+				DB708CA01FC557CD009D850B /* ZPZPersonModel.h */,
+				DB708CA11FC557CD009D850B /* ZPZPersonModel.m */,
+				DB708CA31FC557F2009D850B /* ZPZChildModel.h */,
+				DB708CA41FC557F2009D850B /* ZPZChildModel.m */,
+				DB708CA61FC55810009D850B /* ZPZStudentModel.h */,
+				DB708CA71FC55810009D850B /* ZPZStudentModel.m */,
 				DB708C741FC55735009D850B /* Main.storyboard */,
 				DB708C771FC55735009D850B /* Assets.xcassets */,
 				DB708C791FC55735009D850B /* LaunchScreen.storyboard */,
@@ -241,6 +259,7 @@
 				DB708C7B1FC55735009D850B /* LaunchScreen.storyboard in Resources */,
 				DB708C781FC55735009D850B /* Assets.xcassets in Resources */,
 				DB708C761FC55735009D850B /* Main.storyboard in Resources */,
+				DB708CAA1FC55B0E009D850B /* 结论 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +286,10 @@
 			files = (
 				DB708C731FC55735009D850B /* ViewController.m in Sources */,
 				DB708C7E1FC55735009D850B /* main.m in Sources */,
+				DB708CA51FC557F2009D850B /* ZPZChildModel.m in Sources */,
 				DB708C701FC55735009D850B /* AppDelegate.m in Sources */,
+				DB708CA81FC55810009D850B /* ZPZStudentModel.m in Sources */,
+				DB708CA21FC557CD009D850B /* ZPZPersonModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

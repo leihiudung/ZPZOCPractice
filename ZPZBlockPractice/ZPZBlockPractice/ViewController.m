@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <objc/runtime.h>
+#import "ZPZIsaTestModel.h"
 
 @interface ViewController ()
 
@@ -18,6 +20,29 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor orangeColor];
+//    [self defineNormalLocalBlock];
+    [self getObjectIsa];
+}
+
+/**
+ * 对象的isa
+ */
+- (void)getObjectIsa {
+    ZPZIsaTestModel * model = [[ZPZIsaTestModel alloc] init];
+    NSLog(@"%@",object_getClass(model));  //ZPZIsaTestModel
+    Class cls = [ZPZIsaTestModel class];
+    NSLog(@"%@",object_getClass(cls));  //ZPZIsaTestModel
+}
+
+- (void)defineNormalLocalBlock {
+    void(^localBlock)(void) = ^{
+        NSLog(@"localBlock");
+    };
+    NSLog(@"%@",object_getClass(localBlock));
+    Class cls = object_getClass(localBlock);
+    NSLog(@"%@",class_getSuperclass(cls));
+    NSLog(@"%@",object_getClass(cls));
+    
 }
 
 

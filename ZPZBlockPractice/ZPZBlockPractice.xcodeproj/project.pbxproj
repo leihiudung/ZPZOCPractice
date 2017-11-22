@@ -15,6 +15,7 @@
 		DB708C3D1FC549DC009D850B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C3C1FC549DC009D850B /* main.m */; };
 		DB708C471FC549DC009D850B /* ZPZBlockPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C461FC549DC009D850B /* ZPZBlockPracticeTests.m */; };
 		DB708C521FC549DC009D850B /* ZPZBlockPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C511FC549DC009D850B /* ZPZBlockPracticeUITests.m */; };
+		DB708C611FC5509D009D850B /* ZPZIsaTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C601FC5509D009D850B /* ZPZIsaTestModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		DB708C4D1FC549DC009D850B /* ZPZBlockPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZBlockPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB708C511FC549DC009D850B /* ZPZBlockPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZBlockPracticeUITests.m; sourceTree = "<group>"; };
 		DB708C531FC549DC009D850B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB708C5F1FC5509D009D850B /* ZPZIsaTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZIsaTestModel.h; sourceTree = "<group>"; };
+		DB708C601FC5509D009D850B /* ZPZIsaTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZIsaTestModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				DB708C2E1FC549DC009D850B /* AppDelegate.m */,
 				DB708C301FC549DC009D850B /* ViewController.h */,
 				DB708C311FC549DC009D850B /* ViewController.m */,
+				DB708C5F1FC5509D009D850B /* ZPZIsaTestModel.h */,
+				DB708C601FC5509D009D850B /* ZPZIsaTestModel.m */,
 				DB708C331FC549DC009D850B /* Main.storyboard */,
 				DB708C361FC549DC009D850B /* Assets.xcassets */,
 				DB708C381FC549DC009D850B /* LaunchScreen.storyboard */,
@@ -267,6 +272,7 @@
 			files = (
 				DB708C321FC549DC009D850B /* ViewController.m in Sources */,
 				DB708C3D1FC549DC009D850B /* main.m in Sources */,
+				DB708C611FC5509D009D850B /* ZPZIsaTestModel.m in Sources */,
 				DB708C2F1FC549DC009D850B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

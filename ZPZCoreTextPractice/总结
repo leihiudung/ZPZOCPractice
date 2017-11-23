@@ -1,0 +1,19 @@
+一、体系
+Core Text的运行是有一个体系的。
+在最顶层是一个CTFramesetter，它由富文本字符串attributed string和一个图形路径作为输入
+一个framesetter关联着一个或者多个frame（CTFrameRef），一个CTFrameRef的对象就是一个段落
+为了和frames相关联，framesetter会调用typesetter对象（CTTypesetter）,对于在frame中展示的文字，framesetter定义了段落中文字的样式，typesetter会将处于attribute修饰下的字符转换为相应的样式
+每个CTFrame对象包含一行或者很多行对象CTLine，每一个CTLine代表一行文字
+每个CTLine包含一个图形数组CTRun对象。
+
+CTFontRef,推荐使用方法CTFontCreateWithFontDescriptor来创建
+
+二、步骤（大致）
+1、获取上下文
+2、反转坐标
+3、选择区域和创建路径
+4、创建富文本CFMutableAttributedStringRef
+5、设置富文本属性
+6、设置CTFramesetterRef
+7、创建CTFrameRef
+8、绘制CTFrameDraw

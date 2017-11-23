@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import <CoreText/CoreText.h>
+#import "ZPZLayout01View.h"
+#import "ZPZCommonMethod.h"
 
 @interface ViewController ()
 
@@ -16,7 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    CTFramesetterRef
+//    CTTypesetterRef
+//    CTFrameRef
+//    CTLineRef
+//    CTRun
+//    CTFontRef
+    ZPZLayout01View * view = [[ZPZLayout01View alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - [ZPZCommonMethod getNavAndStatusHeight])];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
 }
 
 

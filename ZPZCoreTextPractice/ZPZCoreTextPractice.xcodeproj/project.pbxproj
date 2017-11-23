@@ -15,6 +15,11 @@
 		DB3198741FC693CB00EBA7E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3198731FC693CB00EBA7E5 /* main.m */; };
 		DB31987E1FC693CB00EBA7E5 /* ZPZCoreTextPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31987D1FC693CB00EBA7E5 /* ZPZCoreTextPracticeTests.m */; };
 		DB3198891FC693CB00EBA7E5 /* ZPZCoreTextPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3198881FC693CB00EBA7E5 /* ZPZCoreTextPracticeUITests.m */; };
+		DB3198971FC6946300EBA7E5 /* 总结 in Resources */ = {isa = PBXBuildFile; fileRef = DB3198961FC6946300EBA7E5 /* 总结 */; };
+		DB31989A1FC6989B00EBA7E5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3198991FC6987200EBA7E5 /* CoreText.framework */; };
+		DB31989D1FC69F6C00EBA7E5 /* ZPZLayout01View.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31989C1FC69F6C00EBA7E5 /* ZPZLayout01View.m */; };
+		DB3198A01FC6A3E800EBA7E5 /* ZPZCommonMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */; };
+		DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,14 @@
 		DB3198841FC693CB00EBA7E5 /* ZPZCoreTextPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZCoreTextPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3198881FC693CB00EBA7E5 /* ZPZCoreTextPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZCoreTextPracticeUITests.m; sourceTree = "<group>"; };
 		DB31988A1FC693CB00EBA7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB3198961FC6946300EBA7E5 /* 总结 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "总结"; sourceTree = "<group>"; };
+		DB3198991FC6987200EBA7E5 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		DB31989B1FC69F6C00EBA7E5 /* ZPZLayout01View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZLayout01View.h; sourceTree = "<group>"; };
+		DB31989C1FC69F6C00EBA7E5 /* ZPZLayout01View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZLayout01View.m; sourceTree = "<group>"; };
+		DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPZCommonMethod.m; sourceTree = "<group>"; };
+		DB31989F1FC6A3E800EBA7E5 /* ZPZCommonMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPZCommonMethod.h; sourceTree = "<group>"; };
+		DB3198A11FC6A99600EBA7E5 /* ZPZDrawSingleLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZDrawSingleLineView.h; sourceTree = "<group>"; };
+		DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZDrawSingleLineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB31989A1FC6989B00EBA7E5 /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +95,14 @@
 		DB3198581FC693CB00EBA7E5 = {
 			isa = PBXGroup;
 			children = (
+				DB31989F1FC6A3E800EBA7E5 /* ZPZCommonMethod.h */,
+				DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */,
+				DB3198961FC6946300EBA7E5 /* 总结 */,
 				DB3198631FC693CB00EBA7E5 /* ZPZCoreTextPractice */,
 				DB31987C1FC693CB00EBA7E5 /* ZPZCoreTextPracticeTests */,
 				DB3198871FC693CB00EBA7E5 /* ZPZCoreTextPracticeUITests */,
 				DB3198621FC693CB00EBA7E5 /* Products */,
+				DB3198981FC6987200EBA7E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +123,10 @@
 				DB3198651FC693CB00EBA7E5 /* AppDelegate.m */,
 				DB3198671FC693CB00EBA7E5 /* ViewController.h */,
 				DB3198681FC693CB00EBA7E5 /* ViewController.m */,
+				DB31989B1FC69F6C00EBA7E5 /* ZPZLayout01View.h */,
+				DB31989C1FC69F6C00EBA7E5 /* ZPZLayout01View.m */,
+				DB3198A11FC6A99600EBA7E5 /* ZPZDrawSingleLineView.h */,
+				DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */,
 				DB31986A1FC693CB00EBA7E5 /* Main.storyboard */,
 				DB31986D1FC693CB00EBA7E5 /* Assets.xcassets */,
 				DB31986F1FC693CB00EBA7E5 /* LaunchScreen.storyboard */,
@@ -130,6 +152,14 @@
 				DB31988A1FC693CB00EBA7E5 /* Info.plist */,
 			);
 			path = ZPZCoreTextPracticeUITests;
+			sourceTree = "<group>";
+		};
+		DB3198981FC6987200EBA7E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB3198991FC6987200EBA7E5 /* CoreText.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3198971FC6946300EBA7E5 /* 总结 in Resources */,
 				DB3198711FC693CB00EBA7E5 /* LaunchScreen.storyboard in Resources */,
 				DB31986E1FC693CB00EBA7E5 /* Assets.xcassets in Resources */,
 				DB31986C1FC693CB00EBA7E5 /* Main.storyboard in Resources */,
@@ -265,9 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3198A01FC6A3E800EBA7E5 /* ZPZCommonMethod.m in Sources */,
 				DB3198691FC693CB00EBA7E5 /* ViewController.m in Sources */,
 				DB3198741FC693CB00EBA7E5 /* main.m in Sources */,
+				DB31989D1FC69F6C00EBA7E5 /* ZPZLayout01View.m in Sources */,
 				DB3198661FC693CB00EBA7E5 /* AppDelegate.m in Sources */,
+				DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

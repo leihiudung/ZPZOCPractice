@@ -22,6 +22,8 @@
 		DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */; };
 		DB95A62B1FC7FA39002A2B59 /* ZPZColumnarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */; };
 		DB95A62E1FC80A2B002A2B59 /* ZPZManualView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A62D1FC80A2B002A2B59 /* ZPZManualView.m */; };
+		DB95A6311FC812A8002A2B59 /* ZPZParagraphPractice.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A6301FC812A8002A2B59 /* ZPZParagraphPractice.m */; };
+		DB95A6341FC81BBD002A2B59 /* ZPZNonRectangularView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A6331FC81BBD002A2B59 /* ZPZNonRectangularView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZColumnarView.m; sourceTree = "<group>"; };
 		DB95A62C1FC80A2B002A2B59 /* ZPZManualView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZManualView.h; sourceTree = "<group>"; };
 		DB95A62D1FC80A2B002A2B59 /* ZPZManualView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZManualView.m; sourceTree = "<group>"; };
+		DB95A62F1FC812A8002A2B59 /* ZPZParagraphPractice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZParagraphPractice.h; sourceTree = "<group>"; };
+		DB95A6301FC812A8002A2B59 /* ZPZParagraphPractice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZParagraphPractice.m; sourceTree = "<group>"; };
+		DB95A6321FC81BBD002A2B59 /* ZPZNonRectangularView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZNonRectangularView.h; sourceTree = "<group>"; };
+		DB95A6331FC81BBD002A2B59 /* ZPZNonRectangularView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNonRectangularView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,10 @@
 				DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */,
 				DB95A62C1FC80A2B002A2B59 /* ZPZManualView.h */,
 				DB95A62D1FC80A2B002A2B59 /* ZPZManualView.m */,
+				DB95A62F1FC812A8002A2B59 /* ZPZParagraphPractice.h */,
+				DB95A6301FC812A8002A2B59 /* ZPZParagraphPractice.m */,
+				DB95A6321FC81BBD002A2B59 /* ZPZNonRectangularView.h */,
+				DB95A6331FC81BBD002A2B59 /* ZPZNonRectangularView.m */,
 				DB31986A1FC693CB00EBA7E5 /* Main.storyboard */,
 				DB31986D1FC693CB00EBA7E5 /* Assets.xcassets */,
 				DB31986F1FC693CB00EBA7E5 /* LaunchScreen.storyboard */,
@@ -308,10 +318,12 @@
 			files = (
 				DB3198A01FC6A3E800EBA7E5 /* ZPZCommonMethod.m in Sources */,
 				DB3198691FC693CB00EBA7E5 /* ViewController.m in Sources */,
+				DB95A6341FC81BBD002A2B59 /* ZPZNonRectangularView.m in Sources */,
 				DB3198741FC693CB00EBA7E5 /* main.m in Sources */,
 				DB31989D1FC69F6C00EBA7E5 /* ZPZLayout01View.m in Sources */,
 				DB95A62B1FC7FA39002A2B59 /* ZPZColumnarView.m in Sources */,
 				DB3198661FC693CB00EBA7E5 /* AppDelegate.m in Sources */,
+				DB95A6311FC812A8002A2B59 /* ZPZParagraphPractice.m in Sources */,
 				DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */,
 				DB95A62E1FC80A2B002A2B59 /* ZPZManualView.m in Sources */,
 			);

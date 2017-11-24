@@ -13,6 +13,8 @@
 #import "ZPZDrawSingleLineView.h"
 #import "ZPZColumnarView.h"
 #import "ZPZManualView.h"
+#import "ZPZParagraphPractice.h"
+#import "ZPZNonRectangularView.h"
 
 @interface ViewController ()
 
@@ -31,7 +33,9 @@
 //    CTFontRef
 //    [self drawLineRef];
 //    [self drawColumnarRef];
-    [self drawManualView];
+//    [self drawManualView];
+//    [self drawParagraphView];
+    [self drawNonRectangularView];
 }
 
 - (void)drawFrameRef{
@@ -54,6 +58,18 @@
 
 - (void)drawManualView{
     ZPZManualView * manualView = [[ZPZManualView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - [ZPZCommonMethod getNavAndStatusHeight])];
+    manualView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:manualView];
+}
+
+- (void)drawParagraphView{
+    ZPZParagraphPractice * manualView = [[ZPZParagraphPractice alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - [ZPZCommonMethod getNavAndStatusHeight])];
+    manualView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:manualView];
+}
+
+- (void)drawNonRectangularView{
+    ZPZNonRectangularView * manualView = [[ZPZNonRectangularView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - [ZPZCommonMethod getNavAndStatusHeight])];
     manualView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:manualView];
 }

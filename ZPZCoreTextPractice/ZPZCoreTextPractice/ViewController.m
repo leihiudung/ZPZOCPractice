@@ -11,6 +11,7 @@
 #import "ZPZLayout01View.h"
 #import "ZPZCommonMethod.h"
 #import "ZPZDrawSingleLineView.h"
+#import "ZPZColumnarView.h"
 
 @interface ViewController ()
 
@@ -27,7 +28,8 @@
 //    CTLineRef
 //    CTRun
 //    CTFontRef
-    [self drawLineRef];
+//    [self drawLineRef];
+    [self drawColumnarRef];
 }
 
 - (void)drawFrameRef{
@@ -42,6 +44,11 @@
     [self.view addSubview:lineView];
 }
 
+- (void)drawColumnarRef{
+    ZPZColumnarView * columnView = [[ZPZColumnarView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - [ZPZCommonMethod getNavAndStatusHeight])];
+    columnView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:columnView];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

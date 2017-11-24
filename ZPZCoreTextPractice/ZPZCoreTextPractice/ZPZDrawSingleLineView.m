@@ -26,7 +26,7 @@
     CFStringRef strRef = CFSTR("Hello, World! I know nothing in the world that has as much power as a word. Sometimes I write one, and I look at it, until it begins to shine.");
     //创建富文本字典
     CTFontDescriptorRef descriptorRef = CTFontDescriptorCreateWithNameAndSize(CFSTR("PingFangSC-Light"), 18);
-    CTFontRef fontRef = CTFontCreateWithFontDescriptor(descriptorRef, 20, NULL);
+    CTFontRef fontRef = CTFontCreateWithFontDescriptor(descriptorRef, 30, NULL);
     CGColorSpaceRef spaceRef = CGColorSpaceCreateDeviceRGB();
     CGFloat components[] = {1,1,1,1};
     CGColorRef colorRef = CGColorCreate(spaceRef, components);

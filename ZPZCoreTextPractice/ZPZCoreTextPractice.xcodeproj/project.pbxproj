@@ -20,6 +20,7 @@
 		DB31989D1FC69F6C00EBA7E5 /* ZPZLayout01View.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31989C1FC69F6C00EBA7E5 /* ZPZLayout01View.m */; };
 		DB3198A01FC6A3E800EBA7E5 /* ZPZCommonMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */; };
 		DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */; };
+		DB95A62B1FC7FA39002A2B59 /* ZPZColumnarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		DB31989F1FC6A3E800EBA7E5 /* ZPZCommonMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPZCommonMethod.h; sourceTree = "<group>"; };
 		DB3198A11FC6A99600EBA7E5 /* ZPZDrawSingleLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZDrawSingleLineView.h; sourceTree = "<group>"; };
 		DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZDrawSingleLineView.m; sourceTree = "<group>"; };
+		DB95A6291FC7FA39002A2B59 /* ZPZColumnarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZColumnarView.h; sourceTree = "<group>"; };
+		DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZColumnarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				DB31989C1FC69F6C00EBA7E5 /* ZPZLayout01View.m */,
 				DB3198A11FC6A99600EBA7E5 /* ZPZDrawSingleLineView.h */,
 				DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */,
+				DB95A6291FC7FA39002A2B59 /* ZPZColumnarView.h */,
+				DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */,
 				DB31986A1FC693CB00EBA7E5 /* Main.storyboard */,
 				DB31986D1FC693CB00EBA7E5 /* Assets.xcassets */,
 				DB31986F1FC693CB00EBA7E5 /* LaunchScreen.storyboard */,
@@ -300,6 +305,7 @@
 				DB3198691FC693CB00EBA7E5 /* ViewController.m in Sources */,
 				DB3198741FC693CB00EBA7E5 /* main.m in Sources */,
 				DB31989D1FC69F6C00EBA7E5 /* ZPZLayout01View.m in Sources */,
+				DB95A62B1FC7FA39002A2B59 /* ZPZColumnarView.m in Sources */,
 				DB3198661FC693CB00EBA7E5 /* AppDelegate.m in Sources */,
 				DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */,
 			);

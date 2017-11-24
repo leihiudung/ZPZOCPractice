@@ -23,8 +23,11 @@
     //创建字符串
     CFStringRef strRef = CFSTR("Hello, World! I know nothing in the world that has as much power as a word. Sometimes I write one, and I look at it, until it begins to shine.");
     //创建富文本字典
-    CTFontDescriptorRef descriptorRef = CTFontDescriptorCreateWithNameAndSize(CFSTR(""), 18);
-    CTFontRef fontRef = CTFontCreateWithFontDescriptor(<#CTFontDescriptorRef  _Nonnull descriptor#>, <#CGFloat size#>, <#const CGAffineTransform * _Nullable matrix#>)
+    CTFontDescriptorRef descriptorRef = CTFontDescriptorCreateWithNameAndSize(CFSTR("PingFangSC-Light"), 18);
+    CTFontRef fontRef = CTFontCreateWithFontDescriptor(descriptorRef, 18, NULL);
+    CFStringRef keys[] = { kCTFontAttributeName };
+    CTFontRef values[] = { fontRef };
+    CFDictionaryRef dictionaryRef = CFDictionaryCreate(kCFAllocatorDefault, &keys, &values, <#CFIndex numValues#>, <#const CFDictionaryKeyCallBacks *keyCallBacks#>, <#const CFDictionaryValueCallBacks *valueCallBacks#>)
     //创建富文本
     CFAttributedStringRef attrRef = CFAttributedStringCreate(kCFAllocatorDefault, strRef, <#CFDictionaryRef attributes#>)
 }

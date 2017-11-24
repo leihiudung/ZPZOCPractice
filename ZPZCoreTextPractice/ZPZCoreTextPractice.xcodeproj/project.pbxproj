@@ -21,6 +21,7 @@
 		DB3198A01FC6A3E800EBA7E5 /* ZPZCommonMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */; };
 		DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */; };
 		DB95A62B1FC7FA39002A2B59 /* ZPZColumnarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */; };
+		DB95A62E1FC80A2B002A2B59 /* ZPZManualView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A62D1FC80A2B002A2B59 /* ZPZManualView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZDrawSingleLineView.m; sourceTree = "<group>"; };
 		DB95A6291FC7FA39002A2B59 /* ZPZColumnarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZColumnarView.h; sourceTree = "<group>"; };
 		DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZColumnarView.m; sourceTree = "<group>"; };
+		DB95A62C1FC80A2B002A2B59 /* ZPZManualView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZManualView.h; sourceTree = "<group>"; };
+		DB95A62D1FC80A2B002A2B59 /* ZPZManualView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZManualView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */,
 				DB95A6291FC7FA39002A2B59 /* ZPZColumnarView.h */,
 				DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */,
+				DB95A62C1FC80A2B002A2B59 /* ZPZManualView.h */,
+				DB95A62D1FC80A2B002A2B59 /* ZPZManualView.m */,
 				DB31986A1FC693CB00EBA7E5 /* Main.storyboard */,
 				DB31986D1FC693CB00EBA7E5 /* Assets.xcassets */,
 				DB31986F1FC693CB00EBA7E5 /* LaunchScreen.storyboard */,
@@ -308,6 +313,7 @@
 				DB95A62B1FC7FA39002A2B59 /* ZPZColumnarView.m in Sources */,
 				DB3198661FC693CB00EBA7E5 /* AppDelegate.m in Sources */,
 				DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */,
+				DB95A62E1FC80A2B002A2B59 /* ZPZManualView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

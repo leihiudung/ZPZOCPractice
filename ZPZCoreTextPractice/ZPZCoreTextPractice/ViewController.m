@@ -12,6 +12,7 @@
 #import "ZPZCommonMethod.h"
 #import "ZPZDrawSingleLineView.h"
 #import "ZPZColumnarView.h"
+#import "ZPZManualView.h"
 
 @interface ViewController ()
 
@@ -29,7 +30,8 @@
 //    CTRun
 //    CTFontRef
 //    [self drawLineRef];
-    [self drawColumnarRef];
+//    [self drawColumnarRef];
+    [self drawManualView];
 }
 
 - (void)drawFrameRef{
@@ -48,6 +50,12 @@
     ZPZColumnarView * columnView = [[ZPZColumnarView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - [ZPZCommonMethod getNavAndStatusHeight])];
     columnView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:columnView];
+}
+
+- (void)drawManualView{
+    ZPZManualView * manualView = [[ZPZManualView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - [ZPZCommonMethod getNavAndStatusHeight])];
+    manualView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:manualView];
 }
 
 - (void)didReceiveMemoryWarning {

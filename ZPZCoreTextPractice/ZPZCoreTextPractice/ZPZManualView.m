@@ -17,6 +17,9 @@
     CGContextTranslateCTM(context, 0, self.bounds.size.height);
     CGContextScaleCTM(context, 1, -1);
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGRect bounds = CGRectMake(10, 10, self.bounds.size.width - 2 * 10, 200);
+    CGPathAddRect(path, NULL, bounds);
     //富文本
     CFAttributedStringRef attrRef = [self getAttributedStr];
     //CFTypesetter
@@ -26,13 +29,15 @@
     double width = 150;
     CFIndex count = CTTypesetterSuggestLineBreak(typesetterRef, start, width);
     CTLineRef lineRef = CTTypesetterCreateLine(typesetterRef, CFRangeMake(start, count));
-    float flush = 0.5;
+    float flush = 1;
     double penoffset = CTLineGetPenOffsetForFlush(lineRef, flush, width);
-    CGPoint textPosition = CGPointMake(20, 20);
+    CGPoint textPosition = CGPointMake(0, 20);
     CGContextSetTextPosition(context, textPosition.x + penoffset, textPosition.y);
     CTLineDraw(lineRef, context);
+    start += count;
     CFRelease(typesetterRef);
     CFRelease(lineRef);
+    
 }
 
 - (CFAttributedStringRef)getAttributedStr{

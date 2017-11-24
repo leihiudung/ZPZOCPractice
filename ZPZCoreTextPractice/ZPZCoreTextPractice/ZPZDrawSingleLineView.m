@@ -20,16 +20,38 @@
     //创建区域
     CGMutablePathRef pathRef = CGPathCreateMutable();
     CGPathAddRect(pathRef, NULL, CGRectMake(10, 10, self.frame.size.width - 2 * 10, self.bounds.size.height - 2 * 10));
+    CGContextSetFillColorWithColor(context, [UIColor cyanColor].CGColor);
+    CGContextFillRect(context, CGRectMake(10, 10, self.frame.size.width - 2 * 10, self.bounds.size.height - 2 * 10));
     //创建字符串
     CFStringRef strRef = CFSTR("Hello, World! I know nothing in the world that has as much power as a word. Sometimes I write one, and I look at it, until it begins to shine.");
     //创建富文本字典
     CTFontDescriptorRef descriptorRef = CTFontDescriptorCreateWithNameAndSize(CFSTR("PingFangSC-Light"), 18);
-    CTFontRef fontRef = CTFontCreateWithFontDescriptor(descriptorRef, 18, NULL);
-    CFStringRef keys[] = { kCTFontAttributeName };
-    CTFontRef values[] = { fontRef };
-    CFDictionaryRef dictionaryRef = CFDictionaryCreate(kCFAllocatorDefault, &keys, &values, <#CFIndex numValues#>, <#const CFDictionaryKeyCallBacks *keyCallBacks#>, <#const CFDictionaryValueCallBacks *valueCallBacks#>)
+    CTFontRef fontRef = CTFontCreateWithFontDescriptor(descriptorRef, 20, NULL);
+    CGColorSpaceRef spaceRef = CGColorSpaceCreateDeviceRGB();
+    CGFloat components[] = {1,1,1,1};
+    CGColorRef colorRef = CGColorCreate(spaceRef, components);
+    CFStringRef keys[] = { kCTFontAttributeName, kCTForegroundColorAttributeName };
+    CFTypeRef values[] = { fontRef, colorRef };
+    CFDictionaryRef dictionaryRef = CFDictionaryCreate(kCFAllocatorDefault, (const void**)&keys, (const void**)&values, sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
     //创建富文本
-    CFAttributedStringRef attrRef = CFAttributedStringCreate(kCFAllocatorDefault, strRef, <#CFDictionaryRef attributes#>)
+    CFAttributedStringRef attrRef = CFAttributedStringCreate(kCFAllocatorDefault, strRef, dictionaryRef);
+    //行
+    CTLineRef lineRef = CTLineCreateWithAttributedString(attrRef);
+    CGContextSetTextPosition(context, 10, 10);
+    CTLineDraw(lineRef, context);
+    CFRelease(pathRef);
+    CFRelease(descriptorRef);
+    CFRelease(dictionaryRef);
+    CFRelease(attrRef);
+    CFRelease(lineRef);
 }
 
 @end
+
+
+
+
+
+
+
+

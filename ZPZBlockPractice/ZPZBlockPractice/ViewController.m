@@ -10,6 +10,8 @@
 #import <objc/runtime.h>
 #import "ZPZIsaTestModel.h"
 
+//block不再用weak修饰，clang不能通过，所以不再关注weak修饰下的block
+
 typedef void(^testBlock)(void);
 typedef void(^testBlock1)(int a);
 
@@ -17,11 +19,11 @@ typedef void(^testBlock1)(int a);
 
 @property (nonatomic,strong) testBlock strongBlock;
 @property (nonatomic,copy) testBlock copyBlock;
-@property (nonatomic,weak) testBlock weakBlock;
+//@property (nonatomic,weak) testBlock weakBlock;
 
 @property (nonatomic,strong) testBlock1 strongBlock1;
 @property (nonatomic,copy) testBlock1 copyBlock1;
-@property (nonatomic,weak) testBlock1 weakBlock1;
+//@property (nonatomic,weak) testBlock1 weakBlock1;
 
 @end
 
@@ -82,22 +84,22 @@ typedef void(^testBlock1)(int a);
     _copyBlock = ^{
         NSLog(@"copy block");
     };
-    _weakBlock = ^{
-        NSLog(@"weak block");
-    };
+//    _weakBlock = ^{
+//        NSLog(@"weak block");
+//    };
     //strong_block:__NSGlobalBlock__,copy_block:__NSGlobalBlock__,weak_block:__NSGlobalBlock__
-    NSLog(@"strong_block:%@,copy_block:%@,weak_block:%@",object_getClass(_strongBlock),object_getClass(_copyBlock),object_getClass(_weakBlock));
+    NSLog(@"strong_block:%@,copy_block:%@",object_getClass(_strongBlock),object_getClass(_copyBlock)/*,object_getClass(_weakBlock)*/);
     _strongBlock1 = ^(int a){
         NSLog(@"strong block1");
     };
     _copyBlock1 = ^(int a){
         NSLog(@"copy block1");
     };
-    _weakBlock1 = ^(int a){
-        NSLog(@"weak block1");
-    };
+//    _weakBlock1 = ^(int a){
+//        NSLog(@"weak block1");
+//    };
     //strong_block1:__NSGlobalBlock__,copy_block1:__NSGlobalBlock__,weak_block1:__NSGlobalBlock__
-    NSLog(@"strong_block1:%@,copy_block1:%@,weak_block1:%@",object_getClass(_strongBlock1),object_getClass(_copyBlock1),object_getClass(_weakBlock1));
+    NSLog(@"strong_block1:%@,copy_block1:%@",object_getClass(_strongBlock1),object_getClass(_copyBlock1)/*,object_getClass(_weakBlock1)*/);
 }
 
 - (void)defineGlobalNormalBlockWithLocalParams{
@@ -108,23 +110,22 @@ typedef void(^testBlock1)(int a);
     _copyBlock = ^{
         NSLog(@"copy block:%d",k);
     };
-    _weakBlock = ^{
-        NSLog(@"weak block:%d",k);
-    };
+//    _weakBlock = ^{
+//        NSLog(@"weak block:%d",k);
+//    };
     //strong_block:__NSMallocBlock__,copy_block:__NSMallocBlock__,weak_block:__NSStackBlock__
-    NSLog(@"strong_block:%@,copy_block:%@,weak_block:%@",object_getClass(_strongBlock),object_getClass(_copyBlock),object_getClass(_weakBlock));
-    NSLog(@"%p",&_weakBlock);
+    NSLog(@"strong_block:%@,copy_block:%@",object_getClass(_strongBlock),object_getClass(_copyBlock)/*,object_getClass(_weakBlock)*/);
     _strongBlock1 = ^(int a){
         NSLog(@"strong block1:%d",k);
     };
     _copyBlock1 = ^(int a){
         NSLog(@"copy block1:%d",k);
     };
-    _weakBlock1 = ^(int a){
-        NSLog(@"weak block1:%d",k);
-    };
+//    _weakBlock1 = ^(int a){
+//        NSLog(@"weak block1:%d",k);
+//    };
     //strong_block1:__NSMallocBlock__,copy_block1:__NSMallocBlock__,weak_block1:__NSStackBlock__
-    NSLog(@"strong_block1:%@,copy_block1:%@,weak_block1:%@",object_getClass(_strongBlock1),object_getClass(_copyBlock1),object_getClass(_weakBlock1));
+    NSLog(@"strong_block1:%@,copy_block1:%@",object_getClass(_strongBlock1),object_getClass(_copyBlock1)/*,object_getClass(_weakBlock1)*/);
 }
 
 - (void)addButton{
@@ -136,12 +137,13 @@ typedef void(^testBlock1)(int a);
 }
 
 - (void)clickedToTest{
-    if (_weakBlock) {
-        _weakBlock();
-    }
-    if (_weakBlock1) {
-        _weakBlock1(10);
-    }
+    //为什么不能这么写呢，如果用weak修饰，则两个都会出问题，如果用assign修饰，则带参数的会出问题
+//    if (_weakBlock) {
+//        _weakBlock();
+//    }
+//    if (_weakBlock1) {
+//        _weakBlock1(10);
+//    }
 }
 
 - (void)didReceiveMemoryWarning {

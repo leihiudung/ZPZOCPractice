@@ -18,12 +18,12 @@
 		DB3198971FC6946300EBA7E5 /* 总结 in Resources */ = {isa = PBXBuildFile; fileRef = DB3198961FC6946300EBA7E5 /* 总结 */; };
 		DB31989A1FC6989B00EBA7E5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3198991FC6987200EBA7E5 /* CoreText.framework */; };
 		DB31989D1FC69F6C00EBA7E5 /* ZPZLayout01View.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31989C1FC69F6C00EBA7E5 /* ZPZLayout01View.m */; };
-		DB3198A01FC6A3E800EBA7E5 /* ZPZCommonMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */; };
 		DB3198A31FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */; };
 		DB95A62B1FC7FA39002A2B59 /* ZPZColumnarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A62A1FC7FA39002A2B59 /* ZPZColumnarView.m */; };
 		DB95A62E1FC80A2B002A2B59 /* ZPZManualView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A62D1FC80A2B002A2B59 /* ZPZManualView.m */; };
 		DB95A6311FC812A8002A2B59 /* ZPZParagraphPractice.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A6301FC812A8002A2B59 /* ZPZParagraphPractice.m */; };
 		DB95A6341FC81BBD002A2B59 /* ZPZNonRectangularView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95A6331FC81BBD002A2B59 /* ZPZNonRectangularView.m */; };
+		DBEA75A11FC930C4004C4EF1 /* ZPZCommonMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEA75A01FC930C4004C4EF1 /* ZPZCommonMethod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +64,6 @@
 		DB3198991FC6987200EBA7E5 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		DB31989B1FC69F6C00EBA7E5 /* ZPZLayout01View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZLayout01View.h; sourceTree = "<group>"; };
 		DB31989C1FC69F6C00EBA7E5 /* ZPZLayout01View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZLayout01View.m; sourceTree = "<group>"; };
-		DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPZCommonMethod.m; sourceTree = "<group>"; };
-		DB31989F1FC6A3E800EBA7E5 /* ZPZCommonMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPZCommonMethod.h; sourceTree = "<group>"; };
 		DB3198A11FC6A99600EBA7E5 /* ZPZDrawSingleLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZDrawSingleLineView.h; sourceTree = "<group>"; };
 		DB3198A21FC6A99600EBA7E5 /* ZPZDrawSingleLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZDrawSingleLineView.m; sourceTree = "<group>"; };
 		DB95A6291FC7FA39002A2B59 /* ZPZColumnarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZColumnarView.h; sourceTree = "<group>"; };
@@ -76,6 +74,8 @@
 		DB95A6301FC812A8002A2B59 /* ZPZParagraphPractice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZParagraphPractice.m; sourceTree = "<group>"; };
 		DB95A6321FC81BBD002A2B59 /* ZPZNonRectangularView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZNonRectangularView.h; sourceTree = "<group>"; };
 		DB95A6331FC81BBD002A2B59 /* ZPZNonRectangularView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNonRectangularView.m; sourceTree = "<group>"; };
+		DBEA759F1FC930C4004C4EF1 /* ZPZCommonMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPZCommonMethod.h; sourceTree = "<group>"; };
+		DBEA75A01FC930C4004C4EF1 /* ZPZCommonMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPZCommonMethod.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +107,8 @@
 		DB3198581FC693CB00EBA7E5 = {
 			isa = PBXGroup;
 			children = (
-				DB31989F1FC6A3E800EBA7E5 /* ZPZCommonMethod.h */,
-				DB31989E1FC6A3E800EBA7E5 /* ZPZCommonMethod.m */,
+				DBEA759F1FC930C4004C4EF1 /* ZPZCommonMethod.h */,
+				DBEA75A01FC930C4004C4EF1 /* ZPZCommonMethod.m */,
 				DB3198961FC6946300EBA7E5 /* 总结 */,
 				DB3198631FC693CB00EBA7E5 /* ZPZCoreTextPractice */,
 				DB31987C1FC693CB00EBA7E5 /* ZPZCoreTextPracticeTests */,
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3198A01FC6A3E800EBA7E5 /* ZPZCommonMethod.m in Sources */,
+				DBEA75A11FC930C4004C4EF1 /* ZPZCommonMethod.m in Sources */,
 				DB3198691FC693CB00EBA7E5 /* ViewController.m in Sources */,
 				DB95A6341FC81BBD002A2B59 /* ZPZNonRectangularView.m in Sources */,
 				DB3198741FC693CB00EBA7E5 /* main.m in Sources */,

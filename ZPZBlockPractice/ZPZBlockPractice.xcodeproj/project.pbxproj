@@ -16,6 +16,8 @@
 		DB708C471FC549DC009D850B /* ZPZBlockPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C461FC549DC009D850B /* ZPZBlockPracticeTests.m */; };
 		DB708C521FC549DC009D850B /* ZPZBlockPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C511FC549DC009D850B /* ZPZBlockPracticeUITests.m */; };
 		DB708C611FC5509D009D850B /* ZPZIsaTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB708C601FC5509D009D850B /* ZPZIsaTestModel.m */; };
+		DBC94CC21FCBFDCF00956719 /* 总结 in Resources */ = {isa = PBXBuildFile; fileRef = DBC94CC11FCBFDCF00956719 /* 总结 */; };
+		DBC94CC41FCC0D2700956719 /* LLVM in Resources */ = {isa = PBXBuildFile; fileRef = DBC94CC31FCC0D2700956719 /* LLVM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		DB708C531FC549DC009D850B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB708C5F1FC5509D009D850B /* ZPZIsaTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZIsaTestModel.h; sourceTree = "<group>"; };
 		DB708C601FC5509D009D850B /* ZPZIsaTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZIsaTestModel.m; sourceTree = "<group>"; };
+		DBC94CC11FCBFDCF00956719 /* 总结 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "总结"; sourceTree = "<group>"; };
+		DBC94CC31FCC0D2700956719 /* LLVM */ = {isa = PBXFileReference; lastKnownFileType = text; path = LLVM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		DB708C211FC549DC009D850B = {
 			isa = PBXGroup;
 			children = (
+				DBC94CC31FCC0D2700956719 /* LLVM */,
+				DBC94CC11FCBFDCF00956719 /* 总结 */,
 				DB708C2C1FC549DC009D850B /* ZPZBlockPractice */,
 				DB708C451FC549DC009D850B /* ZPZBlockPracticeTests */,
 				DB708C501FC549DC009D850B /* ZPZBlockPracticeUITests */,
@@ -243,7 +249,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC94CC21FCBFDCF00956719 /* 总结 in Resources */,
 				DB708C3A1FC549DC009D850B /* LaunchScreen.storyboard in Resources */,
+				DBC94CC41FCC0D2700956719 /* LLVM in Resources */,
 				DB708C371FC549DC009D850B /* Assets.xcassets in Resources */,
 				DB708C351FC549DC009D850B /* Main.storyboard in Resources */,
 			);

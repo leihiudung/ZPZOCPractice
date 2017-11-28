@@ -15,6 +15,9 @@
 		DB506FF21FCCF702000BB9DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB506FF11FCCF702000BB9DC /* main.m */; };
 		DB506FFC1FCCF702000BB9DC /* ZPZClangBlockPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB506FFB1FCCF702000BB9DC /* ZPZClangBlockPracticeTests.m */; };
 		DB5070071FCCF702000BB9DC /* ZPZClangBlockPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5070061FCCF702000BB9DC /* ZPZClangBlockPracticeUITests.m */; };
+		DB5070151FCCFBA1000BB9DC /* defineNormalLocalBlock解析 in Resources */ = {isa = PBXBuildFile; fileRef = DB5070141FCCFBA1000BB9DC /* defineNormalLocalBlock解析 */; };
+		DB6382E11FCD3C59002537D9 /* personal_define_noamal_local_block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB6382E01FCD3C59002537D9 /* personal_define_noamal_local_block.cpp */; };
+		DB6382E41FCD3DA7002537D9 /* ZPZObjcMsgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6382E31FCD3DA7002537D9 /* ZPZObjcMsgSend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		DB5070021FCCF702000BB9DC /* ZPZClangBlockPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZClangBlockPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5070061FCCF702000BB9DC /* ZPZClangBlockPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZClangBlockPracticeUITests.m; sourceTree = "<group>"; };
 		DB5070081FCCF702000BB9DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5070141FCCFBA1000BB9DC /* defineNormalLocalBlock解析 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "defineNormalLocalBlock解析"; sourceTree = "<group>"; };
+		DB6382E01FCD3C59002537D9 /* personal_define_noamal_local_block.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = personal_define_noamal_local_block.cpp; sourceTree = "<group>"; };
+		DB6382E21FCD3DA7002537D9 /* ZPZObjcMsgSend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZObjcMsgSend.h; sourceTree = "<group>"; };
+		DB6382E31FCD3DA7002537D9 /* ZPZObjcMsgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZObjcMsgSend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,8 @@
 		DB506FD61FCCF701000BB9DC = {
 			isa = PBXGroup;
 			children = (
+				DB6382E01FCD3C59002537D9 /* personal_define_noamal_local_block.cpp */,
+				DB5070141FCCFBA1000BB9DC /* defineNormalLocalBlock解析 */,
 				DB506FE11FCCF702000BB9DC /* ZPZClangBlockPractice */,
 				DB506FFA1FCCF702000BB9DC /* ZPZClangBlockPracticeTests */,
 				DB5070051FCCF702000BB9DC /* ZPZClangBlockPracticeUITests */,
@@ -105,6 +114,8 @@
 				DB506FE31FCCF702000BB9DC /* AppDelegate.m */,
 				DB506FE51FCCF702000BB9DC /* ViewController.h */,
 				DB506FE61FCCF702000BB9DC /* ViewController.m */,
+				DB6382E21FCD3DA7002537D9 /* ZPZObjcMsgSend.h */,
+				DB6382E31FCD3DA7002537D9 /* ZPZObjcMsgSend.m */,
 				DB506FE81FCCF702000BB9DC /* Main.storyboard */,
 				DB506FEB1FCCF702000BB9DC /* Assets.xcassets */,
 				DB506FED1FCCF702000BB9DC /* LaunchScreen.storyboard */,
@@ -239,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB506FEF1FCCF702000BB9DC /* LaunchScreen.storyboard in Resources */,
+				DB5070151FCCFBA1000BB9DC /* defineNormalLocalBlock解析 in Resources */,
 				DB506FEC1FCCF702000BB9DC /* Assets.xcassets in Resources */,
 				DB506FEA1FCCF702000BB9DC /* Main.storyboard in Resources */,
 			);
@@ -265,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6382E11FCD3C59002537D9 /* personal_define_noamal_local_block.cpp in Sources */,
 				DB506FE71FCCF702000BB9DC /* ViewController.m in Sources */,
+				DB6382E41FCD3DA7002537D9 /* ZPZObjcMsgSend.m in Sources */,
 				DB506FF21FCCF702000BB9DC /* main.m in Sources */,
 				DB506FE41FCCF702000BB9DC /* AppDelegate.m in Sources */,
 			);

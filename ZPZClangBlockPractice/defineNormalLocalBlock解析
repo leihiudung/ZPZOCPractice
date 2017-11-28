@@ -1,0 +1,18 @@
+1、block的定义
+struct __block_impl {
+    void *isa;
+    int Flags;
+    int Reserved;
+    void *FuncPtr;
+};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_hk_zhxz0gtj7z1djqcl5mbjdpd00000gn_T_ViewController_0db716_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"defineNormalLocalBlock",22};
+struct __NSConstantStringImpl {
+int *isa;
+int flags;
+char *str;
+#if _WIN64
+long long length;
+#else
+long length;
+#endif
+};

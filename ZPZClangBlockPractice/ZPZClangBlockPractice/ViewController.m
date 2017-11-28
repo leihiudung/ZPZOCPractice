@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <objc/runtime.h>
+#import "ZPZObjcMsgSend.h"
 
 @interface ViewController ()
 
@@ -17,7 +19,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
+    [self defineNormalLocalBlock];
+//    objc_getClass(<#const char * _Nonnull name#>)
+//    object_getClass(<#id  _Nullable obj#>)
+    [self sendMessage];
+}
+
+- (void)sendMessage{
+    ZPZObjcMsgSend * send = [[ZPZObjcMsgSend alloc] init];
+    [send sendMessage];
+}
+
+- (void)defineNormalLocalBlock {
+    void(^testBlock)(void) = ^{
+        NSLog(@"defineNormalLocalBlock");
+    };
+    testBlock();
 }
 
 

@@ -29,6 +29,12 @@
     ZPZObjcMsgSend * send = [[ZPZObjcMsgSend alloc] init];
     [send sendMessage];
 }
+/**
+ * 下面的函数会转成这里的样子,由此可以看出，定义的block名是个函数指针，具体的调用为:
+ * __ViewController__defineNormalLocalBlock_block_impl_0，在这里
+ * void(*testBlock)(void) = ((void (*)())&__ViewController__defineNormalLocalBlock_block_impl_0((void *)__ViewController__defineNormalLocalBlock_block_func_0, &__ViewController__defineNormalLocalBlock_block_desc_0_DATA));
+   ((void (*)(__block_impl *))((__block_impl *)testBlock)->FuncPtr)((__block_impl *)testBlock);
+ */
 
 - (void)defineNormalLocalBlock {
     void(^testBlock)(void) = ^{

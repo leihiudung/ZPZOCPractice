@@ -16,8 +16,11 @@
 		DB506FFC1FCCF702000BB9DC /* ZPZClangBlockPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB506FFB1FCCF702000BB9DC /* ZPZClangBlockPracticeTests.m */; };
 		DB5070071FCCF702000BB9DC /* ZPZClangBlockPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5070061FCCF702000BB9DC /* ZPZClangBlockPracticeUITests.m */; };
 		DB5070151FCCFBA1000BB9DC /* defineNormalLocalBlock解析 in Resources */ = {isa = PBXBuildFile; fileRef = DB5070141FCCFBA1000BB9DC /* defineNormalLocalBlock解析 */; };
-		DB6382E11FCD3C59002537D9 /* personal_define_noamal_local_block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB6382E01FCD3C59002537D9 /* personal_define_noamal_local_block.cpp */; };
 		DB6382E41FCD3DA7002537D9 /* ZPZObjcMsgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6382E31FCD3DA7002537D9 /* ZPZObjcMsgSend.m */; };
+		DB63830C1FCD4ED2002537D9 /* defineNormalLocalWithLocalParamsBlock解析 in Resources */ = {isa = PBXBuildFile; fileRef = DB63830B1FCD4ED2002537D9 /* defineNormalLocalWithLocalParamsBlock解析 */; };
+		DB63830E1FCD5638002537D9 /* defineNormalLocalWithGlobalParamsBlock解析 in Resources */ = {isa = PBXBuildFile; fileRef = DB63830D1FCD5638002537D9 /* defineNormalLocalWithGlobalParamsBlock解析 */; };
+		DB6383101FCD5C87002537D9 /* 全局静态变量和全局变量解析 in Resources */ = {isa = PBXBuildFile; fileRef = DB63830F1FCD5C87002537D9 /* 全局静态变量和全局变量解析 */; };
+		DB6383121FCD6294002537D9 /* block修饰解析 in Resources */ = {isa = PBXBuildFile; fileRef = DB6383111FCD6294002537D9 /* block修饰解析 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +58,12 @@
 		DB5070061FCCF702000BB9DC /* ZPZClangBlockPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZClangBlockPracticeUITests.m; sourceTree = "<group>"; };
 		DB5070081FCCF702000BB9DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5070141FCCFBA1000BB9DC /* defineNormalLocalBlock解析 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "defineNormalLocalBlock解析"; sourceTree = "<group>"; };
-		DB6382E01FCD3C59002537D9 /* personal_define_noamal_local_block.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = personal_define_noamal_local_block.cpp; sourceTree = "<group>"; };
 		DB6382E21FCD3DA7002537D9 /* ZPZObjcMsgSend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZObjcMsgSend.h; sourceTree = "<group>"; };
 		DB6382E31FCD3DA7002537D9 /* ZPZObjcMsgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZObjcMsgSend.m; sourceTree = "<group>"; };
+		DB63830B1FCD4ED2002537D9 /* defineNormalLocalWithLocalParamsBlock解析 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "defineNormalLocalWithLocalParamsBlock解析"; sourceTree = "<group>"; };
+		DB63830D1FCD5638002537D9 /* defineNormalLocalWithGlobalParamsBlock解析 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "defineNormalLocalWithGlobalParamsBlock解析"; sourceTree = "<group>"; };
+		DB63830F1FCD5C87002537D9 /* 全局静态变量和全局变量解析 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "全局静态变量和全局变量解析"; sourceTree = "<group>"; };
+		DB6383111FCD6294002537D9 /* block修饰解析 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "block修饰解析"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,10 @@
 		DB506FD61FCCF701000BB9DC = {
 			isa = PBXGroup;
 			children = (
-				DB6382E01FCD3C59002537D9 /* personal_define_noamal_local_block.cpp */,
+				DB6383111FCD6294002537D9 /* block修饰解析 */,
+				DB63830F1FCD5C87002537D9 /* 全局静态变量和全局变量解析 */,
+				DB63830D1FCD5638002537D9 /* defineNormalLocalWithGlobalParamsBlock解析 */,
+				DB63830B1FCD4ED2002537D9 /* defineNormalLocalWithLocalParamsBlock解析 */,
 				DB5070141FCCFBA1000BB9DC /* defineNormalLocalBlock解析 */,
 				DB506FE11FCCF702000BB9DC /* ZPZClangBlockPractice */,
 				DB506FFA1FCCF702000BB9DC /* ZPZClangBlockPracticeTests */,
@@ -249,10 +258,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB63830E1FCD5638002537D9 /* defineNormalLocalWithGlobalParamsBlock解析 in Resources */,
 				DB506FEF1FCCF702000BB9DC /* LaunchScreen.storyboard in Resources */,
 				DB5070151FCCFBA1000BB9DC /* defineNormalLocalBlock解析 in Resources */,
+				DB6383101FCD5C87002537D9 /* 全局静态变量和全局变量解析 in Resources */,
 				DB506FEC1FCCF702000BB9DC /* Assets.xcassets in Resources */,
+				DB6383121FCD6294002537D9 /* block修饰解析 in Resources */,
 				DB506FEA1FCCF702000BB9DC /* Main.storyboard in Resources */,
+				DB63830C1FCD4ED2002537D9 /* defineNormalLocalWithLocalParamsBlock解析 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB6382E11FCD3C59002537D9 /* personal_define_noamal_local_block.cpp in Sources */,
 				DB506FE71FCCF702000BB9DC /* ViewController.m in Sources */,
 				DB6382E41FCD3DA7002537D9 /* ZPZObjcMsgSend.m in Sources */,
 				DB506FF21FCCF702000BB9DC /* main.m in Sources */,

@@ -10,7 +10,12 @@
 #import <objc/runtime.h>
 #import "ZPZObjcMsgSend.h"
 
+int globalVar = 20;
+static NSString * globalStatic = @"全局静态对象";
+
 @interface ViewController ()
+
+@property (nonatomic,assign) NSInteger count;
 
 @end
 
@@ -19,10 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    [self defineNormalLocalBlock];
+//    [self defineNormalLocalBlock];
 //    objc_getClass(<#const char * _Nonnull name#>)
 //    object_getClass(<#id  _Nullable obj#>)
-    [self sendMessage];
+//    [self sendMessage];
+//    [self defineNormalLocalWithLocalParamsBlock];
+//    [self defineNormalLocalWithHasParamsBlock];
+    [self defineNormalLocalVarLife];
 }
 
 - (void)sendMessage{
@@ -30,10 +38,7 @@
     [send sendMessage];
 }
 /**
- * 下面的函数会转成这里的样子,由此可以看出，定义的block名是个函数指针，具体的调用为:
- * __ViewController__defineNormalLocalBlock_block_impl_0，在这里
- * void(*testBlock)(void) = ((void (*)())&__ViewController__defineNormalLocalBlock_block_impl_0((void *)__ViewController__defineNormalLocalBlock_block_func_0, &__ViewController__defineNormalLocalBlock_block_desc_0_DATA));
-   ((void (*)(__block_impl *))((__block_impl *)testBlock)->FuncPtr)((__block_impl *)testBlock);
+ * 下面的函数clang后看文件defineNormalLocalBlock解析
  */
 
 - (void)defineNormalLocalBlock {
@@ -42,7 +47,92 @@
     };
     testBlock();
 }
+/**
+ * 捕获局部外界值
+ */
+- (void)defineNormalLocalWithLocalParamsBlock{
+//    NSInteger a = 10;
+    NSString * a = @"";
+    void(^testBlock)(void) = ^{
+//        NSLog(@"defineNormalLocalBlock:%ld",a);
+        NSLog(@"defineNormalLocalBlock:%@",a);
+    };
+    testBlock();
+}
 
+/**
+ * 带参数的
+ */
+- (void)defineNormalLocalWithHasParamsBlock{
+    void(^testBlock)(NSInteger i) = ^(NSInteger i){
+        NSLog(@"defineNormalLocalBlock:%ld",i);
+    };
+    testBlock(10);
+}
+/**
+ * 属性
+ */
+- (void)defineNormalLocalWithGlobalParamsBlock{
+    void(^testBlock)(void) = ^{
+        NSLog(@"defineNormalLocalBlock:%ld",_count);
+    };
+    testBlock();
+}
+/**
+ * 全局变量
+ * 全局变量和全局静态变量生命周期和程序是一样的，但是作用域不同
+ */
+- (void)defineNormalLocalWithAllGlobalParamsBlock{
+    void(^testBlock)(void) = ^{
+        NSLog(@"defineNormalLocalBlock:%d,%@",globalVar,globalStatic);
+    };
+    testBlock();
+}
+
+/**
+ * 局部静态变量
+ * 表现和局部变量一样，因为局部静态变量的作用域和局部变量的作用域相同
+ * 作用域和生命周期不一样，静态局部变量的生命周期是程序运行期
+ */
+- (void)defineNormaLocalWithStaticBlock{
+    static NSString * flag = @"";
+    void(^testBlock)(void) = ^{
+        NSLog(@"defineNormalLocalBlock:%@",flag);
+    };
+    testBlock();
+}
+
+/**
+ * 因为a的作用域离开该函数就会释放，所以这里p很容易形成野指针，导致出现不可预见的错误
+ - (void)test
+ {
+     int a = 0;
+     // 利用指针p存储a的地址
+     int *p = &a;
+ 
+     ^{
+     // 通过a的地址设置a的值
+     *p = 10;
+     };
+ }
+ */
+- (void)defineNormalLocalVarLife{
+    int a = 10;
+    int *p = &a;
+    void(^testBlock)(void) = ^{
+        *p = 20;
+    };
+    NSLog(@"%@",@(a));
+    testBlock();
+}
+
+- (void)defineBlockWithBlock{
+    __block NSInteger a = 20;
+    void(^testBlock)(void) = ^{
+        NSLog(@"%@",@(a));
+    };
+    testBlock();
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

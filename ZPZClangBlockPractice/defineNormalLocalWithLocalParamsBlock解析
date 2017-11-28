@@ -1,0 +1,31 @@
+
+struct __ViewController__defineNormalLocalWithLocalParamsBlock_block_impl_0 {
+    struct __block_impl impl;
+    struct __ViewController__defineNormalLocalWithLocalParamsBlock_block_desc_0* Desc;
+    NSInteger a;
+    __ViewController__defineNormalLocalWithLocalParamsBlock_block_impl_0(void *fp, struct __ViewController__defineNormalLocalWithLocalParamsBlock_block_desc_0 *desc, NSInteger _a, int flags=0) : a(_a) {
+        impl.isa = &_NSConcreteStackBlock;
+        impl.Flags = flags;
+        impl.FuncPtr = fp;
+        Desc = desc;
+    }
+};
+static void __ViewController__defineNormalLocalWithLocalParamsBlock_block_func_0(struct __ViewController__defineNormalLocalWithLocalParamsBlock_block_impl_0 *__cself) {
+    NSInteger a = __cself->a; // bound by copy
+
+    NSLog((NSString *)&__NSConstantStringImpl__var_folders_hk_zhxz0gtj7z1djqcl5mbjdpd00000gn_T_ViewController_dbec40_mi_1,a);
+}
+
+static struct __ViewController__defineNormalLocalWithLocalParamsBlock_block_desc_0 {
+    size_t reserved;
+    size_t Block_size;
+} __ViewController__defineNormalLocalWithLocalParamsBlock_block_desc_0_DATA = { 0, sizeof(struct __ViewController__defineNormalLocalWithLocalParamsBlock_block_impl_0)};
+
+static void _I_ViewController_defineNormalLocalWithLocalParamsBlock(ViewController * self, SEL _cmd) {
+    NSInteger a = 10;
+    void(*testBlock)(void) = ((void (*)())&__ViewController__defineNormalLocalWithLocalParamsBlock_block_impl_0((void *)__ViewController__defineNormalLocalWithLocalParamsBlock_block_func_0, &__ViewController__defineNormalLocalWithLocalParamsBlock_block_desc_0_DATA, a));
+    ((void (*)(__block_impl *))((__block_impl *)testBlock)->FuncPtr)((__block_impl *)testBlock);
+}
+
+说明：相比于之前的变化是，传递的参数新增了一个a
+这里可以看到a是一个实参，而实参的值是不能修改的

@@ -92,6 +92,7 @@ static NSString * globalStatic = @"全局静态对象";
 /**
  * 局部静态变量
  * 表现和局部变量一样，因为局部静态变量的作用域和局部变量的作用域相同
+ * 但是这里传递的是变量的地址，所以结果和普通局部变量不一样
  * 作用域和生命周期不一样，静态局部变量的生命周期是程序运行期
  */
 - (void)defineNormaLocalWithStaticBlock{

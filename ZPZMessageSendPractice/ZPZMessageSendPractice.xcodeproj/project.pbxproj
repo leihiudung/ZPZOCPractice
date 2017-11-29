@@ -15,6 +15,8 @@
 		DBD208701FCE48B600FF9C2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD2086F1FCE48B600FF9C2A /* main.m */; };
 		DBD2087A1FCE48B600FF9C2A /* ZPZMessageSendPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD208791FCE48B600FF9C2A /* ZPZMessageSendPracticeTests.m */; };
 		DBD208851FCE48B600FF9C2A /* ZPZMessageSendPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD208841FCE48B600FF9C2A /* ZPZMessageSendPracticeUITests.m */; };
+		DBD208941FCE58C000FF9C2A /* ZPZReceiveMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD208931FCE58C000FF9C2A /* ZPZReceiveMessage.m */; };
+		DBD208971FCE58F500FF9C2A /* ZPZPickMissMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD208961FCE58F500FF9C2A /* ZPZPickMissMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		DBD208801FCE48B600FF9C2A /* ZPZMessageSendPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZMessageSendPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD208841FCE48B600FF9C2A /* ZPZMessageSendPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZMessageSendPracticeUITests.m; sourceTree = "<group>"; };
 		DBD208861FCE48B600FF9C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD208921FCE58C000FF9C2A /* ZPZReceiveMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZReceiveMessage.h; sourceTree = "<group>"; };
+		DBD208931FCE58C000FF9C2A /* ZPZReceiveMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZReceiveMessage.m; sourceTree = "<group>"; };
+		DBD208951FCE58F500FF9C2A /* ZPZPickMissMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZPickMissMessage.h; sourceTree = "<group>"; };
+		DBD208961FCE58F500FF9C2A /* ZPZPickMissMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPickMissMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				DBD208611FCE48B600FF9C2A /* AppDelegate.m */,
 				DBD208631FCE48B600FF9C2A /* ViewController.h */,
 				DBD208641FCE48B600FF9C2A /* ViewController.m */,
+				DBD208921FCE58C000FF9C2A /* ZPZReceiveMessage.h */,
+				DBD208931FCE58C000FF9C2A /* ZPZReceiveMessage.m */,
+				DBD208951FCE58F500FF9C2A /* ZPZPickMissMessage.h */,
+				DBD208961FCE58F500FF9C2A /* ZPZPickMissMessage.m */,
 				DBD208661FCE48B600FF9C2A /* Main.storyboard */,
 				DBD208691FCE48B600FF9C2A /* Assets.xcassets */,
 				DBD2086B1FCE48B600FF9C2A /* LaunchScreen.storyboard */,
@@ -266,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBD208651FCE48B600FF9C2A /* ViewController.m in Sources */,
+				DBD208971FCE58F500FF9C2A /* ZPZPickMissMessage.m in Sources */,
 				DBD208701FCE48B600FF9C2A /* main.m in Sources */,
+				DBD208941FCE58C000FF9C2A /* ZPZReceiveMessage.m in Sources */,
 				DBD208621FCE48B600FF9C2A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

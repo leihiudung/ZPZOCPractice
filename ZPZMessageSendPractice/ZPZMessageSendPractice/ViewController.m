@@ -39,6 +39,8 @@
     ZPZReceiveMessage * msg = [[ZPZReceiveMessage alloc] init];
     int value = [msg testResolveInstanceMthod:@"resolveInstance" age:2];
     NSLog(@"%d",value);
+    [msg testFindOtherReceiver];
+    [msg testMsgInvocationWithMessage:@"new direct"];
 }
 
 - (void)didReceiveMemoryWarning {

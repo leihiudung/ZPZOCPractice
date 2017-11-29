@@ -11,5 +11,7 @@
 @interface ZPZReceiveMessage : NSObject
 
 - (int)testResolveInstanceMthod:(NSString *)name age:(NSInteger)age;
+- (NSInteger)testFindOtherReceiver;
+- (NSString *)testMsgInvocationWithMessage:(NSString *)msg;
 
 @end

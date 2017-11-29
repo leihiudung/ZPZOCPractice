@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface ZPZPickMissMessage : NSObject
+//测试能否在第一步就修改为其他对象
+- (int)resolveInstanceMethodWithOC:(NSString *)name age:(NSInteger)age;
+- (NSInteger)testFindOtherReceiver;
+- (void)testMsgInvocationWithMessage:(NSString *)msg;
+- (void)msgInvocationWithMessage:(NSString *)msg andScore:(NSInteger)score;
 
 @end

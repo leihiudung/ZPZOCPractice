@@ -19,7 +19,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Basic Use";
-    [self dispatchSetTargetQueue3];
+    [self dispatchAsyncF1];
 }
 /**
  * 创建线程
@@ -150,13 +150,13 @@
 }
 
 void testDispatchFunction(void * context){
-    int * i = context;
-    printf("%d\n",*i);
+    int * count = context;
+    printf("%d",*count);
 //    NSLog(@"dispatch_async_f:%@",@(*i));
 }
 
 - (void)dispatchAsyncF1 {
-    dispatch_queue_t queue = dispatch_queue_create("com.serial.queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.serial.queue", DISPATCH_QUEUE_SERIAL);
     int count = 10;
     dispatch_async_f(queue, &count, testDispatchFunction);
 //    for (int i = 0; i < 10; i++) {
@@ -164,20 +164,5 @@ void testDispatchFunction(void * context){
 //        dispatch_async_f(queue, &count, testDispatchFunction);
 //    }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

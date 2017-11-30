@@ -108,7 +108,7 @@
         [NSThread sleepForTimeInterval:1];
     });
 }
-//不起作用？
+//不起作用？实际起作用了
 - (void)dispatchSetTargetQueue3 {
     dispatch_queue_t serial1 = dispatch_queue_create("com.queue.serial", DISPATCH_QUEUE_SERIAL);
     dispatch_queue_t serial2 = dispatch_queue_create("com.queue.serial", DISPATCH_QUEUE_SERIAL);

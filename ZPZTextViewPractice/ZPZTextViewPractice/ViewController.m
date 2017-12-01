@@ -38,7 +38,7 @@
 - (void)createUseButton {
     _btnSpace = 15;
     NSInteger lineCount = 2;
-    _btnWidth = ([UIScreen mainScreen].bounds.size.width - (lineCount + 1) * _btnWidth) / lineCount;
+    _btnWidth = ([UIScreen mainScreen].bounds.size.width - (lineCount + 1) * _btnSpace) / lineCount;
     if (_btnWidth < 0) {
         _btnWidth = 0;
     }

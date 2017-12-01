@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZPZTextViewStructureViewController.h"
 
 @interface ViewController ()
 
@@ -39,7 +40,7 @@
     NSString * titleKey = @"title";
     NSString * selKey = @"selKey";
     NSArray<NSDictionary *> * btnArray = @[
-                                           @{titleKey:@"basic use",selKey:NSStringFromSelector(@selector(gotoBasicUse))},
+                                           @{titleKey:@"TextView structure",selKey:NSStringFromSelector(@selector(gotoBasicUse))},
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -54,7 +55,8 @@
 
 #pragma - mark event
 - (void)gotoBasicUse {
-    
+    ZPZTextViewStructureViewController * textViewVC = [[ZPZTextViewStructureViewController alloc] init];
+    [self.navigationController pushViewController:textViewVC animated:YES];
 }
 
 #pragma - mark common button

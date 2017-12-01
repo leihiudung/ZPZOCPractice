@@ -14,6 +14,7 @@
 		DBBAEB521FD0E9A4004961FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBAEB511FD0E9A4004961FB /* main.m */; };
 		DBBAEB5C1FD0E9A4004961FB /* ZPZTextViewPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBAEB5B1FD0E9A4004961FB /* ZPZTextViewPracticeTests.m */; };
 		DBBAEB671FD0E9A4004961FB /* ZPZTextViewPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBAEB661FD0E9A4004961FB /* ZPZTextViewPracticeUITests.m */; };
+		DBBAEB761FD0EBFA004961FB /* ZPZTextViewStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBAEB751FD0EBFA004961FB /* ZPZTextViewStructureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		DBBAEB621FD0E9A4004961FB /* ZPZTextViewPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZTextViewPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBAEB661FD0E9A4004961FB /* ZPZTextViewPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZTextViewPracticeUITests.m; sourceTree = "<group>"; };
 		DBBAEB681FD0E9A4004961FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBBAEB741FD0EBFA004961FB /* ZPZTextViewStructureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZTextViewStructureViewController.h; sourceTree = "<group>"; };
+		DBBAEB751FD0EBFA004961FB /* ZPZTextViewStructureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZTextViewStructureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				DBBAEB431FD0E9A4004961FB /* AppDelegate.m */,
 				DBBAEB451FD0E9A4004961FB /* ViewController.h */,
 				DBBAEB461FD0E9A4004961FB /* ViewController.m */,
+				DBBAEB741FD0EBFA004961FB /* ZPZTextViewStructureViewController.h */,
+				DBBAEB751FD0EBFA004961FB /* ZPZTextViewStructureViewController.m */,
 				DBBAEB4B1FD0E9A4004961FB /* Assets.xcassets */,
 				DBBAEB4D1FD0E9A4004961FB /* LaunchScreen.storyboard */,
 				DBBAEB501FD0E9A4004961FB /* Info.plist */,
@@ -264,6 +269,7 @@
 				DBBAEB471FD0E9A4004961FB /* ViewController.m in Sources */,
 				DBBAEB521FD0E9A4004961FB /* main.m in Sources */,
 				DBBAEB441FD0E9A4004961FB /* AppDelegate.m in Sources */,
+				DBBAEB761FD0EBFA004961FB /* ZPZTextViewStructureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ZPZTextViewStructureViewController.h"
+#import "ZPZTextContainerViewController.h"
 
 @interface ViewController ()
 
@@ -25,7 +26,12 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"UITextView";
+    
     [self createUseButton];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
 }
 
 #pragma - mark create button
@@ -41,6 +47,7 @@
     NSString * selKey = @"selKey";
     NSArray<NSDictionary *> * btnArray = @[
                                            @{titleKey:@"TextView structure",selKey:NSStringFromSelector(@selector(gotoBasicUse))},
+                                           @{titleKey:@"TextContainer",selKey:NSStringFromSelector(@selector(gotoTextContainer))}
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -57,6 +64,11 @@
 - (void)gotoBasicUse {
     ZPZTextViewStructureViewController * textViewVC = [[ZPZTextViewStructureViewController alloc] init];
     [self.navigationController pushViewController:textViewVC animated:YES];
+}
+
+- (void)gotoTextContainer {
+    ZPZTextContainerViewController * containerVC = [[ZPZTextContainerViewController alloc] init];
+    [self.navigationController pushViewController:containerVC animated:YES];
 }
 
 #pragma - mark common button

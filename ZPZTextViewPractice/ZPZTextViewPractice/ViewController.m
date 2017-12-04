@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ZPZTextViewStructureViewController.h"
 #import "ZPZTextContainerViewController.h"
+#import "ZPZLayoutManagerViewController.h"
 
 @interface ViewController ()
 
@@ -47,7 +48,8 @@
     NSString * selKey = @"selKey";
     NSArray<NSDictionary *> * btnArray = @[
                                            @{titleKey:@"TextView structure",selKey:NSStringFromSelector(@selector(gotoBasicUse))},
-                                           @{titleKey:@"TextContainer",selKey:NSStringFromSelector(@selector(gotoTextContainer))}
+                                           @{titleKey:@"TextContainer",selKey:NSStringFromSelector(@selector(gotoTextContainer))},
+                                           @{titleKey:@"LayoutManager",selKey:NSStringFromSelector(@selector(gotoLayoutManager))},
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -69,6 +71,11 @@
 - (void)gotoTextContainer {
     ZPZTextContainerViewController * containerVC = [[ZPZTextContainerViewController alloc] init];
     [self.navigationController pushViewController:containerVC animated:YES];
+}
+
+- (void)gotoLayoutManager {
+    ZPZLayoutManagerViewController * layoutVC = [[ZPZLayoutManagerViewController alloc] init];
+    [self.navigationController pushViewController:layoutVC animated:YES];
 }
 
 #pragma - mark common button

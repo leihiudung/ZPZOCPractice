@@ -56,6 +56,13 @@
     _textView.backgroundColor = [UIColor orangeColor];
     _textView.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:_textView];
+    if (@available(iOS 9.0, *)) {
+        if (textContainer.isSimpleRectangularTextContainer) {
+            NSLog(@"is SimpleRectangularTextContainer");   //打印这里
+        } else {
+            NSLog(@"is Not SimpleRectangularTextContainer");
+        }
+    }
 }
 
 - (void)configTextViewWithTwoContainer {
@@ -141,6 +148,14 @@
     _textView.backgroundColor = [UIColor orangeColor];
     _textView.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:_textView];
+    
+    if (@available(iOS 9.0, *)) {
+        if (textContainer.isSimpleRectangularTextContainer) {
+            NSLog(@"is SimpleRectangularTextContainer");
+        } else {
+            NSLog(@"is Not SimpleRectangularTextContainer");  //打印这里
+        }
+    }
 }
 
 - (NSString *)contentStr {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB85B89B1FD4EA2A00FA8CC9 /* ZPZLayoutManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85B89A1FD4EA2A00FA8CC9 /* ZPZLayoutManagerViewController.m */; };
 		DBBAEB441FD0E9A4004961FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBAEB431FD0E9A4004961FB /* AppDelegate.m */; };
 		DBBAEB471FD0E9A4004961FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBAEB461FD0E9A4004961FB /* ViewController.m */; };
 		DBBAEB4C1FD0E9A4004961FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBAEB4B1FD0E9A4004961FB /* Assets.xcassets */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB85B8991FD4EA2A00FA8CC9 /* ZPZLayoutManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZLayoutManagerViewController.h; sourceTree = "<group>"; };
+		DB85B89A1FD4EA2A00FA8CC9 /* ZPZLayoutManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZLayoutManagerViewController.m; sourceTree = "<group>"; };
 		DBBAEB3F1FD0E9A4004961FB /* ZPZTextViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZPZTextViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBAEB421FD0E9A4004961FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBBAEB431FD0E9A4004961FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				DBBAEB431FD0E9A4004961FB /* AppDelegate.m */,
 				DBBAEB451FD0E9A4004961FB /* ViewController.h */,
 				DBBAEB461FD0E9A4004961FB /* ViewController.m */,
+				DB85B8991FD4EA2A00FA8CC9 /* ZPZLayoutManagerViewController.h */,
+				DB85B89A1FD4EA2A00FA8CC9 /* ZPZLayoutManagerViewController.m */,
 				DBBAEB771FD13A20004961FB /* ZPZTextContainerViewController.h */,
 				DBBAEB781FD13A20004961FB /* ZPZTextContainerViewController.m */,
 				DBBAEB741FD0EBFA004961FB /* ZPZTextViewStructureViewController.h */,
@@ -275,6 +280,7 @@
 				DBBAEB521FD0E9A4004961FB /* main.m in Sources */,
 				DBBAEB441FD0E9A4004961FB /* AppDelegate.m in Sources */,
 				DBBAEB791FD13A20004961FB /* ZPZTextContainerViewController.m in Sources */,
+				DB85B89B1FD4EA2A00FA8CC9 /* ZPZLayoutManagerViewController.m in Sources */,
 				DBBAEB761FD0EBFA004961FB /* ZPZTextViewStructureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

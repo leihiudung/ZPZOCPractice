@@ -104,9 +104,9 @@
 
 - (void)hidePlaceHolder {
     [UIView animateWithDuration:0.25 animations:^{
-        self.placeHoldLabel.alpha = 1;
+        self.placeHoldLabel.alpha = 0;
     } completion:^(BOOL finished) {
-        self.placeHoldLabel.hidden = NO;
+        self.placeHoldLabel.hidden = YES;
     }];
 }
 

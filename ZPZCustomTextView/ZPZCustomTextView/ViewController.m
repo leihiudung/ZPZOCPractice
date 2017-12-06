@@ -30,8 +30,7 @@
 //    NSLog(@"%@",NSStringFromUIEdgeInsets(textView.textContainerInset));
     textView.backgroundColor = [UIColor orangeColor];
     textView.placeHoldStr = @"I am the place hold textI am the place hold textI am the place hold textI am the place hold textI am the place hold textI am the place hold textI am the place hold text";
-    textView.placeHoldLabel.textColor = [UIColor whiteColor];
-    textView.font = [UIFont systemFontOfSize:17];
+//    textView.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:textView];
     textView.shouldBeginEditing = ^BOOL(ZPZTextView * zT) {
         NSLog(@"begin");

@@ -24,11 +24,7 @@ const char * shouldChangeAndReplaceTextKey = "shouldChangeAndReplaceText";
         shouldBegin = self.shouldBeginEditing(self);
     }
     if (shouldBegin) {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.placeHoldLabel.alpha = 0;
-        } completion:^(BOOL finished) {
-           self.placeHoldLabel.hidden = YES;
-        }];
+        [self hidePlaceHolder];
     }
     return shouldBegin;
 }
@@ -39,17 +35,9 @@ const char * shouldChangeAndReplaceTextKey = "shouldChangeAndReplaceText";
         shouldEnd = self.shouldEndEditing(self);
     }
     if (self.text.length == 0) {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.placeHoldLabel.alpha = 1;
-        } completion:^(BOOL finished) {
-            self.placeHoldLabel.hidden = NO;
-        }];
+        [self showPlaceHolder];
     } else {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.placeHoldLabel.alpha = 0;
-        } completion:^(BOOL finished) {
-            self.placeHoldLabel.hidden = YES;
-        }];
+        [self hidePlaceHolder];
     }
     return shouldEnd;
 }

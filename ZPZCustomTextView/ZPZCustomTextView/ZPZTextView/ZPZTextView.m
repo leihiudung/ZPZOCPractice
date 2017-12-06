@@ -9,10 +9,15 @@
 #import "ZPZTextView.h"
 #import "ZPZTextView+delegate.h"
 
+@interface ZPZTextView ()
+
+@property (nonatomic, strong, readonly) ZPZLabel * placeHoldLabel;
+
+@end
+
 @implementation ZPZTextView
 
 @synthesize placeHoldStr = _placeHoldStr;
-@synthesize placeHoldAttr = _placeHoldAttr;
 
 - (instancetype)init {
     self = [super init];
@@ -21,6 +26,7 @@
         self.delegate = self;
         [self addSubview:_placeHoldLabel];
         [self adjustPlaceLabelFrame];
+        _placeHoldColor = [self getPlaceHoldDefaultColor];
     }
     return self;
 }
@@ -32,6 +38,7 @@
         self.delegate = self;
         [self addSubview:_placeHoldLabel];
         [self adjustPlaceLabelFrame];
+        _placeHoldColor = [self getPlaceHoldDefaultColor];
     }
     return self;
 }
@@ -67,33 +74,48 @@
     return _placeHoldStr;
 }
 
-- (void)setPlaceHoldAttr:(NSAttributedString *)placeHoldAttr {
-    if (_placeHoldLabel == nil) {
-        return;
-    }
-    if (placeHoldAttr == nil) {
-        _placeHoldAttr = [[NSAttributedString alloc] init];
-    } else {
-        _placeHoldAttr = placeHoldAttr;
-    }
-    _placeHoldLabel.attributedText = placeHoldAttr;
-}
-
-- (NSAttributedString *)placeHoldAttr {
-    _placeHoldAttr = _placeHoldLabel.attributedText;
-    return _placeHoldAttr;
-}
-
 - (void)setFont:(UIFont *)font {
     [super setFont:font];
     _placeHoldLabel.font = self.font;
+}
+
+- (void)setPlaceHoldColor:(UIColor *)placeHoldColor {
+    if (placeHoldColor == nil) {
+        _placeHoldColor = [UIColor blackColor];
+    } else {
+        _placeHoldColor = placeHoldColor;
+    }
+    _placeHoldLabel.textColor = _placeHoldColor;
 }
 
 - (ZPZLabel *)createPlaceHoldLabel {
     ZPZLabel * label = [[ZPZLabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;
+    label.textColor = [self getPlaceHoldDefaultColor];
+    //UITextView默认font不存在
+    self.font = _placeHoldLabel.font;
     return label;
+}
+
+- (UIColor *)getPlaceHoldDefaultColor {
+    return [UIColor colorWithWhite:153 / 255.f alpha:1];
+}
+
+- (void)hidePlaceHolder {
+    [UIView animateWithDuration:0.25 animations:^{
+        self.placeHoldLabel.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.placeHoldLabel.hidden = YES;
+    }];
+}
+
+- (void)showPlaceHolder {
+    [UIView animateWithDuration:0.25 animations:^{
+        self.placeHoldLabel.alpha = 1;
+    } completion:^(BOOL finished) {
+        self.placeHoldLabel.hidden = NO;
+    }];
 }
 
 - (void)adjustPlaceLabelFrame {

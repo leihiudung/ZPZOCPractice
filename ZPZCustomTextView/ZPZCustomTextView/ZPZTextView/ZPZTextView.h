@@ -11,11 +11,13 @@
 
 @interface ZPZTextView : UITextView
 
-@property (nonatomic, strong, readonly) ZPZLabel * placeHoldLabel;
 @property (nonatomic, copy) NSString * placeHoldStr;
-@property (nonatomic, strong) NSAttributedString * placeHoldAttr;
+@property (nonatomic, strong) UIColor * placeHoldColor;
 
 - (instancetype)init;
 - (instancetype)initWithFrame:(CGRect)frame;
+
+- (void)hidePlaceHolder;
+- (void)showPlaceHolder;
 
 @end

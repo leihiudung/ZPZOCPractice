@@ -15,6 +15,7 @@
 		DB8798D21FD7890900252E4D /* ZPZCustomTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8798D11FD7890900252E4D /* ZPZCustomTextViewTests.m */; };
 		DB8798DD1FD7890900252E4D /* ZPZCustomTextViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8798DC1FD7890900252E4D /* ZPZCustomTextViewUITests.m */; };
 		DB8798ED1FD789B500252E4D /* ZPZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8798EC1FD789B500252E4D /* ZPZTextView.m */; };
+		DB8799321FD7C1FA00252E4D /* ZPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8799301FD7C1FA00252E4D /* ZPZLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		DB8798DE1FD7890900252E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8798EB1FD789B500252E4D /* ZPZTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZTextView.h; sourceTree = "<group>"; };
 		DB8798EC1FD789B500252E4D /* ZPZTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZTextView.m; sourceTree = "<group>"; };
+		DB8799301FD7C1FA00252E4D /* ZPZLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPZLabel.m; sourceTree = "<group>"; };
+		DB8799311FD7C1FA00252E4D /* ZPZLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPZLabel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 		DB8798EA1FD7899900252E4D /* ZPZTextView */ = {
 			isa = PBXGroup;
 			children = (
+				DB8799311FD7C1FA00252E4D /* ZPZLabel.h */,
+				DB8799301FD7C1FA00252E4D /* ZPZLabel.m */,
 				DB8798EB1FD789B500252E4D /* ZPZTextView.h */,
 				DB8798EC1FD789B500252E4D /* ZPZTextView.m */,
 			);
@@ -274,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8799321FD7C1FA00252E4D /* ZPZLabel.m in Sources */,
 				DB8798ED1FD789B500252E4D /* ZPZTextView.m in Sources */,
 				DB8798BD1FD7890900252E4D /* ViewController.m in Sources */,
 				DB8798C81FD7890900252E4D /* main.m in Sources */,

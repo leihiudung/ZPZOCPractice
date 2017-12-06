@@ -38,14 +38,14 @@
 }
 //这里小心写错
 - (void)drawTextInRect:(CGRect)rect {
-//    NSLog(@"%s",__func__);
+    NSLog(@"%s",__func__);
     CGRect actualRect = [self textRectForBounds:rect limitedToNumberOfLines:self.numberOfLines];
     [super drawTextInRect:actualRect];
-//    NSLog(@"%s",__func__);
+    NSLog(@"%s",__func__);
 }
 //先调用父类的这个方法，然后是上面的方法，最后是该方法剩下的
 - (void)drawRect:(CGRect)rect {
-//     NSLog(@"%s",__func__);
+     NSLog(@"%s",__func__);
     [super drawRect:rect];
    
 }

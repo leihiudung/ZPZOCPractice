@@ -94,7 +94,7 @@
     label.numberOfLines = 0;
     label.textColor = [self getPlaceHoldDefaultColor];
     //UITextView默认font不存在
-    self.font = _placeHoldLabel.font;
+    self.font = label.font;
     return label;
 }
 
@@ -104,9 +104,9 @@
 
 - (void)hidePlaceHolder {
     [UIView animateWithDuration:0.25 animations:^{
-        self.placeHoldLabel.alpha = 0;
+        self.placeHoldLabel.alpha = 1;
     } completion:^(BOOL finished) {
-        self.placeHoldLabel.hidden = YES;
+        self.placeHoldLabel.hidden = NO;
     }];
 }
 

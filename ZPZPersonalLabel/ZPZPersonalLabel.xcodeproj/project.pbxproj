@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB8798FC1FD7921300252E4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8798FB1FD7921300252E4D /* AppDelegate.m */; };
+		DB8798FF1FD7921300252E4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8798FE1FD7921300252E4D /* ViewController.m */; };
+		DB8799041FD7921300252E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8799031FD7921300252E4D /* Assets.xcassets */; };
+		DB8799071FD7921300252E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8799051FD7921300252E4D /* LaunchScreen.storyboard */; };
+		DB87990A1FD7921300252E4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8799091FD7921300252E4D /* main.m */; };
+		DB8799141FD7921300252E4D /* ZPZPersonalLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8799131FD7921300252E4D /* ZPZPersonalLabelTests.m */; };
+		DB87991F1FD7921300252E4D /* ZPZPersonalLabelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB87991E1FD7921300252E4D /* ZPZPersonalLabelUITests.m */; };
+		DB87992F1FD7928800252E4D /* ZPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB87992E1FD7928800252E4D /* ZPZLabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB8799101FD7921300252E4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8798EF1FD7921300252E4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8798F61FD7921300252E4D;
+			remoteInfo = ZPZPersonalLabel;
+		};
+		DB87991B1FD7921300252E4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8798EF1FD7921300252E4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8798F61FD7921300252E4D;
+			remoteInfo = ZPZPersonalLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB8798F71FD7921300252E4D /* ZPZPersonalLabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZPZPersonalLabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8798FA1FD7921300252E4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB8798FB1FD7921300252E4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB8798FD1FD7921300252E4D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB8798FE1FD7921300252E4D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB8799031FD7921300252E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB8799061FD7921300252E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB8799081FD7921300252E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8799091FD7921300252E4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB87990F1FD7921300252E4D /* ZPZPersonalLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZPersonalLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8799131FD7921300252E4D /* ZPZPersonalLabelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPersonalLabelTests.m; sourceTree = "<group>"; };
+		DB8799151FD7921300252E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB87991A1FD7921300252E4D /* ZPZPersonalLabelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZPersonalLabelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB87991E1FD7921300252E4D /* ZPZPersonalLabelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPersonalLabelUITests.m; sourceTree = "<group>"; };
+		DB8799201FD7921300252E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB87992D1FD7928800252E4D /* ZPZLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZLabel.h; sourceTree = "<group>"; };
+		DB87992E1FD7928800252E4D /* ZPZLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZLabel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB8798F41FD7921300252E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB87990C1FD7921300252E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8799171FD7921300252E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB8798EE1FD7921300252E4D = {
+			isa = PBXGroup;
+			children = (
+				DB8798F91FD7921300252E4D /* ZPZPersonalLabel */,
+				DB8799121FD7921300252E4D /* ZPZPersonalLabelTests */,
+				DB87991D1FD7921300252E4D /* ZPZPersonalLabelUITests */,
+				DB8798F81FD7921300252E4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB8798F81FD7921300252E4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8798F71FD7921300252E4D /* ZPZPersonalLabel.app */,
+				DB87990F1FD7921300252E4D /* ZPZPersonalLabelTests.xctest */,
+				DB87991A1FD7921300252E4D /* ZPZPersonalLabelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8798F91FD7921300252E4D /* ZPZPersonalLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DB87992C1FD7925300252E4D /* ZPZLabel */,
+				DB8798FA1FD7921300252E4D /* AppDelegate.h */,
+				DB8798FB1FD7921300252E4D /* AppDelegate.m */,
+				DB8798FD1FD7921300252E4D /* ViewController.h */,
+				DB8798FE1FD7921300252E4D /* ViewController.m */,
+				DB8799031FD7921300252E4D /* Assets.xcassets */,
+				DB8799051FD7921300252E4D /* LaunchScreen.storyboard */,
+				DB8799081FD7921300252E4D /* Info.plist */,
+				DB8799091FD7921300252E4D /* main.m */,
+			);
+			path = ZPZPersonalLabel;
+			sourceTree = "<group>";
+		};
+		DB8799121FD7921300252E4D /* ZPZPersonalLabelTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB8799131FD7921300252E4D /* ZPZPersonalLabelTests.m */,
+				DB8799151FD7921300252E4D /* Info.plist */,
+			);
+			path = ZPZPersonalLabelTests;
+			sourceTree = "<group>";
+		};
+		DB87991D1FD7921300252E4D /* ZPZPersonalLabelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB87991E1FD7921300252E4D /* ZPZPersonalLabelUITests.m */,
+				DB8799201FD7921300252E4D /* Info.plist */,
+			);
+			path = ZPZPersonalLabelUITests;
+			sourceTree = "<group>";
+		};
+		DB87992C1FD7925300252E4D /* ZPZLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DB87992D1FD7928800252E4D /* ZPZLabel.h */,
+				DB87992E1FD7928800252E4D /* ZPZLabel.m */,
+			);
+			path = ZPZLabel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB8798F61FD7921300252E4D /* ZPZPersonalLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8799231FD7921300252E4D /* Build configuration list for PBXNativeTarget "ZPZPersonalLabel" */;
+			buildPhases = (
+				DB8798F31FD7921300252E4D /* Sources */,
+				DB8798F41FD7921300252E4D /* Frameworks */,
+				DB8798F51FD7921300252E4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZPZPersonalLabel;
+			productName = ZPZPersonalLabel;
+			productReference = DB8798F71FD7921300252E4D /* ZPZPersonalLabel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB87990E1FD7921300252E4D /* ZPZPersonalLabelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8799261FD7921300252E4D /* Build configuration list for PBXNativeTarget "ZPZPersonalLabelTests" */;
+			buildPhases = (
+				DB87990B1FD7921300252E4D /* Sources */,
+				DB87990C1FD7921300252E4D /* Frameworks */,
+				DB87990D1FD7921300252E4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB8799111FD7921300252E4D /* PBXTargetDependency */,
+			);
+			name = ZPZPersonalLabelTests;
+			productName = ZPZPersonalLabelTests;
+			productReference = DB87990F1FD7921300252E4D /* ZPZPersonalLabelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB8799191FD7921300252E4D /* ZPZPersonalLabelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8799291FD7921300252E4D /* Build configuration list for PBXNativeTarget "ZPZPersonalLabelUITests" */;
+			buildPhases = (
+				DB8799161FD7921300252E4D /* Sources */,
+				DB8799171FD7921300252E4D /* Frameworks */,
+				DB8799181FD7921300252E4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB87991C1FD7921300252E4D /* PBXTargetDependency */,
+			);
+			name = ZPZPersonalLabelUITests;
+			productName = ZPZPersonalLabelUITests;
+			productReference = DB87991A1FD7921300252E4D /* ZPZPersonalLabelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB8798EF1FD7921300252E4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = zhoupengzu;
+				TargetAttributes = {
+					DB8798F61FD7921300252E4D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					DB87990E1FD7921300252E4D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DB8798F61FD7921300252E4D;
+					};
+					DB8799191FD7921300252E4D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DB8798F61FD7921300252E4D;
+					};
+				};
+			};
+			buildConfigurationList = DB8798F21FD7921300252E4D /* Build configuration list for PBXProject "ZPZPersonalLabel" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB8798EE1FD7921300252E4D;
+			productRefGroup = DB8798F81FD7921300252E4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB8798F61FD7921300252E4D /* ZPZPersonalLabel */,
+				DB87990E1FD7921300252E4D /* ZPZPersonalLabelTests */,
+				DB8799191FD7921300252E4D /* ZPZPersonalLabelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB8798F51FD7921300252E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8799071FD7921300252E4D /* LaunchScreen.storyboard in Resources */,
+				DB8799041FD7921300252E4D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB87990D1FD7921300252E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8799181FD7921300252E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB8798F31FD7921300252E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8798FF1FD7921300252E4D /* ViewController.m in Sources */,
+				DB87992F1FD7928800252E4D /* ZPZLabel.m in Sources */,
+				DB87990A1FD7921300252E4D /* main.m in Sources */,
+				DB8798FC1FD7921300252E4D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB87990B1FD7921300252E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8799141FD7921300252E4D /* ZPZPersonalLabelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8799161FD7921300252E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB87991F1FD7921300252E4D /* ZPZPersonalLabelUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB8799111FD7921300252E4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8798F61FD7921300252E4D /* ZPZPersonalLabel */;
+			targetProxy = DB8799101FD7921300252E4D /* PBXContainerItemProxy */;
+		};
+		DB87991C1FD7921300252E4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8798F61FD7921300252E4D /* ZPZPersonalLabel */;
+			targetProxy = DB87991B1FD7921300252E4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB8799051FD7921300252E4D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB8799061FD7921300252E4D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB8799211FD7921300252E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB8799221FD7921300252E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB8799241FD7921300252E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPersonalLabel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPersonalLabel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB8799251FD7921300252E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPersonalLabel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPersonalLabel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB8799271FD7921300252E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPersonalLabelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPersonalLabelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZPZPersonalLabel.app/ZPZPersonalLabel";
+			};
+			name = Debug;
+		};
+		DB8799281FD7921300252E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPersonalLabelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPersonalLabelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZPZPersonalLabel.app/ZPZPersonalLabel";
+			};
+			name = Release;
+		};
+		DB87992A1FD7921300252E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPersonalLabelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPersonalLabelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZPZPersonalLabel;
+			};
+			name = Debug;
+		};
+		DB87992B1FD7921300252E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPersonalLabelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPersonalLabelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZPZPersonalLabel;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB8798F21FD7921300252E4D /* Build configuration list for PBXProject "ZPZPersonalLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8799211FD7921300252E4D /* Debug */,
+				DB8799221FD7921300252E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8799231FD7921300252E4D /* Build configuration list for PBXNativeTarget "ZPZPersonalLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8799241FD7921300252E4D /* Debug */,
+				DB8799251FD7921300252E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8799261FD7921300252E4D /* Build configuration list for PBXNativeTarget "ZPZPersonalLabelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8799271FD7921300252E4D /* Debug */,
+				DB8799281FD7921300252E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8799291FD7921300252E4D /* Build configuration list for PBXNativeTarget "ZPZPersonalLabelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB87992A1FD7921300252E4D /* Debug */,
+				DB87992B1FD7921300252E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB8798EF1FD7921300252E4D /* Project object */;
+}

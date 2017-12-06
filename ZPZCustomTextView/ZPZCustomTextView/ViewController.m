@@ -29,7 +29,8 @@
     ZPZTextView * textView = [[ZPZTextView alloc] initWithFrame:CGRectMake(20, 20, [UIScreen mainScreen].bounds.size.width - 2 * 20, 100)];
 //    NSLog(@"%@",NSStringFromUIEdgeInsets(textView.textContainerInset));
     textView.backgroundColor = [UIColor orangeColor];
-    textView.placeHoldStr = @"I am the place hold textI am the place hold textI am the place hold textI am the place hold textI am the place hold textI am the place hold textI am the place hold text";
+    textView.textColor = [UIColor blueColor];
+    textView.placeHoldStr = @"I am the";
 //    textView.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:textView];
     textView.shouldBeginEditing = ^BOOL(ZPZTextView * zT) {

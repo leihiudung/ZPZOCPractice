@@ -26,8 +26,9 @@
 
 - (void)configLableView {
     ZPZLabel * tempLabel = [[ZPZLabel alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 100)];
-    tempLabel.text = @"I am a label";
-//    tempLabel.verticalAlignment = ZPZLabelVerticalTextAlignmentMiddle;
+    tempLabel.text = @"I am a label,I am a label,I am a label,I am a label,I am a label,I am a label,I am a label,I am a label,";
+    tempLabel.verticalAlignment = ZPZLabelVerticalTextAlignmentTop;
+    tempLabel.numberOfLines = 0;
     tempLabel.font = [UIFont systemFontOfSize:20];
     tempLabel.backgroundColor = [UIColor orangeColor];
     tempLabel.textAlignment = NSTextAlignmentCenter;

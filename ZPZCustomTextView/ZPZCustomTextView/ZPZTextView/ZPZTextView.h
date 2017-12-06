@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZPZLabel.h"
 
 @interface ZPZTextView : UITextView
 
-@property (nonatomic, strong, readonly) UILabel * placeHoldLabel;
+@property (nonatomic, strong, readonly) ZPZLabel * placeHoldLabel;
 @property (nonatomic, copy) NSString * placeHoldStr;
-@property (nonatomic, strong) NSMutableAttributedString * placeHoldAttr;
+@property (nonatomic, strong) NSAttributedString * placeHoldAttr;
 
 - (instancetype)init;
 - (instancetype)initWithFrame:(CGRect)frame;

@@ -16,6 +16,7 @@
 		DB8798DD1FD7890900252E4D /* ZPZCustomTextViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8798DC1FD7890900252E4D /* ZPZCustomTextViewUITests.m */; };
 		DB8798ED1FD789B500252E4D /* ZPZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8798EC1FD789B500252E4D /* ZPZTextView.m */; };
 		DB8799351FD7C24500252E4D /* ZPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8799341FD7C24500252E4D /* ZPZLabel.m */; };
+		DB8799381FD7C79D00252E4D /* ZPZTextView+delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8799371FD7C79D00252E4D /* ZPZTextView+delegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB800A661FD7DA05006752FE /* ZPZTextViewHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZTextViewHead.h; sourceTree = "<group>"; };
 		DB8798B51FD7890900252E4D /* ZPZCustomTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZPZCustomTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8798B81FD7890900252E4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB8798B91FD7890900252E4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		DB8798EC1FD789B500252E4D /* ZPZTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZTextView.m; sourceTree = "<group>"; };
 		DB8799331FD7C24500252E4D /* ZPZLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPZLabel.h; sourceTree = "<group>"; };
 		DB8799341FD7C24500252E4D /* ZPZLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPZLabel.m; sourceTree = "<group>"; };
+		DB8799361FD7C79D00252E4D /* ZPZTextView+delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZPZTextView+delegate.h"; sourceTree = "<group>"; };
+		DB8799371FD7C79D00252E4D /* ZPZTextView+delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZPZTextView+delegate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +145,11 @@
 			children = (
 				DB8799331FD7C24500252E4D /* ZPZLabel.h */,
 				DB8799341FD7C24500252E4D /* ZPZLabel.m */,
+				DB800A661FD7DA05006752FE /* ZPZTextViewHead.h */,
 				DB8798EB1FD789B500252E4D /* ZPZTextView.h */,
 				DB8798EC1FD789B500252E4D /* ZPZTextView.m */,
+				DB8799361FD7C79D00252E4D /* ZPZTextView+delegate.h */,
+				DB8799371FD7C79D00252E4D /* ZPZTextView+delegate.m */,
 			);
 			path = ZPZTextView;
 			sourceTree = "<group>";
@@ -282,6 +289,7 @@
 				DB8799351FD7C24500252E4D /* ZPZLabel.m in Sources */,
 				DB8798ED1FD789B500252E4D /* ZPZTextView.m in Sources */,
 				DB8798BD1FD7890900252E4D /* ViewController.m in Sources */,
+				DB8799381FD7C79D00252E4D /* ZPZTextView+delegate.m in Sources */,
 				DB8798C81FD7890900252E4D /* main.m in Sources */,
 				DB8798BA1FD7890900252E4D /* AppDelegate.m in Sources */,
 			);

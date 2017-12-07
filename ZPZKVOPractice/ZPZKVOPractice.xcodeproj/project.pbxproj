@@ -18,6 +18,7 @@
 		DB5CD9741FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9731FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m */; };
 		DB5CD9771FD91A75009AFFB5 /* ZPZHandleKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9761FD91A75009AFFB5 /* ZPZHandleKVOViewController.m */; };
 		DB5CD97A1FD92F61009AFFB5 /* ZPZObserveInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9791FD92F61009AFFB5 /* ZPZObserveInfoViewController.m */; };
+		DB5CD97D1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD97C1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		DB5CD9761FD91A75009AFFB5 /* ZPZHandleKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZHandleKVOViewController.m; sourceTree = "<group>"; };
 		DB5CD9781FD92F61009AFFB5 /* ZPZObserveInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZObserveInfoViewController.h; sourceTree = "<group>"; };
 		DB5CD9791FD92F61009AFFB5 /* ZPZObserveInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZObserveInfoViewController.m; sourceTree = "<group>"; };
+		DB5CD97B1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZRuntimeKVOViewController.h; sourceTree = "<group>"; };
+		DB5CD97C1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZRuntimeKVOViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				DB5CD9761FD91A75009AFFB5 /* ZPZHandleKVOViewController.m */,
 				DB5CD9781FD92F61009AFFB5 /* ZPZObserveInfoViewController.h */,
 				DB5CD9791FD92F61009AFFB5 /* ZPZObserveInfoViewController.m */,
+				DB5CD97B1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.h */,
+				DB5CD97C1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.m */,
 				DB5CD96F1FD8DC27009AFFB5 /* ZPZPersonModel.h */,
 				DB5CD9701FD8DC27009AFFB5 /* ZPZPersonModel.m */,
 				DB5CD9461FD8DBA9009AFFB5 /* Assets.xcassets */,
@@ -288,6 +293,7 @@
 				DB5CD93F1FD8DBA9009AFFB5 /* AppDelegate.m in Sources */,
 				DB5CD9711FD8DC27009AFFB5 /* ZPZPersonModel.m in Sources */,
 				DB5CD97A1FD92F61009AFFB5 /* ZPZObserveInfoViewController.m in Sources */,
+				DB5CD97D1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

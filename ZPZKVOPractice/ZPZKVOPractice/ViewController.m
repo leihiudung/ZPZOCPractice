@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ZPZNormalKVOUseViewController.h"
 #import "ZPZHandleKVOViewController.h"
+#import "ZPZObserveInfoViewController.h"
 
 @interface ViewController ()
 
@@ -43,6 +44,7 @@
     NSArray<NSDictionary *> * btnArray = @[
                                            @{titleKey:@"KVO normal use",selKey:NSStringFromSelector(@selector(normalKVOUse))},
                                            @{titleKey:@"KVO handle use",selKey:NSStringFromSelector(@selector(handleKVOUse))},
+                                           @{titleKey:@"KVO observe info",selKey:NSStringFromSelector(@selector(logObserveInfo))},
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -63,6 +65,11 @@
 - (void)handleKVOUse {
     ZPZHandleKVOViewController * handleVC = [[ZPZHandleKVOViewController alloc] init];
     [self.navigationController pushViewController:handleVC animated:YES];
+}
+
+- (void)logObserveInfo {
+    ZPZObserveInfoViewController * observeVC = [[ZPZObserveInfoViewController alloc] init];
+    [self.navigationController pushViewController:observeVC animated:YES];
 }
 
 - (UIButton *)createButtonWithFrame:(CGRect)frame andTitle:(NSString *)title andSelectorStr:(NSString *)selStr {

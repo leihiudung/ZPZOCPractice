@@ -14,6 +14,9 @@
 		DB5CD94D1FD8DBA9009AFFB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD94C1FD8DBA9009AFFB5 /* main.m */; };
 		DB5CD9571FD8DBA9009AFFB5 /* ZPZKVOPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9561FD8DBA9009AFFB5 /* ZPZKVOPracticeTests.m */; };
 		DB5CD9621FD8DBA9009AFFB5 /* ZPZKVOPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9611FD8DBA9009AFFB5 /* ZPZKVOPracticeUITests.m */; };
+		DB5CD9711FD8DC27009AFFB5 /* ZPZPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9701FD8DC27009AFFB5 /* ZPZPersonModel.m */; };
+		DB5CD9741FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9731FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m */; };
+		DB5CD9771FD91A75009AFFB5 /* ZPZHandleKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9761FD91A75009AFFB5 /* ZPZHandleKVOViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,12 @@
 		DB5CD95D1FD8DBA9009AFFB5 /* ZPZKVOPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZKVOPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5CD9611FD8DBA9009AFFB5 /* ZPZKVOPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZKVOPracticeUITests.m; sourceTree = "<group>"; };
 		DB5CD9631FD8DBA9009AFFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5CD96F1FD8DC27009AFFB5 /* ZPZPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZPersonModel.h; sourceTree = "<group>"; };
+		DB5CD9701FD8DC27009AFFB5 /* ZPZPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPersonModel.m; sourceTree = "<group>"; };
+		DB5CD9721FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZNormalKVOUseViewController.h; sourceTree = "<group>"; };
+		DB5CD9731FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNormalKVOUseViewController.m; sourceTree = "<group>"; };
+		DB5CD9751FD91A75009AFFB5 /* ZPZHandleKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZHandleKVOViewController.h; sourceTree = "<group>"; };
+		DB5CD9761FD91A75009AFFB5 /* ZPZHandleKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZHandleKVOViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,12 @@
 				DB5CD93E1FD8DBA9009AFFB5 /* AppDelegate.m */,
 				DB5CD9401FD8DBA9009AFFB5 /* ViewController.h */,
 				DB5CD9411FD8DBA9009AFFB5 /* ViewController.m */,
+				DB5CD9721FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.h */,
+				DB5CD9731FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m */,
+				DB5CD9751FD91A75009AFFB5 /* ZPZHandleKVOViewController.h */,
+				DB5CD9761FD91A75009AFFB5 /* ZPZHandleKVOViewController.m */,
+				DB5CD96F1FD8DC27009AFFB5 /* ZPZPersonModel.h */,
+				DB5CD9701FD8DC27009AFFB5 /* ZPZPersonModel.m */,
 				DB5CD9461FD8DBA9009AFFB5 /* Assets.xcassets */,
 				DB5CD9481FD8DBA9009AFFB5 /* LaunchScreen.storyboard */,
 				DB5CD94B1FD8DBA9009AFFB5 /* Info.plist */,
@@ -263,7 +278,10 @@
 			files = (
 				DB5CD9421FD8DBA9009AFFB5 /* ViewController.m in Sources */,
 				DB5CD94D1FD8DBA9009AFFB5 /* main.m in Sources */,
+				DB5CD9771FD91A75009AFFB5 /* ZPZHandleKVOViewController.m in Sources */,
+				DB5CD9741FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m in Sources */,
 				DB5CD93F1FD8DBA9009AFFB5 /* AppDelegate.m in Sources */,
+				DB5CD9711FD8DC27009AFFB5 /* ZPZPersonModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,34 +1,35 @@
 //
-//  ViewController.m
+//  ZPZHandleKVOViewController.m
 //  ZPZKVOPractice
 //
 //  Created by zhoupengzu on 2017/12/7.
 //  Copyright © 2017年 zhoupengzu. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "ZPZNormalKVOUseViewController.h"
 #import "ZPZHandleKVOViewController.h"
+#import "ZPZPersonModel.h"
 
-@interface ViewController ()
+@interface ZPZHandleKVOViewController ()
 
 @property (nonatomic,assign) CGFloat btnWidth;
 @property (nonatomic,assign) CGFloat btnHeight;
 @property (nonatomic,assign) CGFloat btnBeginY;
 @property (nonatomic,assign) CGFloat btnSpace;
 
+@property (nonatomic, strong) ZPZPersonModel * personModel;
+
 @end
 
-@implementation ViewController
+@implementation ZPZHandleKVOViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"KVO";
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(changeArrayContent)];
     [self createUseButton];
 }
+
 #pragma - mark create button
 - (void)createUseButton {
     _btnSpace = 15;
@@ -41,8 +42,7 @@
     NSString * titleKey = @"title";
     NSString * selKey = @"selKey";
     NSArray<NSDictionary *> * btnArray = @[
-                                           @{titleKey:@"KVO normal use",selKey:NSStringFromSelector(@selector(normalKVOUse))},
-                                           @{titleKey:@"KVO handle use",selKey:NSStringFromSelector(@selector(handleKVOUse))},
+                                           @{titleKey:@"addKVOForModel",selKey:NSStringFromSelector(@selector(givePersonName))},
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -53,16 +53,26 @@
         UIButton * button = [self createButtonWithFrame:frame andTitle:title andSelectorStr:selStr];
         [self.view addSubview:button];
     }
+    [self addKVOForModel];
 }
 
-- (void)normalKVOUse {
-    ZPZNormalKVOUseViewController * normalVC = [[ZPZNormalKVOUseViewController alloc] init];
-    [self.navigationController pushViewController:normalVC animated:YES];
+- (void)addKVOForModel {
+    _personModel = [[ZPZPersonModel alloc] init];
+    [_personModel addObserver:self forKeyPath:NSStringFromSelector(@selector(name)) options:NSKeyValueObservingOptionNew context:NULL];
+    [_personModel addObserver:self forKeyPath:NSStringFromSelector(@selector(ID)) options:NSKeyValueObservingOptionNew context:NULL];
+//    [_personModel addObserver:self forKeyPath:NSStringFromSelector(@selector(addName:andID:)) options:NSKeyValueObservingOptionNew context:NULL];
 }
 
-- (void)handleKVOUse {
-    ZPZHandleKVOViewController * handleVC = [[ZPZHandleKVOViewController alloc] init];
-    [self.navigationController pushViewController:handleVC animated:YES];
+- (void)givePersonName {
+    _personModel.name = @"new name";
+    [_personModel willChangeValueForKey:@"ID"];
+    _personModel.ID = @"999";
+    [_personModel didChangeValueForKey:@"ID"];
+    [_personModel addName:@"zhou" andID:@"999"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"%@---%@",keyPath,change);
 }
 
 - (UIButton *)createButtonWithFrame:(CGRect)frame andTitle:(NSString *)title andSelectorStr:(NSString *)selStr {
@@ -77,10 +87,10 @@
     return button;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_personModel removeObserver:self forKeyPath:NSStringFromSelector(@selector(name))];
+    [_personModel removeObserver:self forKeyPath:NSStringFromSelector(@selector(ID))];
 }
-
 
 @end

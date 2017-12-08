@@ -11,6 +11,8 @@
 #import "ZPZHandleKVOViewController.h"
 #import "ZPZObserveInfoViewController.h"
 #import "ZPZRuntimeKVOViewController.h"
+#import "ZPZPersonModel.h"
+#import <objc/runtime.h>
 
 @interface ViewController ()
 
@@ -18,6 +20,8 @@
 @property (nonatomic,assign) CGFloat btnHeight;
 @property (nonatomic,assign) CGFloat btnBeginY;
 @property (nonatomic,assign) CGFloat btnSpace;
+
+@property (nonatomic, strong) ZPZPersonModel * personModel;
 
 @end
 
@@ -30,7 +34,35 @@
     self.title = @"KVO";
     
     [self createUseButton];
+    [self addPersonModelKVO];
 }
+
+- (void)addPersonModelKVO {
+    _personModel = [[ZPZPersonModel alloc] init];
+    [_personModel addObserver:self forKeyPath:@"height" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self logMethodOfObject:object_getClass(_personModel)];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+}
+
+//method
+- (void)logMethodOfObject:(Class)cls {
+    unsigned int count = 0;
+    Method * method_list = class_copyMethodList(cls, &count);
+    for (unsigned int i = 0; i < count; i++) {
+        Method method = method_list[i];
+        SEL method_name = method_getName(method);
+        NSString * methodName = NSStringFromSelector(method_name);
+        NSLog(@"%@",methodName);
+    }
+}
+
 #pragma - mark create button
 - (void)createUseButton {
     _btnSpace = 15;

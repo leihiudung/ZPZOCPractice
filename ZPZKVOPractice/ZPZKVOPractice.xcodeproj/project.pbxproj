@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB336B311FDA31500099C891 /* ZPZStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB336B301FDA31500099C891 /* ZPZStudentModel.m */; };
 		DB5CD93F1FD8DBA9009AFFB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD93E1FD8DBA9009AFFB5 /* AppDelegate.m */; };
 		DB5CD9421FD8DBA9009AFFB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5CD9411FD8DBA9009AFFB5 /* ViewController.m */; };
 		DB5CD9471FD8DBA9009AFFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5CD9461FD8DBA9009AFFB5 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB336B2F1FDA31500099C891 /* ZPZStudentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZStudentModel.h; sourceTree = "<group>"; };
+		DB336B301FDA31500099C891 /* ZPZStudentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZStudentModel.m; sourceTree = "<group>"; };
 		DB5CD93A1FD8DBA9009AFFB5 /* ZPZKVOPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZPZKVOPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5CD93D1FD8DBA9009AFFB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB5CD93E1FD8DBA9009AFFB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				DB5CD97C1FD949A9009AFFB5 /* ZPZRuntimeKVOViewController.m */,
 				DB5CD96F1FD8DC27009AFFB5 /* ZPZPersonModel.h */,
 				DB5CD9701FD8DC27009AFFB5 /* ZPZPersonModel.m */,
+				DB336B2F1FDA31500099C891 /* ZPZStudentModel.h */,
+				DB336B301FDA31500099C891 /* ZPZStudentModel.m */,
 				DB5CD9461FD8DBA9009AFFB5 /* Assets.xcassets */,
 				DB5CD9481FD8DBA9009AFFB5 /* LaunchScreen.storyboard */,
 				DB5CD94B1FD8DBA9009AFFB5 /* Info.plist */,
@@ -290,6 +295,7 @@
 				DB5CD94D1FD8DBA9009AFFB5 /* main.m in Sources */,
 				DB5CD9771FD91A75009AFFB5 /* ZPZHandleKVOViewController.m in Sources */,
 				DB5CD9741FD8DCBC009AFFB5 /* ZPZNormalKVOUseViewController.m in Sources */,
+				DB336B311FDA31500099C891 /* ZPZStudentModel.m in Sources */,
 				DB5CD93F1FD8DBA9009AFFB5 /* AppDelegate.m in Sources */,
 				DB5CD9711FD8DC27009AFFB5 /* ZPZPersonModel.m in Sources */,
 				DB5CD97A1FD92F61009AFFB5 /* ZPZObserveInfoViewController.m in Sources */,

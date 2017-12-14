@@ -14,6 +14,9 @@
 		DB2327071FE2521C00315B98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2327061FE2521C00315B98 /* main.m */; };
 		DB2327111FE2521C00315B98 /* ZPZNotificationPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2327101FE2521C00315B98 /* ZPZNotificationPracticeTests.m */; };
 		DB23271C1FE2521C00315B98 /* ZPZNotificationPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23271B1FE2521C00315B98 /* ZPZNotificationPracticeUITests.m */; };
+		DB23272B1FE2781600315B98 /* ZPZNotiSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23272A1FE2781600315B98 /* ZPZNotiSyncViewController.m */; };
+		DB23272E1FE27EBC00315B98 /* ZPZNotiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23272D1FE27EBC00315B98 /* ZPZNotiThreadViewController.m */; };
+		DB2327311FE2855900315B98 /* ZPZNotiQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2327301FE2855900315B98 /* ZPZNotiQueueViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,12 @@
 		DB2327171FE2521C00315B98 /* ZPZNotificationPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZNotificationPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB23271B1FE2521C00315B98 /* ZPZNotificationPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNotificationPracticeUITests.m; sourceTree = "<group>"; };
 		DB23271D1FE2521C00315B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB2327291FE2781600315B98 /* ZPZNotiSyncViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZNotiSyncViewController.h; sourceTree = "<group>"; };
+		DB23272A1FE2781600315B98 /* ZPZNotiSyncViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNotiSyncViewController.m; sourceTree = "<group>"; };
+		DB23272C1FE27EBC00315B98 /* ZPZNotiThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZNotiThreadViewController.h; sourceTree = "<group>"; };
+		DB23272D1FE27EBC00315B98 /* ZPZNotiThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNotiThreadViewController.m; sourceTree = "<group>"; };
+		DB23272F1FE2855900315B98 /* ZPZNotiQueueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZNotiQueueViewController.h; sourceTree = "<group>"; };
+		DB2327301FE2855900315B98 /* ZPZNotiQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNotiQueueViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,12 @@
 				DB2326F81FE2521C00315B98 /* AppDelegate.m */,
 				DB2326FA1FE2521C00315B98 /* ViewController.h */,
 				DB2326FB1FE2521C00315B98 /* ViewController.m */,
+				DB2327291FE2781600315B98 /* ZPZNotiSyncViewController.h */,
+				DB23272A1FE2781600315B98 /* ZPZNotiSyncViewController.m */,
+				DB23272C1FE27EBC00315B98 /* ZPZNotiThreadViewController.h */,
+				DB23272D1FE27EBC00315B98 /* ZPZNotiThreadViewController.m */,
+				DB23272F1FE2855900315B98 /* ZPZNotiQueueViewController.h */,
+				DB2327301FE2855900315B98 /* ZPZNotiQueueViewController.m */,
 				DB2327001FE2521C00315B98 /* Assets.xcassets */,
 				DB2327021FE2521C00315B98 /* LaunchScreen.storyboard */,
 				DB2327051FE2521C00315B98 /* Info.plist */,
@@ -261,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB23272B1FE2781600315B98 /* ZPZNotiSyncViewController.m in Sources */,
 				DB2326FC1FE2521C00315B98 /* ViewController.m in Sources */,
 				DB2327071FE2521C00315B98 /* main.m in Sources */,
+				DB2327311FE2855900315B98 /* ZPZNotiQueueViewController.m in Sources */,
 				DB2326F91FE2521C00315B98 /* AppDelegate.m in Sources */,
+				DB23272E1FE27EBC00315B98 /* ZPZNotiThreadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

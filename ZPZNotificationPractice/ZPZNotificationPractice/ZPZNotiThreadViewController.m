@@ -1,17 +1,14 @@
 //
-//  ViewController.m
+//  ZPZNotiThreadViewController.m
 //  ZPZNotificationPractice
 //
 //  Created by zhoupengzu on 2017/12/14.
 //  Copyright © 2017年 zhoupengzu. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "ZPZNotiSyncViewController.h"
 #import "ZPZNotiThreadViewController.h"
-#import "ZPZNotiQueueViewController.h"
 
-@interface ViewController ()
+@interface ZPZNotiThreadViewController ()
 
 @property (nonatomic,assign) CGFloat btnWidth;
 @property (nonatomic,assign) CGFloat btnHeight;
@@ -20,15 +17,53 @@
 
 @end
 
-@implementation ViewController
+@implementation ZPZNotiThreadViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"NSNotification";
-    
     [self createUseButton];
+    [self addNotificationForThread];
+}
+//主线程添加
+- (void)addNotificationForThread {
+    [self addNotification1];
+    [self addNotification2];
+}
+
+- (void)postNotificationInThreads {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        NSLog(@"发送receiveNotification1:%@",[NSThread currentThread]);
+        NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+        NSLog(@"%@",center);
+        [center postNotificationName:@"receiveNotification1" object:nil];
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"发送receiveNotification2:%@",[NSThread currentThread]);
+        NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+        NSLog(@"%@",center);
+        [center postNotificationName:@"receiveNotification2" object:nil];
+    });
+}
+
+- (void)addNotification1 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification1) name:@"receiveNotification1" object:nil];
+}
+
+- (void)addNotification2 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification2) name:@"receiveNotification2" object:nil];
+}
+
+- (void)receiveNotification1 {
+    NSLog(@"接收%s,%@",__func__,[NSThread currentThread]);
+    sleep(2);
+    NSLog(@"接收%s,%@",__func__,[NSThread currentThread]);
+}
+
+- (void)receiveNotification2 {
+    NSLog(@"接收%s,%@",__func__,[NSThread currentThread]);
 }
 
 #pragma - mark create button
@@ -43,9 +78,7 @@
     NSString * titleKey = @"title";
     NSString * selKey = @"selKey";
     NSArray<NSDictionary *> * btnArray = @[
-                                           @{titleKey:@"gotoSendNotiSync",selKey:NSStringFromSelector(@selector(gotoSendNotiSync))},
-                                           @{titleKey:@"接收通知和线程的关系",selKey:NSStringFromSelector(@selector(gotoNotiAboutThread))},
-                                           @{titleKey:@"通知队列",selKey:NSStringFromSelector(@selector(gotoNotiQueue))},
+                                           @{titleKey:@"post sync noti",selKey:NSStringFromSelector(@selector(postNotificationInThreads))},
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -58,20 +91,7 @@
     }
 }
 
-- (void)gotoSendNotiSync {
-    ZPZNotiSyncViewController * syncVC = [[ZPZNotiSyncViewController alloc] init];
-    [self.navigationController pushViewController:syncVC animated:YES];
-}
 
-- (void)gotoNotiAboutThread {
-    ZPZNotiThreadViewController * threadVC = [[ZPZNotiThreadViewController alloc] init];
-    [self.navigationController pushViewController:threadVC animated:YES];
-}
-
-- (void)gotoNotiQueue {
-    ZPZNotiQueueViewController * queueVC = [[ZPZNotiQueueViewController alloc] init];
-    [self.navigationController pushViewController:queueVC animated:YES];
-}
 
 #pragma - mark common button
 - (UIButton *)createButtonWithFrame:(CGRect)frame andTitle:(NSString *)title andSelectorStr:(NSString *)selStr {
@@ -85,11 +105,5 @@
     button.layer.masksToBounds = YES;
     return button;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end

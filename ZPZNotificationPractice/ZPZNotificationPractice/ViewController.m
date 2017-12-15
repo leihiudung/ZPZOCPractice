@@ -10,6 +10,7 @@
 #import "ZPZNotiSyncViewController.h"
 #import "ZPZNotiThreadViewController.h"
 #import "ZPZNotiQueueViewController.h"
+#import "ZPZRegisteNotiViewController.h"
 
 @interface ViewController ()
 
@@ -46,6 +47,7 @@
                                            @{titleKey:@"gotoSendNotiSync",selKey:NSStringFromSelector(@selector(gotoSendNotiSync))},
                                            @{titleKey:@"接收通知和线程的关系",selKey:NSStringFromSelector(@selector(gotoNotiAboutThread))},
                                            @{titleKey:@"通知队列",selKey:NSStringFromSelector(@selector(gotoNotiQueue))},
+                                           @{titleKey:@"注册通知",selKey:NSStringFromSelector(@selector(gotoRegisteNoti))},
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -71,6 +73,11 @@
 - (void)gotoNotiQueue {
     ZPZNotiQueueViewController * queueVC = [[ZPZNotiQueueViewController alloc] init];
     [self.navigationController pushViewController:queueVC animated:YES];
+}
+
+- (void)gotoRegisteNoti {
+    ZPZRegisteNotiViewController * registeVC = [[ZPZRegisteNotiViewController alloc] init];
+    [self.navigationController pushViewController:registeVC animated:YES];
 }
 
 #pragma - mark common button

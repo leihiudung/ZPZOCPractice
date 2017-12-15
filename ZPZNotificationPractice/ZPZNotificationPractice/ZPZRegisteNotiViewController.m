@@ -1,14 +1,15 @@
 //
-//  ZPZNotiSyncViewController.m
+//  ZPZRegisteNotiViewController.m
 //  ZPZNotificationPractice
 //
-//  Created by zhoupengzu on 2017/12/14.
+//  Created by zhoupengzu on 2017/12/15.
 //  Copyright © 2017年 zhoupengzu. All rights reserved.
 //
 
-#import "ZPZNotiSyncViewController.h"
+#import "ZPZRegisteNotiViewController.h"
+#import "ZPZPostNotiViewController.h"
 
-@interface ZPZNotiSyncViewController ()
+@interface ZPZRegisteNotiViewController ()
 
 @property (nonatomic,assign) CGFloat btnWidth;
 @property (nonatomic,assign) CGFloat btnHeight;
@@ -17,44 +18,14 @@
 
 @end
 
-@implementation ZPZNotiSyncViewController
+@implementation ZPZRegisteNotiViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self createUseButton];
-    [self addNotificationForSync];
-}
-
-- (void)addNotificationForSync {
-    [self addNotification1];
-    [self addNotification2];
-}
-
-- (void)postNotificationInSync {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveNotification1" object:nil];
-    NSLog(@"%s",__func__);
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveNotification2" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveNotification2" object:nil];
-}
-
-- (void)addNotification1 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification1) name:@"receiveNotification1" object:nil];
-}
-
-- (void)addNotification2 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification2) name:@"receiveNotification2" object:nil];
-}
-
-- (void)receiveNotification1 {
-    NSLog(@"beforeSleep:%s",__func__);
-    sleep(2);
-    NSLog(@"afterSleep:%s",__func__);
-}
-
-- (void)receiveNotification2 {
-    NSLog(@"%s",__func__);
 }
 
 #pragma - mark create button
@@ -69,7 +40,8 @@
     NSString * titleKey = @"title";
     NSString * selKey = @"selKey";
     NSArray<NSDictionary *> * btnArray = @[
-                                           @{titleKey:@"post sync noti",selKey:NSStringFromSelector(@selector(postNotificationInSync))},
+                                           @{titleKey:@"Post Noti Obj",selKey:NSStringFromSelector(@selector(gotoPostNotiVCForObject))},
+                                           @{titleKey:@"Post Noti Name",selKey:NSStringFromSelector(@selector(gotoPostNotiVXForName))}
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;
@@ -82,7 +54,28 @@
     }
 }
 
+- (void)gotoPostNotiVCForObject {
+    [self removeNoti];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotiForObjectIsNil:) name:@"receiveNotiForObjectIsNil" object:nil];
+    ZPZPostNotiViewController * postVC = [[ZPZPostNotiViewController alloc] init];
+    postVC.addVC = self;
+    [self.navigationController pushViewController:postVC animated:YES];
+}
 
+- (void)gotoPostNotiVXForName {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotiForObjectIsNil:) name:nil object:self];
+    ZPZPostNotiViewController * postVC = [[ZPZPostNotiViewController alloc] init];
+    postVC.addVC = self;
+    [self.navigationController pushViewController:postVC animated:YES];
+}
+
+- (void)receiveNotiForObjectIsNil:(NSNotification *)noti {
+    NSLog(@"%@",noti);
+}
+
+- (void)removeNoti {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma - mark common button
 - (UIButton *)createButtonWithFrame:(CGRect)frame andTitle:(NSString *)title andSelectorStr:(NSString *)selStr {

@@ -17,6 +17,8 @@
 		DB23272B1FE2781600315B98 /* ZPZNotiSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23272A1FE2781600315B98 /* ZPZNotiSyncViewController.m */; };
 		DB23272E1FE27EBC00315B98 /* ZPZNotiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23272D1FE27EBC00315B98 /* ZPZNotiThreadViewController.m */; };
 		DB2327311FE2855900315B98 /* ZPZNotiQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2327301FE2855900315B98 /* ZPZNotiQueueViewController.m */; };
+		DBACD8771FE3A2C200829EC2 /* ZPZRegisteNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACD8761FE3A2C200829EC2 /* ZPZRegisteNotiViewController.m */; };
+		DBACD87A1FE3A36500829EC2 /* ZPZPostNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACD8791FE3A36500829EC2 /* ZPZPostNotiViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		DB23272D1FE27EBC00315B98 /* ZPZNotiThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNotiThreadViewController.m; sourceTree = "<group>"; };
 		DB23272F1FE2855900315B98 /* ZPZNotiQueueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZNotiQueueViewController.h; sourceTree = "<group>"; };
 		DB2327301FE2855900315B98 /* ZPZNotiQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZNotiQueueViewController.m; sourceTree = "<group>"; };
+		DBACD8751FE3A2C200829EC2 /* ZPZRegisteNotiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZRegisteNotiViewController.h; sourceTree = "<group>"; };
+		DBACD8761FE3A2C200829EC2 /* ZPZRegisteNotiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZRegisteNotiViewController.m; sourceTree = "<group>"; };
+		DBACD8781FE3A36500829EC2 /* ZPZPostNotiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZPostNotiViewController.h; sourceTree = "<group>"; };
+		DBACD8791FE3A36500829EC2 /* ZPZPostNotiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPostNotiViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				DB23272D1FE27EBC00315B98 /* ZPZNotiThreadViewController.m */,
 				DB23272F1FE2855900315B98 /* ZPZNotiQueueViewController.h */,
 				DB2327301FE2855900315B98 /* ZPZNotiQueueViewController.m */,
+				DBACD8751FE3A2C200829EC2 /* ZPZRegisteNotiViewController.h */,
+				DBACD8761FE3A2C200829EC2 /* ZPZRegisteNotiViewController.m */,
+				DBACD8781FE3A36500829EC2 /* ZPZPostNotiViewController.h */,
+				DBACD8791FE3A36500829EC2 /* ZPZPostNotiViewController.m */,
 				DB2327001FE2521C00315B98 /* Assets.xcassets */,
 				DB2327021FE2521C00315B98 /* LaunchScreen.storyboard */,
 				DB2327051FE2521C00315B98 /* Info.plist */,
@@ -277,7 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB23272B1FE2781600315B98 /* ZPZNotiSyncViewController.m in Sources */,
+				DBACD87A1FE3A36500829EC2 /* ZPZPostNotiViewController.m in Sources */,
 				DB2326FC1FE2521C00315B98 /* ViewController.m in Sources */,
+				DBACD8771FE3A2C200829EC2 /* ZPZRegisteNotiViewController.m in Sources */,
 				DB2327071FE2521C00315B98 /* main.m in Sources */,
 				DB2327311FE2855900315B98 /* ZPZNotiQueueViewController.m in Sources */,
 				DB2326F91FE2521C00315B98 /* AppDelegate.m in Sources */,

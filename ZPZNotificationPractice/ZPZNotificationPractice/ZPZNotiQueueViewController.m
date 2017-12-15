@@ -26,11 +26,6 @@
     [self createUseButton];
     [self addNotificationForThread];
 }
-
-- (void)test {
-    [NSNotificationQueue ]
-}
-
 //主线程添加
 - (void)addNotificationForThread {
     [self addNotification1];
@@ -40,13 +35,48 @@
 - (void)postNotificationInThreads {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        NSLog(@"发送receiveNotification1:%@",[NSThread currentThread]);
+        
+        NSLog(@"发送receiveNotification1的thread:%@，queue：%@",[NSThread currentThread],[NSNotificationQueue defaultQueue]);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveNotification1" object:nil];
     });
     dispatch_async(queue, ^{
-        NSLog(@"发送receiveNotification2:%@",[NSThread currentThread]);
+        NSLog(@"发送receiveNotification2的thread:%@，queue：%@",[NSThread currentThread],[NSNotificationQueue defaultQueue]);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveNotification2" object:nil];
     });
+    dispatch_async(queue, ^{
+        
+        NSLog(@"发送receiveNotification1的thread:%@，queue：%@",[NSThread currentThread],[NSNotificationQueue defaultQueue]);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveNotification1" object:nil];
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"发送receiveNotification2的thread:%@，queue：%@",[NSThread currentThread],[NSNotificationQueue defaultQueue]);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveNotification2" object:nil];
+    });
+}
+
+- (void)postNotificationInQueue {
+    NSNotification * noti = [NSNotification notificationWithName:@"receiveNotification1" object:nil];
+    NSNotificationQueue * queue = [[NSNotificationQueue alloc] initWithNotificationCenter:[NSNotificationCenter defaultCenter]];
+    NSLog(@"发送receiveNotification1的thread:%@，queue：%@,mainQueue:%@",[NSThread currentThread],queue,[NSNotificationQueue defaultQueue]);
+    [queue enqueueNotification:noti postingStyle:NSPostWhenIdle];
+    NSLog(@"我先继续走了!!!");
+}
+
+- (void)postNotificationInQueueSpecial {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        
+        NSNotification * noti = [NSNotification notificationWithName:@"receiveNotification1" object:nil];
+        NSNotificationQueue * queue = [[NSNotificationQueue alloc] initWithNotificationCenter:[NSNotificationCenter defaultCenter]];
+        [queue enqueueNotification:noti postingStyle:NSPostWhenIdle];
+    });
+}
+
+- (void)coalescingNotification {
+    NSNotification * noti1 = [NSNotification notificationWithName:@"receiveNotification2" object:nil];
+    NSNotificationQueue * queue1 = [[NSNotificationQueue alloc] initWithNotificationCenter:[NSNotificationCenter defaultCenter]];
+    [queue1 enqueueNotification:noti1 postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes:nil];
+    [queue1 enqueueNotification:noti1 postingStyle:NSPostWhenIdle];
 }
 
 - (void)addNotification1 {
@@ -58,12 +88,13 @@
 }
 
 - (void)receiveNotification1 {
-    NSLog(@"接收%s,%@",__func__,[NSThread currentThread]);
+    NSLog(@"接收前%s,%@,queue:%@",__func__,[NSThread currentThread],[NSNotificationQueue defaultQueue]);
     sleep(2);
+    NSLog(@"接收后%s,%@,queue:%@",__func__,[NSThread currentThread],[NSNotificationQueue defaultQueue]);
 }
 
 - (void)receiveNotification2 {
-    NSLog(@"接收%s,%@",__func__,[NSThread currentThread]);
+    NSLog(@"接收%s,%@,queue:%@",__func__,[NSThread currentThread],[NSNotificationQueue defaultQueue]);
 }
 
 #pragma - mark create button
@@ -78,7 +109,10 @@
     NSString * titleKey = @"title";
     NSString * selKey = @"selKey";
     NSArray<NSDictionary *> * btnArray = @[
-                                           @{titleKey:@"post sync noti",selKey:NSStringFromSelector(@selector(postNotificationInThreads))},
+                                           @{titleKey:@"post noti in thread",selKey:NSStringFromSelector(@selector(postNotificationInThreads))},
+                                           @{titleKey:@"post noti in queue",selKey:NSStringFromSelector(@selector(postNotificationInQueue))},
+                                           @{titleKey:@"post in special queue",selKey:NSStringFromSelector(@selector(postNotificationInQueueSpecial))},
+                                           @{titleKey:@"coalescing notification",selKey:NSStringFromSelector(@selector(coalescingNotification))},
                                            ];
     for (NSInteger i = 0; i < btnArray.count; i++) {
         CGFloat beignX = (i % lineCount + 1) * _btnSpace + i % lineCount * _btnWidth;

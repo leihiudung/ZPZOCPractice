@@ -16,6 +16,7 @@ static NSString * globalStatic = @"全局静态对象";
 @interface ViewController ()
 
 @property (nonatomic,assign) NSInteger count;
+@property (nonatomic,copy) NSString * str;
 
 @end
 

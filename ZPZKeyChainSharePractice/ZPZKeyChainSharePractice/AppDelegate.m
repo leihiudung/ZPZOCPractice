@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  ZPZKeyChainPractice
+//  ZPZKeyChainSharePractice
 //
-//  Created by zhoupengzu on 2017/12/19.
+//  Created by zhoupengzu on 2017/12/21.
 //  Copyright © 2017年 zhoupengzu. All rights reserved.
 //
 
@@ -18,8 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSString *perfix = [[[NSBundle mainBundle]infoDictionary]objectForKey:@"AppIdentifierPrefix"];
-    NSLog(@"AppIdentifierPrefix:%@",perfix);
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
     ViewController * rootVC = [[ViewController alloc] init];

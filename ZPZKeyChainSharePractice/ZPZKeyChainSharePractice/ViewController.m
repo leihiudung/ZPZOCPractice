@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  ZPZKeyChainPractice
+//  ZPZKeyChainSharePractice
 //
-//  Created by zhoupengzu on 2017/12/19.
+//  Created by zhoupengzu on 2017/12/21.
 //  Copyright © 2017年 zhoupengzu. All rights reserved.
 //
 
@@ -26,7 +26,7 @@
     CGFloat width = [UIScreen mainScreen].bounds.size.width - 2 * margin;
     CGFloat height = 50;
     CGFloat beginY = 20;
-
+    
     UIButton * addButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"添加" andSEL:@selector(saveBasicInfo)];
     [self.view addSubview:addButton];
     beginY = CGRectGetMaxY(addButton.frame) + 20;
@@ -52,9 +52,6 @@
 - (void)addKeyChainForShare {
     CFMutableDictionaryRef mutableDicRef = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
     CFDictionarySetValue(mutableDicRef, kSecClass, kSecClassGenericPassword);  //类型
-    NSString *perfix = [[[NSBundle mainBundle]infoDictionary]objectForKey:@"AppIdentifierPrefix"];
-    CFStringRef groupRef = (__bridge_retained CFStringRef)[perfix stringByAppendingString:@"pengzuzhou.ZPZKeyChainPractice.personal"];
-    CFDictionarySetValue(mutableDicRef, kSecAttrAccessGroup, groupRef);
     CFDateRef dateRef = CFDateCreate(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent());
     CFDictionarySetValue(mutableDicRef, kSecAttrCreationDate, dateRef);  //创建时间
     CFStringRef strRef = CFSTR("save generic password 2");
@@ -184,23 +181,12 @@
     CFMutableDictionaryRef queryDic = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
     //查找类型
     CFDictionarySetValue(queryDic, kSecClass, kSecClassGenericPassword);
-    //匹配的属性 越详细，越精准
-//    CFStringRef strRef = CFSTR("save generic password");
-//    CFDictionarySetValue(queryDic, kSecAttrDescription, strRef);  //描述
-//    CFStringRef commentStrRef = CFSTR("generic password comment");
-//    CFDictionarySetValue(queryDic, kSecAttrComment, commentStrRef); //备注、注释
-//    CFNumberRef creatorRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberCharType, "zhou");
-//    CFDictionarySetValue(queryDic, kSecAttrCreator, creatorRef);  //创建者，只能是四个字符长度
-//    CFNumberRef typeRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberCharType, "type");
-//    CFDictionarySetValue(queryDic, kSecAttrType, typeRef);   // 类型
-//    CFStringRef labelRef = CFSTR("label");
-//    CFDictionarySetValue(queryDic, kSecAttrLabel, labelRef); //标签，用户可以看到
-    CFStringRef accountRef = CFSTR("zhoupengzu_basic 2");
-    CFDictionarySetValue(queryDic, kSecAttrAccount, accountRef);  //账户
+//    CFStringRef accountRef = CFSTR("zhoupengzu_basic 2");
+//    CFDictionarySetValue(queryDic, kSecAttrAccount, accountRef);  //账户
     //查找的参数
-    CFDictionarySetValue(queryDic, kSecMatchLimit, kSecMatchLimitOne);  //可以控制当key=kSecReturnAttributes时返回值的个数
+    CFDictionarySetValue(queryDic, kSecMatchLimit, kSecMatchLimitAll);  //可以控制当key=kSecReturnAttributes时返回值的个数
     //返回类型
-//    CFDictionarySetValue(queryDic, kSecReturnData, kCFBooleanTrue);
+    //    CFDictionarySetValue(queryDic, kSecReturnData, kCFBooleanTrue);
     CFDictionarySetValue(queryDic, kSecReturnAttributes, kCFBooleanTrue);
     CFTypeRef result = NULL;
     OSStatus status = SecItemCopyMatching(queryDic, &result);
@@ -215,21 +201,6 @@
     } else {
         NSLog(@"%@",@(status));
     }
-//    if (labelRef) {
-//        CFRelease(labelRef);
-//    }
-//    if (typeRef) {
-//        CFRelease(typeRef);
-//    }
-//    if (creatorRef) {
-//        CFRelease(creatorRef);
-//    }
-//    if (commentStrRef) {
-//        CFRelease(commentStrRef);
-//    }
-//    if (strRef) {
-//        CFRelease(strRef);
-//    }
     if (queryDic) {
         CFRelease(queryDic);
     }
@@ -264,7 +235,7 @@
     
     CFDictionarySetValue(queryDic, kSecReturnAttributes, kCFBooleanTrue);
     CFDictionarySetValue(queryDic, kSecReturnRef, kCFBooleanTrue);  //这一句话必须要有，否则删除不了
-//    CFDictionarySetValue(queryDic, kSecReturnPersistentRef, kCFBooleanTrue);  //不能用这句，这句是做什么用的呢？
+    //    CFDictionarySetValue(queryDic, kSecReturnPersistentRef, kCFBooleanTrue);  //不能用这句，这句是做什么用的呢？
     CFTypeRef result = NULL;
     OSStatus queryStatus = SecItemCopyMatching(queryDic, &result);
     if (queryDic) {
@@ -360,7 +331,6 @@
     [button addTarget:self action:sel forControlEvents:UIControlEventTouchUpInside];
     return button;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

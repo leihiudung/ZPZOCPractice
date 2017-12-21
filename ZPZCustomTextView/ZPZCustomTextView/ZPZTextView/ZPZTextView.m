@@ -88,6 +88,11 @@
     _placeHoldLabel.textColor = _placeHoldColor;
 }
 
+- (void)setText:(NSString *)text {
+    [super setText:text];
+    [self adjustPlaceLabelFrame];
+}
+
 - (ZPZLabel *)createPlaceHoldLabel {
     ZPZLabel * label = [[ZPZLabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor clearColor];
@@ -118,11 +123,21 @@
     }];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self adjustPlaceLabelFrame];
+}
+
 - (void)adjustPlaceLabelFrame {
     UIEdgeInsets insets = self.textContainerInset;
-//    NSLog(@"%@",NSStringFromUIEdgeInsets(insets));
+    //    NSLog(@"%@",NSStringFromUIEdgeInsets(insets));
     _placeHoldLabel.frame = CGRectMake(insets.left + self.textContainer.lineFragmentPadding, insets.top, self.frame.size.width - insets.left - insets.right - self.textContainer.lineFragmentPadding, self.frame.size.height - insets.top - insets.bottom);
     _placeHoldLabel.verticalAlignment = ZPZLabelVerticalTextAlignmentTop;
+    if (self.text.length > 0) {
+        [self hidePlaceHolder];
+    } else {
+        [self showPlaceHolder];
+    }
 }
 
 @end

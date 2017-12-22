@@ -38,11 +38,41 @@
     UIButton * getLoopButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"获取RunLoop" andSEL:@selector(getCurrentRunLoop)];
     [self.view addSubview:getLoopButton];
     beginY = CGRectGetMaxY(getLoopButton.frame) + 20;
+    UIButton * addLoopObserverButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"添加RunLoop观察者" andSEL:@selector(addRunLoopObserver)];
+    [self.view addSubview:addLoopObserverButton];
+    beginY = CGRectGetMaxY(addLoopObserverButton.frame) + 20;
 }
 
 - (void)getCurrentRunLoop {
     //使用Cocoa框架
+    NSRunLoop * currCocoaLoop = [NSRunLoop currentRunLoop];
+    NSLog(@"Cocoa:%@",currCocoaLoop);
+    //使用Core Foundation框架
+    CFRunLoopRef loopRef = CFRunLoopGetCurrent();
+    NSLog(@"Core Foundation:%@",loopRef);
+}
+
+void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
     
+    NSLog(@"%@", @(activity));
+}
+
+- (void)addRunLoopObserver {
+    //获取CFRunLoopRef方法一：
+//    NSRunLoop * nsRunLoop = [NSRunLoop currentRunLoop];
+//    CFRunLoopRef loopRef = [nsRunLoop getCFRunLoop];
+    //获取CFRunLoopRef方法二：
+    CFRunLoopRef loopRef = CFRunLoopGetCurrent();
+    //添加观察者方法一：
+//    CFRunLoopObserverRef observerRef = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopAllActivities, true, 0, &runLoopObserverCallBack, NULL);
+    //添加观察者方法二：
+    CFRunLoopObserverRef observerRef = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopBeforeWaiting | kCFRunLoopAfterWaiting, true, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        NSLog(@"%@", @(activity));
+    });
+    CFRunLoopAddObserver(loopRef, observerRef, kCFRunLoopCommonModes);
+    if (observerRef) {
+        CFRelease(observerRef);
+    }
 }
 
 - (void)executePerfomSelectorOnCurrentThread {

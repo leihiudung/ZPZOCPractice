@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZPZRunLoopStartViewController.h"
 
 @interface ViewController ()
 
@@ -41,6 +42,14 @@
     UIButton * addLoopObserverButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"添加RunLoop观察者" andSEL:@selector(addRunLoopObserver)];
     [self.view addSubview:addLoopObserverButton];
     beginY = CGRectGetMaxY(addLoopObserverButton.frame) + 20;
+    UIButton * startButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"启动RunLoop" andSEL:@selector(runloopStartTime)];
+    [self.view addSubview:startButton];
+    beginY = CGRectGetMaxY(startButton.frame) + 20;
+}
+
+- (void)runloopStartTime {
+    ZPZRunLoopStartViewController * startVC = [[ZPZRunLoopStartViewController alloc] init];
+    [self.navigationController pushViewController:startVC animated:YES];
 }
 
 - (void)getCurrentRunLoop {

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ZPZRunLoopStartViewController.h"
+#import "ZPZCustomSourceViewController.h"
 
 @interface ViewController ()
 
@@ -45,11 +46,19 @@
     UIButton * startButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"启动RunLoop" andSEL:@selector(runloopStartTime)];
     [self.view addSubview:startButton];
     beginY = CGRectGetMaxY(startButton.frame) + 20;
+    UIButton * customSourceButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"自定义Input Source" andSEL:@selector(gotoDefineCustomSource)];
+    [self.view addSubview:customSourceButton];
+    beginY = CGRectGetMaxY(customSourceButton.frame) + 20;
 }
 
 - (void)runloopStartTime {
     ZPZRunLoopStartViewController * startVC = [[ZPZRunLoopStartViewController alloc] init];
     [self.navigationController pushViewController:startVC animated:YES];
+}
+
+- (void)gotoDefineCustomSource {
+    ZPZCustomSourceViewController * customSourceVC = [[ZPZCustomSourceViewController alloc] init];
+    [self.navigationController pushViewController:customSourceVC animated:YES];
 }
 
 - (void)getCurrentRunLoop {

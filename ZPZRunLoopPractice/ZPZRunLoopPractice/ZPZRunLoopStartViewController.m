@@ -10,7 +10,6 @@
 
 @interface ZPZRunLoopStartViewController ()
 {
-    NSRunLoop * onlyRunLoop;
     NSPort * emptyPort;
     BOOL isContinue;
 }
@@ -53,9 +52,15 @@
     UIButton * runDateWithModeButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"限定时间和模式" andSEL:@selector(runWithDateAndMode)];
     [self.view addSubview:runDateWithModeButton];
     beginY = CGRectGetMaxY(runDateWithModeButton.frame) + 20;
-    UIButton * dealRepeatButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"" andSEL:@selector(dealWithTimerRepeat)];
+    UIButton * dealRepeatButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"重复执行" andSEL:@selector(dealWithTimerRepeat)];
     [self.view addSubview:dealRepeatButton];
     beginY = CGRectGetMaxY(dealRepeatButton.frame) + 20;
+    UIButton * cfRunButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"CFRunLoopRun()" andSEL:@selector(runwithCFRunLoopRun)];
+    [self.view addSubview:cfRunButton];
+    beginY = CGRectGetMaxY(cfRunButton.frame) + 20;
+    UIButton * cfRunWithModeButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"CFRunLoopRunInMode()" andSEL:@selector(runWithCFRunLoopRunWithMode)];
+    [self.view addSubview:cfRunWithModeButton];
+    beginY = CGRectGetMaxY(cfRunWithModeButton.frame) + 20;
     
 }
 ///////////////////////////////////////////////////////////////////////
@@ -66,14 +71,18 @@
 
 - (void)testOnlyRun {
     NSTimer * onlyRunTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(runPerformSelectorForOnlyRun) userInfo:nil repeats:YES];
+//    [self performSelector:@selector(runPerformSelectorForOnlyRun) withObject:nil afterDelay:1];  //不会执行
+//    [onlyRunTimer fire];  //该方法会导致立即执行
+//    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(runPerformSelectorForOnlyRun) userInfo:nil repeats:YES];
     [self addObserverToRunLoop];
-    onlyRunLoop = [NSRunLoop currentRunLoop];
+    NSRunLoop * onlyRunLoop = [NSRunLoop currentRunLoop];
     [onlyRunLoop addTimer:onlyRunTimer forMode:NSDefaultRunLoopMode];
     [onlyRunLoop run];
 }
 
 - (void)runPerformSelectorForOnlyRun {
     NSLog(@"%@",[NSThread currentThread]);
+    CFRunLoopStop(CFRunLoopGetCurrent());   //增加了这一行
 }
 ///////////////////////////////////////////////////////////////////////
 - (void)runWithDate {
@@ -140,6 +149,69 @@
 
 - (void)cycleRepeat {
     NSLog(@"%@",[NSThread currentThread]);
+}
+
+///////////////////////////////////////////////////////////////////////
+- (void)runwithCFRunLoopRun {
+    isContinue = YES;
+    NSThread * thread = [[NSThread alloc] initWithTarget:self selector:@selector(addTimerToCFRunLoopForRun) object:nil];
+    [thread start];
+}
+
+- (void)addTimerToCFRunLoopForRun {
+    NSTimer * runTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(logForCFRunLoopForFun) userInfo:nil repeats:YES];
+    [self addObserverToRunLoop];
+    [[NSRunLoop currentRunLoop] addTimer:runTimer forMode:NSDefaultRunLoopMode];
+    CFRunLoopRun();
+    NSLog(@"addTimerToCFRunLoopForRun");
+    CFRunLoopRun();  //第二次启动
+}
+
+- (void)logForCFRunLoopForFun {
+    NSLog(@"%@",[NSThread currentThread]);
+    if (!isContinue) {
+        CFRunLoopStop(CFRunLoopGetCurrent());
+    }
+}
+///////////////////////////////////////////////////////////////////////
+- (void)runWithCFRunLoopRunWithMode {
+    isContinue = YES;
+    NSThread * thread = [[NSThread alloc] initWithTarget:self selector:@selector(addTimerToCFRunLoopRunWithMode) object:nil];
+    [thread start];
+}
+
+- (void)addTimerToCFRunLoopRunWithMode {
+    NSTimer * runTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(logForCFRunLoopForFunWithMode) userInfo:nil repeats:NO];
+    [self addObserverToRunLoop];
+    [[NSRunLoop currentRunLoop] addTimer:runTimer forMode:NSDefaultRunLoopMode];
+    CFRunLoopRunResult result = CFRunLoopRunInMode(kCFRunLoopDefaultMode, 3, false);
+    switch (result) {
+        case kCFRunLoopRunStopped:{
+            NSLog(@"stoped");
+        }
+            break;
+        case kCFRunLoopRunFinished:{
+            NSLog(@"finished");
+        }
+            break;
+        case kCFRunLoopRunTimedOut:{
+            NSLog(@"timeout");
+        }
+            break;
+        case kCFRunLoopRunHandledSource:{
+            NSLog(@"handle source");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)logForCFRunLoopForFunWithMode {
+    NSLog(@"%@",[NSThread currentThread]);
+    if (!isContinue) {
+        CFRunLoopStop(CFRunLoopGetCurrent());
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

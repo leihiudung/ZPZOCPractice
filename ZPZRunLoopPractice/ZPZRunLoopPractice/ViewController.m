@@ -10,6 +10,7 @@
 #import "ZPZRunLoopStartViewController.h"
 #import "ZPZCustomSourceViewController.h"
 #import "ZPZTimerViewController.h"
+#import "ZPZPortViewController.h"
 
 @interface ViewController ()
 
@@ -53,6 +54,9 @@
     UIButton * timerButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"timer" andSEL:@selector(gotoTimer)];
     [self.view addSubview:timerButton];
     beginY = CGRectGetMaxY(timerButton.frame) + 20;
+    UIButton * portButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"port" andSEL:@selector(gotoPort)];
+    [self.view addSubview:portButton];
+    beginY = CGRectGetMaxY(portButton.frame) + 20;
 }
 
 - (void)runloopStartTime {
@@ -68,6 +72,11 @@
 - (void)gotoTimer {
     ZPZTimerViewController * timerVC = [[ZPZTimerViewController alloc] init];
     [self.navigationController pushViewController:timerVC animated:YES];
+}
+
+- (void)gotoPort {
+    ZPZPortViewController * portVC = [[ZPZPortViewController alloc] init];
+    [self.navigationController pushViewController:portVC animated:YES];
 }
 
 - (void)getCurrentRunLoop {

@@ -12,6 +12,7 @@
 {
     NSPort * emptyPort;
     BOOL isContinue;
+    CFRunLoopRef accrossLoopRef; //测试跨线程暂停
 }
 
 //@property (nonatomic, strong) NSTimer * onlyRunTimer;
@@ -61,6 +62,10 @@
     UIButton * cfRunWithModeButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"CFRunLoopRunInMode()" andSEL:@selector(runWithCFRunLoopRunWithMode)];
     [self.view addSubview:cfRunWithModeButton];
     beginY = CGRectGetMaxY(cfRunWithModeButton.frame) + 20;
+    UIButton * accrossLoopCancelButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"跨线程暂停RunLoop" andSEL:@selector(cancelCFRunAccrossLoopThread)];
+    [self.view addSubview:accrossLoopCancelButton];
+    beginY = CGRectGetMaxY(accrossLoopCancelButton.frame) + 20;
+    
     
 }
 ///////////////////////////////////////////////////////////////////////
@@ -83,7 +88,7 @@
 
 - (void)runPerformSelectorForOnlyRun {
     NSLog(@"%@",[NSThread currentThread]);
-    CFRunLoopStop(CFRunLoopGetCurrent());   //增加了这一行
+//    CFRunLoopStop(CFRunLoopGetCurrent());   //增加了这一行
 }
 ///////////////////////////////////////////////////////////////////////
 - (void)runWithDate {
@@ -175,6 +180,23 @@
     }
 }
 ///////////////////////////////////////////////////////////////////////
+- (void)cancelCFRunAccrossLoopThread {
+    NSThread * thread = [[NSThread alloc] initWithTarget:self selector:@selector(cancelCFRunAccrossLoopRun) object:nil];
+    [thread start];
+}
+
+- (void)cancelCFRunAccrossLoopRun {
+    accrossLoopRef = CFRunLoopGetCurrent();
+    NSTimer * runTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(cancelCFRunAccrossLoopLog) userInfo:nil repeats:YES];
+    [self addObserverToRunLoop];
+    [[NSRunLoop currentRunLoop] addTimer:runTimer forMode:NSDefaultRunLoopMode];
+    CFRunLoopRun();
+}
+
+- (void)cancelCFRunAccrossLoopLog {
+    NSLog(@"%@",[NSThread currentThread]);
+}
+///////////////////////////////////////////////////////////////////////
 - (void)runWithCFRunLoopRunWithMode {
     isContinue = YES;
     NSThread * thread = [[NSThread alloc] initWithTarget:self selector:@selector(addTimerToCFRunLoopRunWithMode) object:nil];
@@ -217,6 +239,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    CFRunLoopStop(accrossLoopRef);
     isContinue = NO;
     NSLog(@"%s",__func__);
 }

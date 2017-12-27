@@ -7,8 +7,12 @@
 //
 
 #import "ZPZPortViewController.h"
+#import "ZPZWorkerClass.h"
 
-@interface ZPZPortViewController ()
+@interface ZPZPortViewController ()<NSPortDelegate, NSMachPortDelegate>
+{
+    NSPort * mainPort;
+}
 
 @end
 
@@ -16,7 +20,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self prepareData];
+    [self sendMessage];
+}
+
+- (void)prepareData {
+    mainPort = [NSMachPort port];
+    mainPort.delegate = self;
+    [[NSRunLoop currentRunLoop] addPort:mainPort forMode:NSDefaultRunLoopMode];
+}
+
+- (void)sendMessage {
+    [NSThread detachNewThreadSelector:@selector(launchThreadWithPort:) toTarget:[ZPZWorkerClass class] withObject:mainPort];
+}
+
+- (void)handlePortMessage:(NSPortMessage *)message {
+    NSLog(@"portVC_thread:%@", [NSThread currentThread]);
+    NSLog(@"portVC:%@", message);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +46,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc
+{
+    NSLog(@"release");
 }
-*/
 
 @end

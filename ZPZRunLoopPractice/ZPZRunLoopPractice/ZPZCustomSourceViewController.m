@@ -10,6 +10,9 @@
 #import "AppDelegate.h"
 
 @interface ZPZCustomSourceViewController ()
+{
+    NSThread * thread;
+}
 
 @end
 
@@ -19,6 +22,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(prepareToAdd)];
     [self testAddSource];
 }
 /*
@@ -50,24 +54,19 @@ void schedule(void *info, CFRunLoopRef rl, CFRunLoopMode mode) {
 
 void cancel(void *info, CFRunLoopRef rl, CFRunLoopMode mode) {
     NSLog(@"cancel");
-    ZPZCustomSourceViewController * custom = (__bridge_transfer ZPZCustomSourceViewController *)info;
-    [custom performSelectorOnMainThread:@selector(finished) withObject:nil waitUntilDone:NO];
 }
 
 void perform(void *info) {
     NSLog(@"perform");
 }
 
-- (void)finished {
-    NSLog(@"%s",__func__);
-}
-
 - (void)testAddSource {
-    NSThread * thread = [[NSThread alloc] initWithTarget:self selector:@selector(test) object:nil];
+    thread = [[NSThread alloc] initWithTarget:self selector:@selector(test) object:nil];
     [thread start];
 }
 
 - (void)test {
+    [self addObserverToRunLoop];
     CFRunLoopSourceContext context = {0, (__bridge void *)self, NULL, NULL,
         &copyDescription,
         &equal,
@@ -85,8 +84,68 @@ void perform(void *info) {
         NSLog(@"is not valid");
     }
     CFRunLoopAddSource(rl, sourceRef, kCFRunLoopDefaultMode);  //调用context的schedule回调函数
+    
     CFRunLoopSourceSignal(sourceRef);
-    CFRunLoopWakeUp(rl);
+//    CFRunLoopWakeUp(rl);
+//    CFRunLoopRun();  //运行很多次
+//    CFRunLoopRunInMode(kCFRunLoopDefaultMode, kCFAbsoluteTimeIntervalSince1904, false); //在时间范围内运行很多次
+    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]]; //这句话必须要有，只运行一次就退出runloop
+    if (sourceRef) {
+        CFRelease(sourceRef);
+    }
+    NSLog(@"runloop finished");
+}
+
+- (void)prepareToAdd {
+    [self performSelector:@selector(addSourceToThread) onThread:thread withObject:nil waitUntilDone:NO];
+}
+
+- (void)addSourceToThread {
+    NSTimer * runTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(logForCFRunLoopForFunWithMode) userInfo:nil repeats:NO];
+    [[NSRunLoop currentRunLoop] addTimer:runTimer forMode:NSDefaultRunLoopMode];
+//    [self performSelector:@selector(logForCFRunLoopForFunWithMode) withObject:nil];
+//    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+}
+
+- (void)logForCFRunLoopForFunWithMode{
+    NSLog(@"%s",__func__);
+}
+
+- (void)addObserverToRunLoop {
+    CFRunLoopObserverRef observerRef = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, true, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        switch (activity) {
+            case kCFRunLoopEntry:{
+                NSLog(@"准备进入循环...");
+            }
+                break;
+            case kCFRunLoopBeforeTimers:{
+                NSLog(@"处理定时器之前。。。");
+            }
+                break;
+            case kCFRunLoopBeforeSources:{
+                NSLog(@"处理输入源之前。。。");
+            }
+                break;
+            case kCFRunLoopBeforeWaiting:{
+                NSLog(@"进入等待之前。。。");
+            }
+                break;
+            case kCFRunLoopAfterWaiting:{
+                NSLog(@"唤醒但是处理事件之前。。。");
+            }
+                break;
+            case kCFRunLoopExit:{
+                NSLog(@"runloop退出！");
+            }
+                break;
+            default:
+                break;
+        }
+    });
+    CFRunLoopAddObserver(CFRunLoopGetCurrent(), observerRef, kCFRunLoopDefaultMode);
+    if (observerRef) {
+        CFRelease(observerRef);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,15 +153,9 @@ void perform(void *info) {
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc {
+    NSLog(@"release");
 }
-*/
 
 @end
 

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZPZRunLoopContext;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)registerSource:(ZPZRunLoopContext *)sourceInfo;
+- (void)removeSource:(ZPZRunLoopContext *)sourceInfo;
 
 @end
 

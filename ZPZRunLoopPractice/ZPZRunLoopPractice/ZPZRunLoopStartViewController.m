@@ -78,6 +78,7 @@
     NSRunLoop * onlyRunLoop = [NSRunLoop currentRunLoop];
     [onlyRunLoop addTimer:onlyRunTimer forMode:NSDefaultRunLoopMode];
     [onlyRunLoop run];
+//    [self performSelector:@selector(runPerformSelectorForOnlyRun) withObject:nil withObject:nil]; //这样可以启动
 }
 
 - (void)runPerformSelectorForOnlyRun {

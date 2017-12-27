@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ZPZRunLoopStartViewController.h"
 #import "ZPZCustomSourceViewController.h"
+#import "ZPZTimerViewController.h"
 
 @interface ViewController ()
 
@@ -49,6 +50,9 @@
     UIButton * customSourceButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"自定义Input Source" andSEL:@selector(gotoDefineCustomSource)];
     [self.view addSubview:customSourceButton];
     beginY = CGRectGetMaxY(customSourceButton.frame) + 20;
+    UIButton * timerButton = [self createButtonWithFrame:CGRectMake(margin, beginY, width, height) andTitle:@"timer" andSEL:@selector(gotoTimer)];
+    [self.view addSubview:timerButton];
+    beginY = CGRectGetMaxY(timerButton.frame) + 20;
 }
 
 - (void)runloopStartTime {
@@ -59,6 +63,11 @@
 - (void)gotoDefineCustomSource {
     ZPZCustomSourceViewController * customSourceVC = [[ZPZCustomSourceViewController alloc] init];
     [self.navigationController pushViewController:customSourceVC animated:YES];
+}
+
+- (void)gotoTimer {
+    ZPZTimerViewController * timerVC = [[ZPZTimerViewController alloc] init];
+    [self.navigationController pushViewController:timerVC animated:YES];
 }
 
 - (void)getCurrentRunLoop {

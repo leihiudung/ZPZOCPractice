@@ -76,7 +76,7 @@
 //    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(runPerformSelectorForOnlyRun) userInfo:nil repeats:YES];
     [self addObserverToRunLoop];
     NSRunLoop * onlyRunLoop = [NSRunLoop currentRunLoop];
-    [onlyRunLoop addTimer:onlyRunTimer forMode:NSDefaultRunLoopMode];
+    [onlyRunLoop addTimer:onlyRunTimer forMode:NSDefaultRunLoopMode];  //这句话可以不要
     [onlyRunLoop run];
 //    [self performSelector:@selector(runPerformSelectorForOnlyRun) withObject:nil withObject:nil]; //这样可以启动
 }

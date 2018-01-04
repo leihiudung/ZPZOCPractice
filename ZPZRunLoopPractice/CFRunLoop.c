@@ -524,13 +524,13 @@ typedef struct __CFRunLoopMode *CFRunLoopModeRef;
 struct __CFRunLoopMode {
     CFRuntimeBase _base;
     pthread_mutex_t _lock;	/* must have the run loop locked before locking this */
-    CFStringRef _name;
+    CFStringRef _name;  //当前模式的名字
     Boolean _stopped;
     char _padding[3];
-    CFMutableSetRef _sources0;
-    CFMutableSetRef _sources1;
-    CFMutableArrayRef _observers;
-    CFMutableArrayRef _timers;
+    CFMutableSetRef _sources0;  //source0事件
+    CFMutableSetRef _sources1;  //source1事件
+    CFMutableArrayRef _observers;  //添加的观察者
+    CFMutableArrayRef _timers; //timer事件
     CFMutableDictionaryRef _portToV1SourceMap;
     __CFPortSet _portSet;
     CFIndex _observerMask;
@@ -561,13 +561,13 @@ CF_INLINE void __CFRunLoopModeUnlock(CFRunLoopModeRef rlm) {
     //CFLog(6, CFSTR("__CFRunLoopModeLock unlocking %p"), rlm);
     pthread_mutex_unlock(&(rlm->_lock));
 }
-
+//判断两个mode是否相同的标志是看两个mode的name是否相同
 static Boolean __CFRunLoopModeEqual(CFTypeRef cf1, CFTypeRef cf2) {
     CFRunLoopModeRef rlm1 = (CFRunLoopModeRef)cf1;
     CFRunLoopModeRef rlm2 = (CFRunLoopModeRef)cf2;
     return CFEqual(rlm1->_name, rlm2->_name);
 }
-
+//因为名字是唯一性的，所以对名字做哈希处理
 static CFHashCode __CFRunLoopModeHash(CFTypeRef cf) {
     CFRunLoopModeRef rlm = (CFRunLoopModeRef)cf;
     return CFHash(rlm->_name);
@@ -592,7 +592,7 @@ static CFStringRef __CFRunLoopModeCopyDescription(CFTypeRef cf) {
     CFStringAppendFormat(result, NULL, CFSTR("\n\tsources0 = %@,\n\tsources1 = %@,\n\tobservers = %@,\n\ttimers = %@,\n\tcurrently %0.09g (%lld) / soft deadline in: %0.09g sec (@ %lld) / hard deadline in: %0.09g sec (@ %lld)\n},\n"), rlm->_sources0, rlm->_sources1, rlm->_observers, rlm->_timers, CFAbsoluteTimeGetCurrent(), mach_absolute_time(), __CFTSRToTimeInterval(rlm->_timerSoftDeadline - mach_absolute_time()), rlm->_timerSoftDeadline, __CFTSRToTimeInterval(rlm->_timerHardDeadline - mach_absolute_time()), rlm->_timerHardDeadline);
     return result;
 }
-
+//释放mode
 static void __CFRunLoopModeDeallocate(CFTypeRef cf) {
     CFRunLoopModeRef rlm = (CFRunLoopModeRef)cf;
     if (NULL != rlm->_sources0) CFRelease(rlm->_sources0);
@@ -636,7 +636,7 @@ typedef struct _per_run_data {
 
 struct __CFRunLoop {
     CFRuntimeBase _base;
-    pthread_mutex_t _lock;			/* locked for accessing mode list */
+    pthread_mutex_t _lock;			/* locked for accessing mode list 互斥锁 */
     __CFPort _wakeUpPort;			// used for CFRunLoopWakeUp 
     Boolean _unused;
     volatile _per_run_data *_perRunData;              // reset for runs of the run loop
@@ -853,78 +853,6 @@ static Boolean __CFRunLoopModeIsEmpty(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFR
     }
     return true;
 }
-
-#if DEPLOYMENT_TARGET_WINDOWS
-
-uint32_t _CFRunLoopGetWindowsMessageQueueMask(CFRunLoopRef rl, CFStringRef modeName) {
-    if (modeName == kCFRunLoopCommonModes) {
-	CFLog(kCFLogLevelError, CFSTR("_CFRunLoopGetWindowsMessageQueueMask: kCFRunLoopCommonModes unsupported"));
-	HALT;
-    }
-    DWORD result = 0;
-    __CFRunLoopLock(rl);
-    CFRunLoopModeRef rlm = __CFRunLoopFindMode(rl, modeName, false);
-    if (rlm) {
-	result = rlm->_msgQMask;
-	__CFRunLoopModeUnlock(rlm);
-    }
-    __CFRunLoopUnlock(rl);
-    return (uint32_t)result;
-}
-
-void _CFRunLoopSetWindowsMessageQueueMask(CFRunLoopRef rl, uint32_t mask, CFStringRef modeName) {
-    if (modeName == kCFRunLoopCommonModes) {
-	CFLog(kCFLogLevelError, CFSTR("_CFRunLoopSetWindowsMessageQueueMask: kCFRunLoopCommonModes unsupported"));
-	HALT;
-    }
-    __CFRunLoopLock(rl);
-    CFRunLoopModeRef rlm = __CFRunLoopFindMode(rl, modeName, true);
-    rlm->_msgQMask = (DWORD)mask;
-    __CFRunLoopModeUnlock(rlm);
-    __CFRunLoopUnlock(rl);
-}
-
-uint32_t _CFRunLoopGetWindowsThreadID(CFRunLoopRef rl) {
-    return rl->_winthread;
-}
-
-CFWindowsMessageQueueHandler _CFRunLoopGetWindowsMessageQueueHandler(CFRunLoopRef rl, CFStringRef modeName) {
-    if (modeName == kCFRunLoopCommonModes) {
-	CFLog(kCFLogLevelError, CFSTR("_CFRunLoopGetWindowsMessageQueueMask: kCFRunLoopCommonModes unsupported"));
-	HALT;
-    }
-    if (rl != CFRunLoopGetCurrent()) {
-	CFLog(kCFLogLevelError, CFSTR("_CFRunLoopGetWindowsMessageQueueHandler: run loop parameter must be the current run loop"));
-	HALT;
-    }
-    void (*result)(void) = NULL;
-    __CFRunLoopLock(rl);
-    CFRunLoopModeRef rlm = __CFRunLoopFindMode(rl, modeName, false);
-    if (rlm) {
-	result = rlm->_msgPump;
-	__CFRunLoopModeUnlock(rlm);
-    }
-    __CFRunLoopUnlock(rl);
-    return result;
-}
-
-void _CFRunLoopSetWindowsMessageQueueHandler(CFRunLoopRef rl, CFStringRef modeName, CFWindowsMessageQueueHandler func) {
-    if (modeName == kCFRunLoopCommonModes) {
-	CFLog(kCFLogLevelError, CFSTR("_CFRunLoopGetWindowsMessageQueueMask: kCFRunLoopCommonModes unsupported"));
-	HALT;
-    }
-    if (rl != CFRunLoopGetCurrent()) {
-	CFLog(kCFLogLevelError, CFSTR("_CFRunLoopGetWindowsMessageQueueHandler: run loop parameter must be the current run loop"));
-	HALT;
-    }
-    __CFRunLoopLock(rl);
-    CFRunLoopModeRef rlm = __CFRunLoopFindMode(rl, modeName, true);
-    rlm->_msgPump = func;
-    __CFRunLoopModeUnlock(rlm);
-    __CFRunLoopUnlock(rl);
-}
-
-#endif
 
 #pragma mark -
 #pragma mark Sources

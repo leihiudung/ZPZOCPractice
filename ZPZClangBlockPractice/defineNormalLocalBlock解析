@@ -1,0 +1,43 @@
+struct __block_impl {
+    void *isa;
+    int Flags;
+    int Reserved;
+    void *FuncPtr;
+};
+
+struct __ViewController__defineNormalLocalBlock_block_impl_0 {
+    struct __block_impl impl;
+    struct __ViewController__defineNormalLocalBlock_block_desc_0* Desc;
+    __ViewController__defineNormalLocalBlock_block_impl_0(void *fp, struct __ViewController__defineNormalLocalBlock_block_desc_0 *desc, int flags=0) {
+        impl.isa = &_NSConcreteStackBlock;
+        impl.Flags = flags;
+        impl.FuncPtr = fp;
+        Desc = desc;
+    }
+};
+static void __ViewController__defineNormalLocalBlock_block_func_0(struct __ViewController__defineNormalLocalBlock_block_impl_0 *__cself) {
+
+    NSLog((NSString *)&__NSConstantStringImpl__var_folders_hk_zhxz0gtj7z1djqcl5mbjdpd00000gn_T_ViewController_06b0d3_mi_0);
+}
+
+static struct __ViewController__defineNormalLocalBlock_block_desc_0 {
+    size_t reserved;
+    size_t Block_size;
+} __ViewController__defineNormalLocalBlock_block_desc_0_DATA = { 0, sizeof(struct __ViewController__defineNormalLocalBlock_block_impl_0)};
+
+static void _I_ViewController_defineNormalLocalBlock(ViewController * self, SEL _cmd) {
+    void(*testBlock)(void) = ((void (*)())&__ViewController__defineNormalLocalBlock_block_impl_0((void *)__ViewController__defineNormalLocalBlock_block_func_0, &__ViewController__defineNormalLocalBlock_block_desc_0_DATA));
+    ((void (*)(__block_impl *))((__block_impl *)testBlock)->FuncPtr)((__block_impl *)testBlock);
+}
+
+说明：上面的代码就是clang编译后生成的，其中最后的_I_ViewController_defineNormalLocalBlock是函数的入口
+1、_I_ViewController_defineNormalLocalBlock
+在这里可以发现我们定义的block被编译成了函数指针，指向__ViewController__defineNormalLocalBlock_block_impl_0
+
+2、__ViewController__defineNormalLocalBlock_block_impl_0
+这个结构体用来将需要的信息转成__block_impl类型的，并存储信息
+
+3、__ViewController__defineNormalLocalBlock_block_func_0
+可以看到这个表示block的主体，即block的详细执行细节
+
+4、可以看到block默认是在栈上的因为block的结构体__block_impl中的isa为_NSConcreteStackBlock

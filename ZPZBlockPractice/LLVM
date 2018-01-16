@@ -1,8 +1,0 @@
-
-一、概览
-LLVM由三部分组成：
-第一部分是LLVM套件，该套件包含了所有的你需要的额工具、框架和头文件;也包括汇编、反汇编、bitcode解析器和bitcode优化控制；也包含一些测试单元
-第二部分是Clang前端，该组件编译c、c++、OC和OC++为LLVM的bitcode，当被编译成LLVM的bitcode后，程序就可以通过LLVM的套件做一些操作了
-第三部分是测试套件，这部分是可选的，主要用来测试LLVM
-
-//GCC（GNU Compiler Collection，GNU编译器套装）

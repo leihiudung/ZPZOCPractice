@@ -1,4 +1,0 @@
-
-1、每个类都有一个自己的meta-class
-2、所有的meta-class指向同一个meta-class，该meta-class一般为NSObject的元类，就看这个类的根类事哪个
-3、

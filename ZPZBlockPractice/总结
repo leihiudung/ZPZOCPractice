@@ -1,9 +1,0 @@
-
-编译器clang:
-clang -fobjc-arc -framework Foundation HelloWord.m -o HelloWord
-这里-fobjc-arc表示编译器需要支持ARC特性
--framework 表示需要引用的框架
-HelloWord.m表示编译的源代码文件
--o 表示编译后输出的可执行的文件
-
-1、不管是OC还是Swift，都是采用Clang作为编译器前端，LLVM(Low level vritual machine)作为编译器后端

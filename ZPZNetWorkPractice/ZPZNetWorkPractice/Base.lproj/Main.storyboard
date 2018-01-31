@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rI3-jk-mZa">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Cmi-Of-kod">
+            <objects>
+                <viewController id="EkG-fh-joE" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s2I-zx-l51">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-AE-G8m">
+                                <rect key="frame" x="16" y="125" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.73394016294005326" blue="0.076043127459281323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Default Session"/>
+                                <connections>
+                                    <action selector="gotoDefaultSessionVC:" destination="EkG-fh-joE" eventType="touchUpInside" id="YQV-gM-oWy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mef-Ds-b4Z">
+                                <rect key="frame" x="16" y="205" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.73394016289999997" blue="0.076043127459999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Ephemeral Session"/>
+                                <connections>
+                                    <action selector="gotoEphemeralSessionVC:" destination="EkG-fh-joE" eventType="touchUpInside" id="SEF-5a-D4C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XA0-9j-nKP">
+                                <rect key="frame" x="18" y="274" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.73394016289999997" blue="0.076043127459999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Background Session"/>
+                                <connections>
+                                    <action selector="gotoBackgroundSessionVC:" destination="EkG-fh-joE" eventType="touchUpInside" id="rYa-ky-lYf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Uxj-Dt-2Le"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TDo-bX-wA0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nv7-Qd-A5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="140.39408866995075"/>
+        </scene>
+        <!--Default Session View Controller-->
+        <scene sceneID="eij-at-h8k">
+            <objects>
+                <viewController id="AXE-2Y-vQd" customClass="ZPZDefaultSessionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="glg-8f-gvK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pxA-Pg-c97"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fu7-Ll-MCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fzh-FM-NUC">
+            <objects>
+                <navigationController id="rI3-jk-mZa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ezD-v5-2MV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EkG-fh-joE" kind="relationship" relationship="rootViewController" id="5t9-AD-lKO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gs-hO-HXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="143"/>
+        </scene>
+    </scenes>
+</document>

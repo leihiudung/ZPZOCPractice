@@ -23,23 +23,5 @@
     
 }
 
-- (IBAction)gotoDefaultSessionVC:(UIButton *)sender {
-    ZPZDefaultSessionViewController * defaultSessionVC = [[ZPZDefaultSessionViewController alloc] init];
-    [self.navigationController pushViewController:defaultSessionVC animated:YES];
-}
-- (IBAction)gotoEphemeralSessionVC:(UIButton *)sender {
-    ZPZEphemeralSessionViewController * ephemeralVC = [[ZPZEphemeralSessionViewController alloc] init];
-    [self.navigationController pushViewController:ephemeralVC animated:YES];
-}
-- (IBAction)gotoBackgroundSessionVC:(UIButton *)sender {
-    ZPZBackgroundSessionViewController * backVC = [[ZPZBackgroundSessionViewController alloc] init];
-    [self.navigationController pushViewController:backVC animated:YES];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end

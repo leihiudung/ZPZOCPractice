@@ -84,7 +84,7 @@
         [paramsStr appendFormat:@"%@\r\n",obj];
     }];
     [bodyData appendData:[paramsStr dataUsingEncoding:NSUTF8StringEncoding]];
-    //全部的结束部分 结束部分必须以--boundary--形式结束
+    //全部的结束部分 结束部分必须以--boundary形式结束
     [bodyData appendData:[[NSString stringWithFormat:@"--%@--", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     NSData * postData = bodyData;
     

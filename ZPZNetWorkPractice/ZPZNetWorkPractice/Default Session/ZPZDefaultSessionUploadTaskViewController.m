@@ -9,6 +9,7 @@
 #import "ZPZDefaultSessionUploadTaskViewController.h"
 
 #define kRequestUrl @"http://0.0.0.0:8080/request.php"
+#define kStreamBoundary @"uploadTaskWithStreame"
 
 @interface ZPZDefaultSessionUploadTaskViewController ()<NSURLSessionDataDelegate>
 
@@ -72,7 +73,7 @@
     [postDic setObject:@"中国" forKey:@"contry"];
     [postDic setObject:@(12) forKey:@"age"];
     [postDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [postParams appendFormat:@"\r\n--%@", boundary];
+        [postParams appendFormat:@"\r\n--%@\r\n", boundary];
         [postParams appendFormat:@"Content-Disposition:form-data;name=%@\r\n",key];
         [postParams appendFormat:@"Content-Type:text/plain\r\n\r\n"];
         [postParams appendFormat:@"%@\r\n", obj];
@@ -80,6 +81,16 @@
     [data appendData:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[[NSString stringWithFormat:@"--%@--",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     NSURLSessionUploadTask * uploadTask = [defaultSession uploadTaskWithRequest:request fromData:data];
+    [uploadTask resume];
+}
+//uploadTaskWithStreamedRequest
+- (IBAction)uploadTaskWithStreame:(id)sender {
+    NSURLSessionConfiguration * defaultConfirguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * defaultSession = [NSURLSession sessionWithConfiguration:defaultConfirguration delegate:self delegateQueue:nil];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kRequestUrl]];
+    request.HTTPMethod = @"POST";
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data;boundary=%@",kStreamBoundary] forHTTPHeaderField:@"Content-Type"];
+    NSURLSessionUploadTask * uploadTask = [defaultSession uploadTaskWithStreamedRequest:request];
     [uploadTask resume];
 }
 
@@ -127,10 +138,34 @@ didCompleteWithError:(nullable NSError *)error {
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-willPerformHTTPRedirection:(NSHTTPURLResponse *)response
-        newRequest:(NSURLRequest *)request
- completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
-    completionHandler(nil);
+ needNewBodyStream:(void (^)(NSInputStream * _Nullable bodyStream))completionHandler {
+    
+    NSString * boundary = kStreamBoundary;
+    NSString * imageName = @"upload";
+    NSString * fileName = @"1.jpeg";
+    NSMutableData * data = [NSMutableData data];
+    //图片部分
+    NSMutableString * imageStr = [NSMutableString string];
+    [imageStr appendFormat:@"--%@\r\n",boundary];
+    [imageStr appendFormat:@"Content-Disposition:form-data;name=\"%@\";filename=\"%@\"\r\n", imageName, fileName];
+    [imageStr appendFormat:@"Content-Type:image/jpeg\r\n\r\n"];
+    [data appendData:[imageStr dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:UIImageJPEGRepresentation([UIImage imageNamed:@"1.jpeg"], 1)];
+    
+    NSMutableString * postParams = [NSMutableString string];
+    NSMutableDictionary * postDic = [NSMutableDictionary dictionary];
+    [postDic setObject:@"中国" forKey:@"contry"];
+    [postDic setObject:@(12) forKey:@"age"];
+    [postDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [postParams appendFormat:@"\r\n--%@\r\n", boundary];
+        [postParams appendFormat:@"Content-Disposition:form-data;name=%@\r\n",key];
+        [postParams appendFormat:@"Content-Type:text/plain\r\n\r\n"];
+        [postParams appendFormat:@"%@\r\n", obj];
+    }];
+    [data appendData:[postParams dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[[NSString stringWithFormat:@"--%@",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSInputStream * bodyStream = [[NSInputStream alloc] initWithData:data];
+    completionHandler(bodyStream);
 }
 
 @end

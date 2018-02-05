@@ -84,9 +84,6 @@
     NSLog(@"finished");
     AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if(delegate.backgroundSessionCompletionHandler) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.view.backgroundColor = [UIColor greenColor];
-        });
         void (^completionHandler)(void) = delegate.backgroundSessionCompletionHandler;
         delegate.backgroundSessionCompletionHandler = nil;
         completionHandler();

@@ -10,7 +10,9 @@
 
 #define kRequest1 @"http://rap2api.taobao.org/app/mock/5106/GET/userInfoList"
 
-@interface ZPZDefaultSessionDataTaskViewController ()<NSURLSessionTaskDelegate>
+@interface ZPZDefaultSessionDataTaskViewController ()<NSURLSessionDataDelegate, NSURLSessionDelegate>
+
+@property (nonatomic, strong) NSMutableData * reponseData;
 
 @end
 
@@ -48,6 +50,107 @@
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.google.com"]];
     NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithRequest:request];
     [dataTask resume];
+}
+- (IBAction)begtinToRequestWithUrlForPost:(id)sender {
+    NSURLSessionConfiguration * defaultConfirguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * form_dataSession = [NSURLSession sessionWithConfiguration:defaultConfirguration delegate:self delegateQueue:nil];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:8080/HelloPython.php?get_prarm=get"]];
+    
+    NSString * boundary = @"--WebKitFormBoundary7MA4YWxkTrZu0gW";
+    NSString * imageName = @"image";
+    NSString * fileName = @"1.jpeg";
+    
+    request.HTTPMethod = @"POST";
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data;boundary=%@",boundary] forHTTPHeaderField:@"content-type"];
+    
+    NSMutableData * bodyData = [NSMutableData data];
+    //图片数据部分
+    NSMutableString *imageBodyPre = [NSMutableString string];
+    [imageBodyPre appendString:[NSString stringWithFormat:@"--%@\r\n", boundary]]; // 部分和全部的开始部分 必须以--boundary开始
+    [imageBodyPre appendFormat:@"Content-Disposition:form-data; name=\"%@\";filename=\"%@\"", imageName, fileName];
+    [imageBodyPre appendFormat:@"Content-Type:image/jpeg\r\n\r\n"];
+    [bodyData appendData:[imageBodyPre dataUsingEncoding:NSUTF8StringEncoding]];
+    NSData * imageData = UIImageJPEGRepresentation([UIImage imageNamed:fileName], 1);
+    [bodyData appendData:imageData];
+    // 参数部分
+    NSMutableString * paramsStr = [NSMutableString string];
+    NSMutableDictionary * postDic = [NSMutableDictionary dictionary];
+    [postDic setObject:@"中国" forKey:@"contry"];
+    [postDic setObject:@(12) forKey:@"age"];
+    [postDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [paramsStr appendFormat:@"\r\n--%@\r\n", boundary];
+        [paramsStr appendFormat:@"Content-Disposition:form-data;name=%@\r\n",key];
+        [paramsStr appendFormat:@"Content-Type:text/plain\r\n\r\n"];  //这里必须要有两个\r\n，来使得value和前一行有一行空白
+        [paramsStr appendFormat:@"%@\r\n",obj];
+    }];
+    [bodyData appendData:[paramsStr dataUsingEncoding:NSUTF8StringEncoding]];
+    //全部的结束部分 结束部分必须以--boundary--形式结束
+    [bodyData appendData:[[NSString stringWithFormat:@"--%@--", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSData * postData = bodyData;
+    
+    [request setHTTPBody:postData];
+    
+    NSURLSessionDataTask * dataTask = [form_dataSession dataTaskWithRequest:request];
+    [dataTask resume];
+//    [self requestTypeIsX_www_form_urlencoded];
+}
+/**
+ NSDictionary *headers = @{ @"content-type": @"multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+ @"Cache-Control": @"no-cache",
+ @"Postman-Token": @"d379d0b2-0cc9-7ab4-8a1b-65ffd23b8d26" };
+ NSArray *parameters = @[ @{ @"name": @"image", @"fileName": @"/Users/zhoupengzu/Desktop/WechatIMG6.jpeg" } ];
+ NSString *boundary = @"----WebKitFormBoundary7MA4YWxkTrZu0gW";
+ 
+ NSError *error;
+ NSMutableString *body = [NSMutableString string];
+ for (NSDictionary *param in parameters) {
+ [body appendFormat:@"--%@\r\n", boundary];
+ if (param[@"fileName"]) {
+ [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"; filename=\"%@\"\r\n", param[@"name"], param[@"fileName"]];
+ [body appendFormat:@"Content-Type: %@\r\n\r\n", param[@"contentType"]];
+ [body appendFormat:@"%@", [NSString stringWithContentsOfFile:param[@"fileName"] encoding:NSUTF8StringEncoding error:&error]];
+ if (error) {
+ NSLog(@"%@", error);
+ }
+ } else {
+ [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"\r\n\r\n", param[@"name"]];
+ [body appendFormat:@"%@", param[@"value"]];
+ }
+ }
+ [body appendFormat:@"\r\n--%@--\r\n", boundary];
+ NSData *postData = [body dataUsingEncoding:NSUTF8StringEncoding];
+ */
+// Content-Type:application/x-www-form-urlencoded
+- (void)requestTypeIsX_www_form_urlencoded {
+    NSURLSessionConfiguration * defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * x_www_form_urlencodedSession = [NSURLSession sessionWithConfiguration:defaultConfiguration delegate:self delegateQueue:nil];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:8080/HelloPython.php?name=zhoupengzu"]];
+    request.HTTPMethod = @"POST";
+    NSMutableDictionary * postDic = [NSMutableDictionary dictionary];
+    [postDic setObject:@"中国" forKey:@"contry"];
+    [postDic setObject:@(12) forKey:@"age"];
+    // application/x-www-form-urlencoded
+    // 方法一：将Contnt-Type和参数分开
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString * bodyStr = [self application_X_www_form_urlencoded:postDic];
+    [request setHTTPBody:[bodyStr dataUsingEncoding:NSUTF8StringEncoding]];
+    // 方法二：不指定，默认就是
+    NSString * requestStr = @"";
+    requestStr = [requestStr stringByAppendingString:bodyStr];
+    [request setHTTPBody:[requestStr dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask * dataTask = [x_www_form_urlencodedSession dataTaskWithRequest:request];
+    [dataTask resume];
+}
+
+
+- (NSString *)application_X_www_form_urlencoded:(NSDictionary *)postDic {
+    NSMutableArray * formArr = [NSMutableArray array];
+    [postDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [formArr addObject:[NSString stringWithFormat:@"%@=%@", key, obj]];
+    }];
+    
+    return [formArr componentsJoinedByString:@"&"];
 }
 
 
@@ -109,6 +212,11 @@ willBeginDelayedRequest:(NSURLRequest *)request
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(nullable NSError *)error {
     NSLog(@"%s, %@", __func__, error == nil ? @"SUCCESS" : error.localizedDescription);
+    if (error == nil) {
+        NSError * eror = nil;
+        id objc = [NSJSONSerialization JSONObjectWithData:_reponseData options:NSJSONReadingMutableContainers error:&eror];
+        NSLog(@"responseDataIs:%@", objc);
+    }
 }
 
 /*
@@ -124,7 +232,7 @@ didCompleteWithError:(nullable NSError *)error {
  */
 - (void)URLSession:(NSURLSession *)session taskIsWaitingForConnectivity:(NSURLSessionTask *)task {
     NSLog(@"%s",__func__);
-    [task cancel];
+//    [task cancel];
 }
 /* An HTTP request is attempting to perform a redirection to a different
  * URL. You must invoke the completion routine to allow the
@@ -175,10 +283,10 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
  * necessary when authentication has failed for any request that
  * involves a body stream.
  */
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
- needNewBodyStream:(void (^)(NSInputStream * _Nullable bodyStream))completionHandler{
-    
-}
+//- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
+// needNewBodyStream:(void (^)(NSInputStream * _Nullable bodyStream))completionHandler{
+//
+//}
 
 /* Sent periodically to notify the delegate of upload progress.  This
  * information is also available as properties of the task.
@@ -187,7 +295,7 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
    didSendBodyData:(int64_t)bytesSent
     totalBytesSent:(int64_t)totalBytesSent
 totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
-    NSLog(@"%lld-%lld-%lld", bytesSent, totalBytesSent, totalBytesExpectedToSend);
+//    NSLog(@"%lld-%lld-%lld", bytesSent, totalBytesSent, totalBytesExpectedToSend);
 }
 
 /*
@@ -195,6 +303,38 @@ totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
  */
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didFinishCollectingMetrics:(NSURLSessionTaskMetrics *)metrics {
     NSLog(@"%s", __func__);
+}
+
+#pragma mark - NSURLSessionDataDelegate
+/* The task has received a response and no further messages will be
+ * received until the completion block is called. The disposition
+ * allows you to cancel a request or to turn a data task into a
+ * download task. This delegate message is optional - if you do not
+ * implement it, you can get the response as a property of the task.
+ *
+ * This method will not be called for background upload tasks (which cannot be converted to download tasks).
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+didReceiveResponse:(NSURLResponse *)response
+ completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
+    NSLog(@"%s",__func__);
+    NSLog(@"MIME Type:%@", response.MIMEType);
+    _reponseData = nil;
+    NSHTTPURLResponse * urlResponse = (NSHTTPURLResponse *)response;
+    if(urlResponse.statusCode == 200) {
+        _reponseData = [NSMutableData data];
+    }
+    completionHandler(NSURLSessionResponseAllow);
+}
+
+/* Sent when data is available for the delegate to consume.  It is
+ * assumed that the delegate will retain and not copy the data.  As
+ * the data may be discontiguous, you should use
+ * [NSData enumerateByteRangesUsingBlock:] to access it.
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+    didReceiveData:(NSData *)data {
+    [_reponseData appendData:data];
 }
 
 - (void)dealloc {

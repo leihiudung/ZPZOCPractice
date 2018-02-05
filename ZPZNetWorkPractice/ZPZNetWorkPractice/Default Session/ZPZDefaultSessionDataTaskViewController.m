@@ -94,32 +94,6 @@
     [dataTask resume];
 //    [self requestTypeIsX_www_form_urlencoded];
 }
-/**
- NSDictionary *headers = @{ @"content-type": @"multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
- @"Cache-Control": @"no-cache",
- @"Postman-Token": @"d379d0b2-0cc9-7ab4-8a1b-65ffd23b8d26" };
- NSArray *parameters = @[ @{ @"name": @"image", @"fileName": @"/Users/zhoupengzu/Desktop/WechatIMG6.jpeg" } ];
- NSString *boundary = @"----WebKitFormBoundary7MA4YWxkTrZu0gW";
- 
- NSError *error;
- NSMutableString *body = [NSMutableString string];
- for (NSDictionary *param in parameters) {
- [body appendFormat:@"--%@\r\n", boundary];
- if (param[@"fileName"]) {
- [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"; filename=\"%@\"\r\n", param[@"name"], param[@"fileName"]];
- [body appendFormat:@"Content-Type: %@\r\n\r\n", param[@"contentType"]];
- [body appendFormat:@"%@", [NSString stringWithContentsOfFile:param[@"fileName"] encoding:NSUTF8StringEncoding error:&error]];
- if (error) {
- NSLog(@"%@", error);
- }
- } else {
- [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"\r\n\r\n", param[@"name"]];
- [body appendFormat:@"%@", param[@"value"]];
- }
- }
- [body appendFormat:@"\r\n--%@--\r\n", boundary];
- NSData *postData = [body dataUsingEncoding:NSUTF8StringEncoding];
- */
 // Content-Type:application/x-www-form-urlencoded
 - (void)requestTypeIsX_www_form_urlencoded {
     NSURLSessionConfiguration * defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];

@@ -54,7 +54,7 @@
 - (IBAction)begtinToRequestWithUrlForPost:(id)sender {
     NSURLSessionConfiguration * defaultConfirguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession * form_dataSession = [NSURLSession sessionWithConfiguration:defaultConfirguration delegate:self delegateQueue:nil];
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:8080/HelloPython.php?get_prarm=get"]];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:8080/request.php?get_prarm=get"]];
     
     NSString * boundary = @"--WebKitFormBoundary7MA4YWxkTrZu0gW";
     NSString * imageName = @"image";
@@ -126,7 +126,18 @@
     
     return [formArr componentsJoinedByString:@"&"];
 }
+- (IBAction)beginToRequestForRequestDownload:(id)sender {
+    NSURLSessionConfiguration * defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * defaultSession = [NSURLSession sessionWithConfiguration:defaultConfiguration delegate:self delegateQueue:nil];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:8080/for_down.JPG"]];
+    NSURLSessionDataTask * task = [defaultSession dataTaskWithRequest:request];
+    [task addObserver:self forKeyPath:NSStringFromSelector(@selector(progress)) options:NSKeyValueObservingOptionNew context:nil];
+    [task resume];
+}
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"%@",change);
+}
 
 #pragma mark - NSURLSessionDelegate
 /* The last message a session receives.  A session will only become
@@ -186,10 +197,12 @@ willBeginDelayedRequest:(NSURLRequest *)request
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(nullable NSError *)error {
     NSLog(@"%s, %@", __func__, error == nil ? @"SUCCESS" : error.localizedDescription);
-    if (error == nil) {
+    if (error == nil && _reponseData.length > 0) {
         NSError * eror = nil;
         id objc = [NSJSONSerialization JSONObjectWithData:_reponseData options:NSJSONReadingMutableContainers error:&eror];
         NSLog(@"responseDataIs:%@", objc);
+    } else {
+        NSLog(@"failed");
     }
 }
 
@@ -269,7 +282,7 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
    didSendBodyData:(int64_t)bytesSent
     totalBytesSent:(int64_t)totalBytesSent
 totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
-//    NSLog(@"%lld-%lld-%lld", bytesSent, totalBytesSent, totalBytesExpectedToSend);
+    NSLog(@"%lld-%lld-%lld", bytesSent, totalBytesSent, totalBytesExpectedToSend);
 }
 
 /*

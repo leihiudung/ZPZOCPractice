@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nms-dB-DKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="171"/>
+            <point key="canvasLocation" x="1430" y="143"/>
         </scene>
         <!--Background Session View Controller-->
         <scene sceneID="ikG-6F-iPR">
@@ -170,6 +170,17 @@
                                     <segue destination="aWd-1u-clu" kind="push" id="iWb-Vb-bNW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1u-gW-YFK">
+                                <rect key="frame" x="16" y="238" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.70744981770000004" blue="0.15393652120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="downloadTask">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="v5q-Oi-8WF" kind="push" id="mpW-Cy-3Th"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pxA-Pg-c97"/>
@@ -244,7 +255,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQO-Gy-iAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506.4000000000001" y="-678.32512315270935"/>
+            <point key="canvasLocation" x="3578" y="-675"/>
+        </scene>
+        <!--Default Session Download Task View Controller-->
+        <scene sceneID="Ypq-s3-tmp">
+            <objects>
+                <viewController id="v5q-Oi-8WF" customClass="ZPZDefaultSessionDownloadTaskViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rUA-c1-ieW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3Q-i1-MJA">
+                                <rect key="frame" x="16" y="106" width="343" height="46"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40462106676164944" green="1" blue="0.071031688280572269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="downloadWithRequest">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadWithRequestAndUrl:" destination="v5q-Oi-8WF" eventType="touchUpInside" id="y6y-mq-UwE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1b-0r-rhc">
+                                <rect key="frame" x="16" y="160" width="343" height="46"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40462106679999998" green="1" blue="0.071031688280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="downloadWithRequest2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadWithRequestAndUrl2:" destination="v5q-Oi-8WF" eventType="touchUpInside" id="omp-SI-TiR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-HX-AB9">
+                                <rect key="frame" x="16" y="214" width="343" height="46"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40462106679999998" green="1" blue="0.071031688280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ezt-c9-a7J"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="G3w-Ys-QCA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4p-9C-YGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2757.5999999999999" y="142.61083743842366"/>
         </scene>
         <!--Default Session Data Task View Controller-->
         <scene sceneID="D0B-5F-TRC">

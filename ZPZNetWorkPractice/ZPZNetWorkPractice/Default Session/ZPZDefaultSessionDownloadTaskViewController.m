@@ -9,6 +9,12 @@
 #import "ZPZDefaultSessionDownloadTaskViewController.h"
 
 @interface ZPZDefaultSessionDownloadTaskViewController ()<NSURLSessionDownloadDelegate, NSURLSessionDataDelegate>
+{
+    BOOL isNeedCancel;
+    NSData * resumeData;
+    NSURLSession * resumeSession;
+    NSURLSessionDownloadTask * resumeDownloadTask;
+}
 
 @property (nonatomic, strong) UIImageView * bacImageView;
 @property (nonatomic, strong) NSMutableData * responseData;
@@ -45,6 +51,22 @@
     NSURLSessionDownloadTask * downTask = [defaultSession downloadTaskWithURL:[NSURL URLWithString:@"http://0.0.0.0:8080/request.php?name=zhoupengzu&age=20"]];
     [downTask resume];
 }
+- (IBAction)downloadWithResumeData:(id)sender {
+    _index = 2;
+    _bacImageView.image = [UIImage imageNamed:@""];
+    if (isNeedCancel) {
+        isNeedCancel = NO;
+        resumeDownloadTask = [resumeSession downloadTaskWithResumeData:resumeData];
+        [resumeDownloadTask resume];
+    } else {
+        isNeedCancel = YES;
+        NSURLSessionConfiguration * defaultConfirguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        //    NSURLSessionConfiguration * defaultConfirguration = [NSURLSessionConfiguration ephemeralSessionConfiguration]; //不影响，还是会往disk上写
+        resumeSession = [NSURLSession sessionWithConfiguration:defaultConfirguration delegate:self delegateQueue:nil];
+        resumeDownloadTask = [resumeSession downloadTaskWithURL:[NSURL URLWithString:@"http://120.25.226.186:32812/resources/videos/minion_02.mp4"]];
+        [resumeDownloadTask resume];
+    }
+}
 
 //该回调在异步线程中
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
@@ -57,6 +79,8 @@ didFinishDownloadingToURL:(NSURL *)location {
         });
     } else if (_index == 1) {
         
+    } else if (_index == 2) {
+        
     }
 }
 
@@ -66,10 +90,21 @@ didFinishDownloadingToURL:(NSURL *)location {
 totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
     NSLog(@"%s",__func__);
     NSLog(@"didWrite:%lld,totalWrite:%lld,totalExpected:%lld", bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    if (_index == 2 && isNeedCancel) {
+        [resumeDownloadTask cancelByProducingResumeData:^(NSData * _Nullable data) {
+            resumeData = data;
+        }];
+    }
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(nullable NSError *)error {
+    NSLog(@"%s",__func__);
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
+ didResumeAtOffset:(int64_t)fileOffset
+expectedTotalBytes:(int64_t)expectedTotalByte {
     NSLog(@"%s",__func__);
 }
 

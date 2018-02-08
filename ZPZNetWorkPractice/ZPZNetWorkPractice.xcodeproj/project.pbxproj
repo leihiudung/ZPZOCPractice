@@ -23,6 +23,7 @@
 		DBA4C1DE2022BB020064E711 /* ZPZDefaultSessionDataTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4C1DD2022BB020064E711 /* ZPZDefaultSessionDataTaskViewController.m */; };
 		DBA4C1E12022EF8D0064E711 /* ZPZBackgroundSessionDataTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4C1E02022EF8D0064E711 /* ZPZBackgroundSessionDataTaskViewController.m */; };
 		DBA4C1E42023163A0064E711 /* ZPZDefaultSessionUploadTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4C1E32023163A0064E711 /* ZPZDefaultSessionUploadTaskViewController.m */; };
+		DBA603E6202BE6B500B86B2E /* ZPZBackgroundSessionDownloadTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA603E5202BE6B500B86B2E /* ZPZBackgroundSessionDownloadTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		DBA4C1E02022EF8D0064E711 /* ZPZBackgroundSessionDataTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZBackgroundSessionDataTaskViewController.m; sourceTree = "<group>"; };
 		DBA4C1E22023163A0064E711 /* ZPZDefaultSessionUploadTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZDefaultSessionUploadTaskViewController.h; sourceTree = "<group>"; };
 		DBA4C1E32023163A0064E711 /* ZPZDefaultSessionUploadTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZDefaultSessionUploadTaskViewController.m; sourceTree = "<group>"; };
+		DBA603E4202BE6B500B86B2E /* ZPZBackgroundSessionDownloadTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZBackgroundSessionDownloadTaskViewController.h; sourceTree = "<group>"; };
+		DBA603E5202BE6B500B86B2E /* ZPZBackgroundSessionDownloadTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZBackgroundSessionDownloadTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				DB7F9C642021CA03000D697E /* ZPZBackgroundSessionViewController.m */,
 				DBA4C1DF2022EF8D0064E711 /* ZPZBackgroundSessionDataTaskViewController.h */,
 				DBA4C1E02022EF8D0064E711 /* ZPZBackgroundSessionDataTaskViewController.m */,
+				DBA603E4202BE6B500B86B2E /* ZPZBackgroundSessionDownloadTaskViewController.h */,
+				DBA603E5202BE6B500B86B2E /* ZPZBackgroundSessionDownloadTaskViewController.m */,
 			);
 			path = "Background Session";
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA603E6202BE6B500B86B2E /* ZPZBackgroundSessionDownloadTaskViewController.m in Sources */,
 				DB7F9C652021CA03000D697E /* ZPZBackgroundSessionViewController.m in Sources */,
 				DBA4C1DE2022BB020064E711 /* ZPZDefaultSessionDataTaskViewController.m in Sources */,
 				DBA4C1E42023163A0064E711 /* ZPZDefaultSessionUploadTaskViewController.m in Sources */,

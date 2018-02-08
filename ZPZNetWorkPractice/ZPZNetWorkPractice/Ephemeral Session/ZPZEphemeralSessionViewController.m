@@ -8,7 +8,9 @@
 
 #import "ZPZEphemeralSessionViewController.h"
 
-@interface ZPZEphemeralSessionViewController ()
+#define kRequest1 @"http://rap2api.taobao.org/app/mock/5106/GET/userInfoList"
+
+@interface ZPZEphemeralSessionViewController ()<NSURLSessionDataDelegate>
 
 @end
 
@@ -18,6 +20,18 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
     self.title = @"Ephemeral Session";
+    [self test];
+}
+
+- (void)test {
+    NSURLSessionConfiguration * ephConfirguration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    NSURLSession * ephSession = [NSURLSession sessionWithConfiguration:ephConfirguration delegate:self delegateQueue:nil];
+    NSURLSessionDataTask * dataTask = [ephSession dataTaskWithURL:[NSURL URLWithString:kRequest1]];
+    [dataTask resume];
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    NSLog(@"finished");
 }
 
 - (void)didReceiveMemoryWarning {

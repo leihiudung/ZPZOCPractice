@@ -15,6 +15,7 @@
 		DB600199203E6E3400BB4EE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB600198203E6E3400BB4EE5 /* main.m */; };
 		DB6001A3203E6E3400BB4EE5 /* ZPZAVFoundationPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6001A2203E6E3400BB4EE5 /* ZPZAVFoundationPracticeTests.m */; };
 		DB6001AE203E6E3400BB4EE5 /* ZPZAVFoundationPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6001AD203E6E3400BB4EE5 /* ZPZAVFoundationPracticeUITests.m */; };
+		DB6001BD203E703D00BB4EE5 /* ZPZAssetsUsingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6001BC203E703D00BB4EE5 /* ZPZAssetsUsingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		DB6001A9203E6E3400BB4EE5 /* ZPZAVFoundationPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZAVFoundationPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6001AD203E6E3400BB4EE5 /* ZPZAVFoundationPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAVFoundationPracticeUITests.m; sourceTree = "<group>"; };
 		DB6001AF203E6E3400BB4EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB6001BB203E703D00BB4EE5 /* ZPZAssetsUsingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetsUsingViewController.h; sourceTree = "<group>"; };
+		DB6001BC203E703D00BB4EE5 /* ZPZAssetsUsingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetsUsingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				DB60018A203E6E3400BB4EE5 /* AppDelegate.m */,
 				DB60018C203E6E3400BB4EE5 /* ViewController.h */,
 				DB60018D203E6E3400BB4EE5 /* ViewController.m */,
+				DB6001BB203E703D00BB4EE5 /* ZPZAssetsUsingViewController.h */,
+				DB6001BC203E703D00BB4EE5 /* ZPZAssetsUsingViewController.m */,
 				DB60018F203E6E3400BB4EE5 /* Main.storyboard */,
 				DB600192203E6E3400BB4EE5 /* Assets.xcassets */,
 				DB600194203E6E3400BB4EE5 /* LaunchScreen.storyboard */,
@@ -266,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB60018E203E6E3400BB4EE5 /* ViewController.m in Sources */,
+				DB6001BD203E703D00BB4EE5 /* ZPZAssetsUsingViewController.m in Sources */,
 				DB600199203E6E3400BB4EE5 /* main.m in Sources */,
 				DB60018B203E6E3400BB4EE5 /* AppDelegate.m in Sources */,
 			);

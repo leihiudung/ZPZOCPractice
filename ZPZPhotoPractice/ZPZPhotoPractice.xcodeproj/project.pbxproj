@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB4CBBBC20439BC500A51491 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBBB20439BC500A51491 /* AppDelegate.m */; };
+		DB4CBBBF20439BC500A51491 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBBE20439BC500A51491 /* ViewController.m */; };
+		DB4CBBC220439BC500A51491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4CBBC020439BC500A51491 /* Main.storyboard */; };
+		DB4CBBC420439BC500A51491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4CBBC320439BC500A51491 /* Assets.xcassets */; };
+		DB4CBBC720439BC500A51491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4CBBC520439BC500A51491 /* LaunchScreen.storyboard */; };
+		DB4CBBCA20439BC500A51491 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBC920439BC500A51491 /* main.m */; };
+		DB4CBBD420439BC500A51491 /* ZPZPhotoPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBD320439BC500A51491 /* ZPZPhotoPracticeTests.m */; };
+		DB4CBBDF20439BC500A51491 /* ZPZPhotoPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBDE20439BC500A51491 /* ZPZPhotoPracticeUITests.m */; };
+		DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */; };
+		DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB4CBBD020439BC500A51491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB4CBBAF20439BC500A51491 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB4CBBB620439BC500A51491;
+			remoteInfo = ZPZPhotoPractice;
+		};
+		DB4CBBDB20439BC500A51491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB4CBBAF20439BC500A51491 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB4CBBB620439BC500A51491;
+			remoteInfo = ZPZPhotoPractice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB4CBBB720439BC500A51491 /* ZPZPhotoPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZPZPhotoPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4CBBBA20439BC500A51491 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB4CBBBB20439BC500A51491 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB4CBBBD20439BC500A51491 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB4CBBBE20439BC500A51491 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB4CBBC120439BC500A51491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB4CBBC320439BC500A51491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB4CBBC620439BC500A51491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB4CBBC820439BC500A51491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB4CBBC920439BC500A51491 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB4CBBCF20439BC500A51491 /* ZPZPhotoPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZPhotoPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4CBBD320439BC500A51491 /* ZPZPhotoPracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPhotoPracticeTests.m; sourceTree = "<group>"; };
+		DB4CBBD520439BC500A51491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB4CBBDA20439BC500A51491 /* ZPZPhotoPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZPZPhotoPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4CBBDE20439BC500A51491 /* ZPZPhotoPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZPhotoPracticeUITests.m; sourceTree = "<group>"; };
+		DB4CBBE020439BC600A51491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB4CBBEC20439C8000A51491 /* ZPZAssetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetViewController.h; sourceTree = "<group>"; };
+		DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetViewController.m; sourceTree = "<group>"; };
+		DB4CBBEF2043A0C900A51491 /* ZPZAssetCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetCollectionViewController.h; sourceTree = "<group>"; };
+		DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetCollectionViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB4CBBB420439BC500A51491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4CBBCC20439BC500A51491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4CBBD720439BC500A51491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB4CBBAE20439BC500A51491 = {
+			isa = PBXGroup;
+			children = (
+				DB4CBBB920439BC500A51491 /* ZPZPhotoPractice */,
+				DB4CBBD220439BC500A51491 /* ZPZPhotoPracticeTests */,
+				DB4CBBDD20439BC500A51491 /* ZPZPhotoPracticeUITests */,
+				DB4CBBB820439BC500A51491 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB4CBBB820439BC500A51491 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB4CBBB720439BC500A51491 /* ZPZPhotoPractice.app */,
+				DB4CBBCF20439BC500A51491 /* ZPZPhotoPracticeTests.xctest */,
+				DB4CBBDA20439BC500A51491 /* ZPZPhotoPracticeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB4CBBB920439BC500A51491 /* ZPZPhotoPractice */ = {
+			isa = PBXGroup;
+			children = (
+				DB4CBBBA20439BC500A51491 /* AppDelegate.h */,
+				DB4CBBBB20439BC500A51491 /* AppDelegate.m */,
+				DB4CBBBD20439BC500A51491 /* ViewController.h */,
+				DB4CBBBE20439BC500A51491 /* ViewController.m */,
+				DB4CBBC020439BC500A51491 /* Main.storyboard */,
+				DB4CBBC320439BC500A51491 /* Assets.xcassets */,
+				DB4CBBC520439BC500A51491 /* LaunchScreen.storyboard */,
+				DB4CBBC820439BC500A51491 /* Info.plist */,
+				DB4CBBC920439BC500A51491 /* main.m */,
+				DB4CBBEC20439C8000A51491 /* ZPZAssetViewController.h */,
+				DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */,
+				DB4CBBEF2043A0C900A51491 /* ZPZAssetCollectionViewController.h */,
+				DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */,
+			);
+			path = ZPZPhotoPractice;
+			sourceTree = "<group>";
+		};
+		DB4CBBD220439BC500A51491 /* ZPZPhotoPracticeTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB4CBBD320439BC500A51491 /* ZPZPhotoPracticeTests.m */,
+				DB4CBBD520439BC500A51491 /* Info.plist */,
+			);
+			path = ZPZPhotoPracticeTests;
+			sourceTree = "<group>";
+		};
+		DB4CBBDD20439BC500A51491 /* ZPZPhotoPracticeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB4CBBDE20439BC500A51491 /* ZPZPhotoPracticeUITests.m */,
+				DB4CBBE020439BC600A51491 /* Info.plist */,
+			);
+			path = ZPZPhotoPracticeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB4CBBB620439BC500A51491 /* ZPZPhotoPractice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB4CBBE320439BC600A51491 /* Build configuration list for PBXNativeTarget "ZPZPhotoPractice" */;
+			buildPhases = (
+				DB4CBBB320439BC500A51491 /* Sources */,
+				DB4CBBB420439BC500A51491 /* Frameworks */,
+				DB4CBBB520439BC500A51491 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZPZPhotoPractice;
+			productName = ZPZPhotoPractice;
+			productReference = DB4CBBB720439BC500A51491 /* ZPZPhotoPractice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB4CBBCE20439BC500A51491 /* ZPZPhotoPracticeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB4CBBE620439BC600A51491 /* Build configuration list for PBXNativeTarget "ZPZPhotoPracticeTests" */;
+			buildPhases = (
+				DB4CBBCB20439BC500A51491 /* Sources */,
+				DB4CBBCC20439BC500A51491 /* Frameworks */,
+				DB4CBBCD20439BC500A51491 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB4CBBD120439BC500A51491 /* PBXTargetDependency */,
+			);
+			name = ZPZPhotoPracticeTests;
+			productName = ZPZPhotoPracticeTests;
+			productReference = DB4CBBCF20439BC500A51491 /* ZPZPhotoPracticeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB4CBBD920439BC500A51491 /* ZPZPhotoPracticeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB4CBBE920439BC600A51491 /* Build configuration list for PBXNativeTarget "ZPZPhotoPracticeUITests" */;
+			buildPhases = (
+				DB4CBBD620439BC500A51491 /* Sources */,
+				DB4CBBD720439BC500A51491 /* Frameworks */,
+				DB4CBBD820439BC500A51491 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB4CBBDC20439BC500A51491 /* PBXTargetDependency */,
+			);
+			name = ZPZPhotoPracticeUITests;
+			productName = ZPZPhotoPracticeUITests;
+			productReference = DB4CBBDA20439BC500A51491 /* ZPZPhotoPracticeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB4CBBAF20439BC500A51491 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = zhoupengzu;
+				TargetAttributes = {
+					DB4CBBB620439BC500A51491 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					DB4CBBCE20439BC500A51491 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DB4CBBB620439BC500A51491;
+					};
+					DB4CBBD920439BC500A51491 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DB4CBBB620439BC500A51491;
+					};
+				};
+			};
+			buildConfigurationList = DB4CBBB220439BC500A51491 /* Build configuration list for PBXProject "ZPZPhotoPractice" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB4CBBAE20439BC500A51491;
+			productRefGroup = DB4CBBB820439BC500A51491 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB4CBBB620439BC500A51491 /* ZPZPhotoPractice */,
+				DB4CBBCE20439BC500A51491 /* ZPZPhotoPracticeTests */,
+				DB4CBBD920439BC500A51491 /* ZPZPhotoPracticeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB4CBBB520439BC500A51491 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4CBBC720439BC500A51491 /* LaunchScreen.storyboard in Resources */,
+				DB4CBBC420439BC500A51491 /* Assets.xcassets in Resources */,
+				DB4CBBC220439BC500A51491 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4CBBCD20439BC500A51491 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4CBBD820439BC500A51491 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB4CBBB320439BC500A51491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4CBBBF20439BC500A51491 /* ViewController.m in Sources */,
+				DB4CBBCA20439BC500A51491 /* main.m in Sources */,
+				DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */,
+				DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */,
+				DB4CBBBC20439BC500A51491 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4CBBCB20439BC500A51491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4CBBD420439BC500A51491 /* ZPZPhotoPracticeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4CBBD620439BC500A51491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4CBBDF20439BC500A51491 /* ZPZPhotoPracticeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB4CBBD120439BC500A51491 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB4CBBB620439BC500A51491 /* ZPZPhotoPractice */;
+			targetProxy = DB4CBBD020439BC500A51491 /* PBXContainerItemProxy */;
+		};
+		DB4CBBDC20439BC500A51491 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB4CBBB620439BC500A51491 /* ZPZPhotoPractice */;
+			targetProxy = DB4CBBDB20439BC500A51491 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB4CBBC020439BC500A51491 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4CBBC120439BC500A51491 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB4CBBC520439BC500A51491 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4CBBC620439BC500A51491 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB4CBBE120439BC600A51491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB4CBBE220439BC600A51491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB4CBBE420439BC600A51491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPhotoPractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB4CBBE520439BC600A51491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPhotoPractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB4CBBE720439BC600A51491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPhotoPracticeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPracticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZPZPhotoPractice.app/ZPZPhotoPractice";
+			};
+			name = Debug;
+		};
+		DB4CBBE820439BC600A51491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPhotoPracticeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPracticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZPZPhotoPractice.app/ZPZPhotoPractice";
+			};
+			name = Release;
+		};
+		DB4CBBEA20439BC600A51491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPhotoPracticeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPracticeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZPZPhotoPractice;
+			};
+			name = Debug;
+		};
+		DB4CBBEB20439BC600A51491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTQKWEYF3;
+				INFOPLIST_FILE = ZPZPhotoPracticeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPracticeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZPZPhotoPractice;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB4CBBB220439BC500A51491 /* Build configuration list for PBXProject "ZPZPhotoPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4CBBE120439BC600A51491 /* Debug */,
+				DB4CBBE220439BC600A51491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB4CBBE320439BC600A51491 /* Build configuration list for PBXNativeTarget "ZPZPhotoPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4CBBE420439BC600A51491 /* Debug */,
+				DB4CBBE520439BC600A51491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB4CBBE620439BC600A51491 /* Build configuration list for PBXNativeTarget "ZPZPhotoPracticeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4CBBE720439BC600A51491 /* Debug */,
+				DB4CBBE820439BC600A51491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB4CBBE920439BC600A51491 /* Build configuration list for PBXNativeTarget "ZPZPhotoPracticeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4CBBEA20439BC600A51491 /* Debug */,
+				DB4CBBEB20439BC600A51491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB4CBBAF20439BC500A51491 /* Project object */;
+}

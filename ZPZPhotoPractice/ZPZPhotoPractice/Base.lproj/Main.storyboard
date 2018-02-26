@@ -102,6 +102,17 @@
                                     <action selector="useCollectionForSmartAlbum:" destination="5gl-jz-IBM" eventType="touchUpInside" id="A6K-4V-9B6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2d-RB-4zy">
+                                <rect key="frame" x="16" y="245" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.37744959210000001" green="1" blue="0.13311002180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="fetchCollectionWithIdentifier">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchCollectionWithIdentifier:" destination="5gl-jz-IBM" eventType="touchUpInside" id="mGh-IV-2VL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9Zv-Sw-vhP"/>

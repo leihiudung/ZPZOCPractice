@@ -241,5 +241,37 @@
     }];
     return smartAlbumResult;
 }
+/**
+ * 使用identifier查找collection
+ */
+- (IBAction)fetchCollectionWithIdentifier:(id)sender {
+    // 先试试用图片的identifier
+    NSMutableArray * assetIdentifierArr = [NSMutableArray array];
+    NSMutableArray * identifierArr = [NSMutableArray array];
+    PHFetchResult<PHAssetCollection *> * result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    [result enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.localIdentifier.length > 0) {
+            NSLog(@"%@--%@", obj.localIdentifier, obj.localizedTitle);
+            [identifierArr addObject:obj.localIdentifier];
+            PHFetchResult<PHAsset *> * assetResult = [PHAsset fetchAssetsInAssetCollection:obj options:nil];
+            PHAsset * asset = assetResult.firstObject;
+            [assetIdentifierArr addObject:asset.localIdentifier];
+        }
+    }];
+    // 注意：这里其实得到的是PHFetchResult<PHAsset *>
+    PHFetchResult<PHAssetCollection *> * assetIdentifierResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:assetIdentifierArr options:nil];
+    [assetIdentifierResult enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.localIdentifier.length > 0) {
+            NSLog(@"%@", obj);
+        }
+    }];
+    NSLog(@"================================");
+    PHFetchResult<PHAssetCollection *> * identifierResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:identifierArr options:nil];
+    [identifierResult enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.localIdentifier.length > 0) {
+            NSLog(@"%@", obj);
+        }
+    }];
+}
 
 @end

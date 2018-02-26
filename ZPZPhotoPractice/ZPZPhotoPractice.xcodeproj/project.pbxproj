@@ -17,6 +17,7 @@
 		DB4CBBDF20439BC500A51491 /* ZPZPhotoPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBDE20439BC500A51491 /* ZPZPhotoPracticeUITests.m */; };
 		DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */; };
 		DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */; };
+		DB4CBBF42044013B00A51491 /* ZPZCollectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetViewController.m; sourceTree = "<group>"; };
 		DB4CBBEF2043A0C900A51491 /* ZPZAssetCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetCollectionViewController.h; sourceTree = "<group>"; };
 		DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetCollectionViewController.m; sourceTree = "<group>"; };
+		DB4CBBF22044013B00A51491 /* ZPZCollectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZCollectionListViewController.h; sourceTree = "<group>"; };
+		DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZCollectionListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */,
 				DB4CBBEF2043A0C900A51491 /* ZPZAssetCollectionViewController.h */,
 				DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */,
+				DB4CBBF22044013B00A51491 /* ZPZCollectionListViewController.h */,
+				DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */,
 			);
 			path = ZPZPhotoPractice;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				DB4CBBBF20439BC500A51491 /* ViewController.m in Sources */,
 				DB4CBBCA20439BC500A51491 /* main.m in Sources */,
 				DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */,
+				DB4CBBF42044013B00A51491 /* ZPZCollectionListViewController.m in Sources */,
 				DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */,
 				DB4CBBBC20439BC500A51491 /* AppDelegate.m in Sources */,
 			);

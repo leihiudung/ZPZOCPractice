@@ -40,6 +40,17 @@
                                     <segue destination="5gl-jz-IBM" kind="show" identifier="ZPZAssetCollectionViewController" id="u9v-Rv-yMG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-Mr-lha">
+                                <rect key="frame" x="16" y="184" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.37744959210000001" green="1" blue="0.13311002180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="AssetCollection">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EOM-aE-NIY" kind="show" id="up1-sI-BfY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -98,7 +109,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjU-TP-WJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="72"/>
+            <point key="canvasLocation" x="1724" y="68"/>
+        </scene>
+        <!--Collection List View Controller-->
+        <scene sceneID="Iek-gX-TMJ">
+            <objects>
+                <viewController id="EOM-aE-NIY" customClass="ZPZCollectionListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m8r-aD-5xw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rSx-Nn-XhQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9l5-tK-KwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724" y="839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bm9-KJ-P9Z">

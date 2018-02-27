@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB2D84CA2044F5DC00D063FC /* ZPZCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D84C92044F5DC00D063FC /* ZPZCollectionViewController.m */; };
+		DB2D84CD204534C100D063FC /* ZPZAssetChangeRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D84CC204534C100D063FC /* ZPZAssetChangeRequestViewController.m */; };
+		DB2D84CF2045364400D063FC /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB2D84CE2045364400D063FC /* girl.jpg */; };
 		DB4CBBBC20439BC500A51491 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBBB20439BC500A51491 /* AppDelegate.m */; };
 		DB4CBBBF20439BC500A51491 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBBE20439BC500A51491 /* ViewController.m */; };
 		DB4CBBC220439BC500A51491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4CBBC020439BC500A51491 /* Main.storyboard */; };
@@ -41,6 +43,9 @@
 /* Begin PBXFileReference section */
 		DB2D84C82044F5DC00D063FC /* ZPZCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZCollectionViewController.h; sourceTree = "<group>"; };
 		DB2D84C92044F5DC00D063FC /* ZPZCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZCollectionViewController.m; sourceTree = "<group>"; };
+		DB2D84CB204534C100D063FC /* ZPZAssetChangeRequestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetChangeRequestViewController.h; sourceTree = "<group>"; };
+		DB2D84CC204534C100D063FC /* ZPZAssetChangeRequestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetChangeRequestViewController.m; sourceTree = "<group>"; };
+		DB2D84CE2045364400D063FC /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		DB4CBBB720439BC500A51491 /* ZPZPhotoPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZPZPhotoPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4CBBBA20439BC500A51491 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB4CBBBB20439BC500A51491 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		DB4CBBAE20439BC500A51491 = {
 			isa = PBXGroup;
 			children = (
+				DB2D84CE2045364400D063FC /* girl.jpg */,
 				DB4CBBB920439BC500A51491 /* ZPZPhotoPractice */,
 				DB4CBBD220439BC500A51491 /* ZPZPhotoPracticeTests */,
 				DB4CBBDD20439BC500A51491 /* ZPZPhotoPracticeUITests */,
@@ -130,6 +136,8 @@
 				DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */,
 				DB4CBBF22044013B00A51491 /* ZPZCollectionListViewController.h */,
 				DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */,
+				DB2D84CB204534C100D063FC /* ZPZAssetChangeRequestViewController.h */,
+				DB2D84CC204534C100D063FC /* ZPZAssetChangeRequestViewController.m */,
 			);
 			path = ZPZPhotoPractice;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB4CBBC720439BC500A51491 /* LaunchScreen.storyboard in Resources */,
+				DB2D84CF2045364400D063FC /* girl.jpg in Resources */,
 				DB4CBBC420439BC500A51491 /* Assets.xcassets in Resources */,
 				DB4CBBC220439BC500A51491 /* Main.storyboard in Resources */,
 			);
@@ -287,6 +296,7 @@
 			files = (
 				DB4CBBBF20439BC500A51491 /* ViewController.m in Sources */,
 				DB4CBBCA20439BC500A51491 /* main.m in Sources */,
+				DB2D84CD204534C100D063FC /* ZPZAssetChangeRequestViewController.m in Sources */,
 				DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */,
 				DB4CBBF42044013B00A51491 /* ZPZCollectionListViewController.m in Sources */,
 				DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */,

@@ -19,11 +19,5 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
-- (IBAction)gotoAssetViewController:(id)sender {
-    ZPZAssetViewController * assetVC = [[ZPZAssetViewController alloc] init];
-    [self.navigationController pushViewController:assetVC animated:YES];
-}
-
-
 
 @end

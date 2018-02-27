@@ -18,20 +18,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self useToFetchLibraryWithOptions];
 }
 
-- (void)test {
-//    PHAsset
+- (void)useToFetchLibraryWithOptions {
+    PHFetchOptions * options = [[PHFetchOptions alloc] init];
+    options.includeHiddenAssets = YES;
+    PHFetchResult<PHAsset *> * libraryResult = [PHAsset fetchAssetsWithOptions:options];
+    NSLog(@"%@", libraryResult);
 }
 
-//*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)useToFetchCollection:(id)sender {
+    // 先获取到集合
+    PHFetchResult<PHAssetCollection *> * collectionResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumFavorites options:nil];
+    if (collectionResult.count == 0) {
+        return;
+    }
+    // 遍历集合，获取信息
+    [collectionResult enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        PHFetchResult<PHAsset *> * assetResult = [PHAsset fetchAssetsInAssetCollection:obj options:nil];
+        NSLog(@"%@", assetResult);
+    }];
 }
-//*/
+- (IBAction)useToFetchIdentifier:(id)sender {
+    PHFetchResult<PHAssetCollection *> * collectionResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumAllHidden options:nil];
+    if (collectionResult.count == 0) {
+        return;
+    }
+    NSMutableArray * hiddenIdentifier = [NSMutableArray array];
+    [collectionResult enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        PHFetchResult<PHAsset *> * assetResult = [PHAsset fetchAssetsInAssetCollection:obj options:nil];
+        [assetResult enumerateObjectsUsingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [hiddenIdentifier addObject:obj.localIdentifier];
+        }];
+    }];
+    // 默认查找
+    PHFetchResult<PHAsset *> * assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:hiddenIdentifier options:nil];
+    NSLog(@"%@", assetResult);
+}
 
 @end

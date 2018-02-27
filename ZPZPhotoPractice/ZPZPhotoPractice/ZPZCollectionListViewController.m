@@ -48,11 +48,15 @@
 }
 
 - (void)test {
-    PHFetchResult * result = [PHCollectionList fetchCollectionListsWithType:PHCollectionListTypeFolder subtype:PHCollectionListSubtypeAny options:nil];
-    [result enumerateObjectsUsingBlock:^(PHCollectionList *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        PHFetchResult * collectionResult = [PHAssetCollection fetchCollectionsInCollectionList:obj options:nil];
-        NSLog(@"%@", collectionResult);
+//    PHFetchResult * result = [PHCollectionList fetchCollectionListsWithType:PHCollectionListTypeSmartFolder subtype:PHCollectionListSubtypeAny options:nil];
+    PHFetchResult * result = [PHCollection fetchTopLevelUserCollectionsWithOptions:nil];
+    [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@", obj);
     }];
+//    [result enumerateObjectsUsingBlock:^(PHCollectionList *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        PHFetchResult * collectionResult = [PHAssetCollection fetchCollectionsInCollectionList:obj options:nil];
+//        NSLog(@"%@", collectionResult);
+//    }];
 }
 
 @end

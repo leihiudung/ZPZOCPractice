@@ -12,7 +12,6 @@
 @interface ZPZAssetChangeRequestViewController ()
 {
     NSMutableArray * identifierArr;
-    PHAsset * myAsset;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *finalImageView;
 
@@ -100,10 +99,9 @@
 
 - (IBAction)toEditAssetContent:(id)sender {
     // 1、根据identifier查找到asset
-    PHFetchResult<PHAsset *> * fetchResult = [PHAsset fetchAssetsWithLocalIdentifiers:identifierArr options:nil];
+    PHFetchResult<PHAsset *> * fetchResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[@"421C93B7-E05A-41FF-9983-02C1B8B41902/L0/001"] options:nil];
     if (fetchResult.count > 0) {
         PHAsset * firstAsset = fetchResult.firstObject;
-        myAsset = firstAsset;
         if ([firstAsset canPerformEditOperation:PHAssetEditOperationContent]) {
             NSLog(@"可以被修改");
         }
@@ -112,12 +110,15 @@
         // 该方法只有在已经存在PHAdjustmentData的情况下才会被调用
         requestOptions.canHandleAdjustmentData = ^BOOL(PHAdjustmentData * _Nonnull adjustmentData) {
             NSLog(@"formatIdentifier:%@,formatVersion:%@", adjustmentData.formatIdentifier, adjustmentData.formatVersion);
+            if ([adjustmentData.formatVersion isEqualToString:@"2.0"]) {
+                return NO;
+            }
             return YES;
         };
 //        PHContentEditingInputRequestID requestId =
         [firstAsset requestContentEditingInputWithOptions:requestOptions completionHandler:^(PHContentEditingInput * _Nullable contentEditingInput, NSDictionary * _Nonnull info) {
             // 3、创建PHAdjustmentdata，可以在data参数里设置要做的操作，比如过滤等，可以是一个序列串，但是这里的长度是有限制的
-            PHAdjustmentData * adjustData = [[PHAdjustmentData alloc] initWithFormatIdentifier:firstAsset.localIdentifier formatVersion:@"1.0" data:[@"ceshi" dataUsingEncoding:NSUTF8StringEncoding]];
+            PHAdjustmentData * adjustData = [[PHAdjustmentData alloc] initWithFormatIdentifier:firstAsset.localIdentifier formatVersion:@"2.0" data:[@"ceshi" dataUsingEncoding:NSUTF8StringEncoding]];
             // 4、初始化PHContentEditingOutput对象
             PHContentEditingOutput * output = [[PHContentEditingOutput alloc] initWithContentEditingInput:contentEditingInput];
             output.adjustmentData = adjustData;
@@ -170,7 +171,7 @@
             // 5、赋值更新
             [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
                 // 使用PHAssetChangeRequest
-                PHAssetChangeRequest * changeRequest = [PHAssetChangeRequest changeRequestForAsset:myAsset];
+                PHAssetChangeRequest * changeRequest = [PHAssetChangeRequest changeRequestForAsset:firstAsset];
                 changeRequest.contentEditingOutput = output;
             } completionHandler:^(BOOL success, NSError * _Nullable error) {
                 if (success) {
@@ -181,6 +182,59 @@
             }];
         }];
     }
+}
+- (IBAction)toResetAsset:(id)sender {
+    PHFetchResult<PHAsset *> * result = [PHAsset fetchAssetsWithLocalIdentifiers:@[@"421C93B7-E05A-41FF-9983-02C1B8B41902/L0/001"] options:nil];
+    if (result.count == 0) {
+        return;
+    }
+    PHAsset * firstAsset = result.firstObject;
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest * request = [PHAssetChangeRequest changeRequestForAsset:firstAsset];
+        [request revertAssetContentToOriginal];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (success) {
+            NSLog(@"还原成功");
+        } else {
+            NSLog(@"还原失败");
+        }
+    }];
+}
+- (IBAction)toUseAssetCreationRequestAdd:(id)sender {
+    [self support];
+    return;
+    NSURL * url1 = [[NSBundle mainBundle] URLForResource:@"girl" withExtension:@"jpg"];
+//    NSURL * url2 = [[NSBundle mainBundle] URLForResource:@"code" withExtension:@"png"];
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetCreationRequest * request = [PHAssetCreationRequest creationRequestForAsset];
+        request.favorite = YES;
+        [request addResourceWithType:PHAssetResourceTypePhoto fileURL:url1 options:nil];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (success) {
+            NSLog(@"添加成功");
+        } else {
+            NSLog(@"添加失败");
+        }
+    }];
+}
+
+- (void)support {
+    NSArray<NSDictionary *> * array = @[
+                                        @{@"title":@"PHAssetResourceTypePhoto", @"value":@(PHAssetResourceTypePhoto)},
+                                        @{@"title":@"PHAssetResourceTypeVideo", @"value":@(PHAssetResourceTypeVideo)},
+                                        @{@"title":@"PHAssetResourceTypeAudio", @"value":@(PHAssetResourceTypeAudio)},
+                                        @{@"title":@"PHAssetResourceTypeAlternatePhoto", @"value":@(PHAssetResourceTypeAlternatePhoto)},
+                                        @{@"title":@"PHAssetResourceTypeFullSizePhoto", @"value":@(PHAssetResourceTypeFullSizePhoto)},
+                                        @{@"title":@"PHAssetResourceTypeFullSizeVideo", @"value":@(PHAssetResourceTypeFullSizeVideo)},
+                                        @{@"title":@"PHAssetResourceTypeAdjustmentData", @"value":@(PHAssetResourceTypeAdjustmentData)},
+                                        @{@"title":@"PHAssetResourceTypeAdjustmentBasePhoto", @"value":@(PHAssetResourceTypeAdjustmentBasePhoto)},
+                                        @{@"title":@"PHAssetResourceTypePairedVideo", @"value":@(PHAssetResourceTypePairedVideo)},
+                                        @{@"title":@"PHAssetResourceTypeFullSizePairedVideo", @"value":@(PHAssetResourceTypeFullSizePairedVideo)},
+                                        @{@"title":@"PHAssetResourceTypeAdjustmentBasePairedVideo", @"value":@(PHAssetResourceTypeAdjustmentBasePairedVideo)},
+                                        ];
+    [array enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@:%@", obj[@"title"], ([PHAssetCreationRequest supportsAssetResourceTypes:@[obj[@"value"]]] ? @"支持" : @"不支持"));
+    }];
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB08B2EB204687A600CEA280 /* code.png in Resources */ = {isa = PBXBuildFile; fileRef = DB08B2EA204687A600CEA280 /* code.png */; };
 		DB2D84CA2044F5DC00D063FC /* ZPZCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D84C92044F5DC00D063FC /* ZPZCollectionViewController.m */; };
 		DB2D84CD204534C100D063FC /* ZPZAssetChangeRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D84CC204534C100D063FC /* ZPZAssetChangeRequestViewController.m */; };
 		DB2D84CF2045364400D063FC /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB2D84CE2045364400D063FC /* girl.jpg */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB08B2EA204687A600CEA280 /* code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = code.png; sourceTree = "<group>"; };
 		DB2D84C82044F5DC00D063FC /* ZPZCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZCollectionViewController.h; sourceTree = "<group>"; };
 		DB2D84C92044F5DC00D063FC /* ZPZCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZCollectionViewController.m; sourceTree = "<group>"; };
 		DB2D84CB204534C100D063FC /* ZPZAssetChangeRequestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetChangeRequestViewController.h; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		DB4CBBAE20439BC500A51491 = {
 			isa = PBXGroup;
 			children = (
+				DB08B2EA204687A600CEA280 /* code.png */,
 				DB2D84CE2045364400D063FC /* girl.jpg */,
 				DB4CBBB920439BC500A51491 /* ZPZPhotoPractice */,
 				DB4CBBD220439BC500A51491 /* ZPZPhotoPracticeTests */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB4CBBC720439BC500A51491 /* LaunchScreen.storyboard in Resources */,
+				DB08B2EB204687A600CEA280 /* code.png in Resources */,
 				DB2D84CF2045364400D063FC /* girl.jpg in Resources */,
 				DB4CBBC420439BC500A51491 /* Assets.xcassets in Resources */,
 				DB4CBBC220439BC500A51491 /* Main.storyboard in Resources */,

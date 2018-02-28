@@ -174,10 +174,17 @@
                                     <action selector="toEditAssetContent:" destination="66I-4t-QuT" eventType="touchUpInside" id="hfJ-MS-uaK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfk-p6-ugZ">
+                                <rect key="frame" x="67" y="345" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uWD-Dr-8ua"/>
                     </view>
+                    <connections>
+                        <outlet property="finalImageView" destination="Sfk-p6-ugZ" id="KZm-2M-jad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqZ-GE-VjM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -80,8 +80,64 @@
     }];
 }
 - (IBAction)toModifyAssetCollectionWithoutIndexes:(id)sender {
+    // 测试其他相册是否可以从其他相册添加内容，这里测试SmartAlbum，你会发现下面打印了一系列的不能添加
+    PHFetchResult<PHAssetCollection *> * smartCollection = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
+    [smartCollection enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj canPerformEditOperation:PHCollectionEditOperationAddContent]) {
+            NSLog(@"可以添加");
+        } else {
+            NSLog(@"不能添加");
+        }
+    }];
+    
+    PHFetchResult<PHAssetCollection *> * result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    if (result.count == 0) {
+        [self showDetailInfo:@"没有可以修改的相册"];
+        return;
+    }
+    // 添加
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        // 获取assets
+        PHFetchResult<PHAssetCollection *> * fetchCollection = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumFavorites options:nil];
+        PHFetchResult<PHAsset *> * fetchAssets = [PHAsset fetchAssetsInAssetCollection:fetchCollection.firstObject options:nil];
+        PHAssetCollectionChangeRequest * request = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:result.firstObject];
+        [request addAssets:fetchAssets];
+//        [request removeAssets:@[fetchAssets.firstObject]];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (success) {
+            [self showDetailInfo:@"修改成功"];
+        } else {
+            [self showDetailInfo:@"修改失败"];
+        }
+    }];
 }
 - (IBAction)toModifyAssetCollectionWithIndexes:(id)sender {
+    PHFetchResult<PHAssetCollection *> * result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    if (result.count == 0) {
+        [self showDetailInfo:@"没有可以修改的相册"];
+        return;
+    }
+    // 添加
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        // 获取assets
+        PHFetchResult<PHAssetCollection *> * fetchCollection = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumFavorites options:nil];
+        PHFetchResult<PHAsset *> * fetchAssets = [PHAsset fetchAssetsInAssetCollection:fetchCollection.firstObject options:nil];
+        // asset必须为当前collection里的,如果没有调用changeRequestForAssetCollection方法，都可以
+        PHAssetCollectionChangeRequest * request = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:result.firstObject assets:[PHAsset fetchAssetsInAssetCollection:result.firstObject options:nil]];
+        NSMutableIndexSet * mutableIndexSet = [NSMutableIndexSet indexSet];
+//        for (NSInteger i = 1; i <= fetchAssets.count; i++) {
+//            [mutableIndexSet addIndex:i];
+//        }
+        [mutableIndexSet addIndex:15];
+        // 这里的index表示在相册中的位置；要保证indexes的长度为assets的长度；indexes里的值不能超过合并后的相册的个数
+        [request insertAssets:fetchAssets atIndexes:mutableIndexSet];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (success) {
+            [self showDetailInfo:@"修改成功"];
+        } else {
+            [self showDetailInfo:@"修改失败"];
+        }
+    }];
 }
 
 #pragma mark - alert

@@ -120,7 +120,7 @@
     // 给图片赋值
     ZPZPhotoModel * model = _dataSourceArr[indexPath.item];
     cell.identifier = model.asset.localIdentifier;
-    // 这里可能有崩溃，但是没复现出来
+    // 这里可能有崩溃，但是没复现出来（发现是由于打了一个全局断点导致的，但是为什么全局断点会出问题呢？？？）
     // 这里的返回的ID不是唯一的
     // PHImageManagerMaximumSize 用于获取原数据
     [[PHImageManager defaultManager] requestImageForAsset:model.asset targetSize:_thumbilImageSize contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {

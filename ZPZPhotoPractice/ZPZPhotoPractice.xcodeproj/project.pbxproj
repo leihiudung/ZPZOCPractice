@@ -22,6 +22,7 @@
 		DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */; };
 		DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */; };
 		DB4CBBF42044013B00A51491 /* ZPZCollectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */; };
+		DB5E47A9204E813F00271967 /* ZPZImageManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E47A8204E813F00271967 /* ZPZImageManagerViewController.m */; };
 		DB76AC2A20479AA40028F038 /* ZPZAssetCollectionRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76AC2920479AA40028F038 /* ZPZAssetCollectionRequestViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetCollectionViewController.m; sourceTree = "<group>"; };
 		DB4CBBF22044013B00A51491 /* ZPZCollectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZCollectionListViewController.h; sourceTree = "<group>"; };
 		DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZCollectionListViewController.m; sourceTree = "<group>"; };
+		DB5E47A7204E813F00271967 /* ZPZImageManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZImageManagerViewController.h; sourceTree = "<group>"; };
+		DB5E47A8204E813F00271967 /* ZPZImageManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZImageManagerViewController.m; sourceTree = "<group>"; };
 		DB76AC2820479AA40028F038 /* ZPZAssetCollectionRequestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetCollectionRequestViewController.h; sourceTree = "<group>"; };
 		DB76AC2920479AA40028F038 /* ZPZAssetCollectionRequestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetCollectionRequestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +149,8 @@
 				DB2D84CC204534C100D063FC /* ZPZAssetChangeRequestViewController.m */,
 				DB76AC2820479AA40028F038 /* ZPZAssetCollectionRequestViewController.h */,
 				DB76AC2920479AA40028F038 /* ZPZAssetCollectionRequestViewController.m */,
+				DB5E47A7204E813F00271967 /* ZPZImageManagerViewController.h */,
+				DB5E47A8204E813F00271967 /* ZPZImageManagerViewController.m */,
 			);
 			path = ZPZPhotoPractice;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				DB4CBBBC20439BC500A51491 /* AppDelegate.m in Sources */,
 				DB76AC2A20479AA40028F038 /* ZPZAssetCollectionRequestViewController.m in Sources */,
 				DB2D84CA2044F5DC00D063FC /* ZPZCollectionViewController.m in Sources */,
+				DB5E47A9204E813F00271967 /* ZPZImageManagerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

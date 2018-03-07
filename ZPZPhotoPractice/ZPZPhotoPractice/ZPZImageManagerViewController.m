@@ -44,11 +44,12 @@
 @end
 
 //===============================================================================================
-@interface ZPZImageManagerViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ZPZImageManagerViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, PHPhotoLibraryChangeObserver>
 
 @property (nonatomic, strong) UICollectionView * photoCollectionView;
 @property (nonatomic, strong) NSMutableArray<ZPZPhotoModel *> * dataSourceArr;
 @property (nonatomic, assign) CGSize thumbilImageSize;
+@property (nonatomic, strong) PHFetchResult<PHAsset *> * assetFetchResult;
 
 @end
 
@@ -83,6 +84,11 @@
     [self.view addSubview:_photoCollectionView];
     
     [_photoCollectionView registerClass:[ZPZPhotoCell class] forCellWithReuseIdentifier:@"photo_cell"];
+    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+}
+
+- (void)photoLibraryDidChange:(PHChange *)changeInstance {
+    NSLog(@"changed");
 }
 
 #pragma mark - 获取图片数据（相机胶卷中的）
@@ -91,6 +97,7 @@
     PHFetchResult<PHAssetCollection *> * collectionFetch = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil];
     [collectionFetch enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         PHFetchResult<PHAsset *> * assetFetch = [PHAsset fetchAssetsInAssetCollection:obj options:nil];
+        _assetFetchResult = assetFetch;
         [assetFetch enumerateObjectsUsingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             ZPZPhotoModel * model = [[ZPZPhotoModel alloc] init];
             model.asset = obj;
@@ -125,6 +132,7 @@
 }
 
 - (void)dealloc {
+    [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
     NSLog(@"release");
 }
 

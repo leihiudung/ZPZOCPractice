@@ -105,6 +105,32 @@
         }];
     }];
     [_photoCollectionView reloadData];
+    // 看看异步的回调
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSLog(@"before:%@", [NSThread currentThread]);
+//        PHImageRequestOptions * options = [[PHImageRequestOptions alloc] init];
+//        options.synchronous = YES;
+//        [[PHImageManager defaultManager] requestImageForAsset:_dataSourceArr.firstObject.asset targetSize:_thumbilImageSize contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//            NSLog(@"request:%@", [NSThread currentThread]);
+//        }];
+//        NSLog(@"finished");
+//    });
+    // ==============================
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSLog(@"before:%@", [NSThread currentThread]);
+//        [[PHImageManager defaultManager] requestImageForAsset:_dataSourceArr.firstObject.asset targetSize:_thumbilImageSize contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//            NSLog(@"request:%@", [NSThread currentThread]);
+//        }];
+//        NSLog(@"finished");
+//    });
+    // ==============================
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSLog(@"before:%@", [NSThread currentThread]);
+//        [[PHImageManager defaultManager] requestImageForAsset:_dataSourceArr.firstObject.asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//            NSLog(@"request:%@", [NSThread currentThread]);
+//        }];
+//        NSLog(@"finished");
+//    });
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

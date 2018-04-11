@@ -22,6 +22,7 @@
 		DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBED20439C8000A51491 /* ZPZAssetViewController.m */; };
 		DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */; };
 		DB4CBBF42044013B00A51491 /* ZPZCollectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */; };
+		DB585037207DA63C008ADDCF /* ZPZAssetAddVedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB585036207DA63C008ADDCF /* ZPZAssetAddVedioViewController.m */; };
 		DB5E47A9204E813F00271967 /* ZPZImageManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E47A8204E813F00271967 /* ZPZImageManagerViewController.m */; };
 		DB76AC2A20479AA40028F038 /* ZPZAssetCollectionRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76AC2920479AA40028F038 /* ZPZAssetCollectionRequestViewController.m */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,8 @@
 		DB4CBBF02043A0C900A51491 /* ZPZAssetCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetCollectionViewController.m; sourceTree = "<group>"; };
 		DB4CBBF22044013B00A51491 /* ZPZCollectionListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZCollectionListViewController.h; sourceTree = "<group>"; };
 		DB4CBBF32044013B00A51491 /* ZPZCollectionListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZCollectionListViewController.m; sourceTree = "<group>"; };
+		DB585035207DA63C008ADDCF /* ZPZAssetAddVedioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetAddVedioViewController.h; sourceTree = "<group>"; };
+		DB585036207DA63C008ADDCF /* ZPZAssetAddVedioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZAssetAddVedioViewController.m; sourceTree = "<group>"; };
 		DB5E47A7204E813F00271967 /* ZPZImageManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZImageManagerViewController.h; sourceTree = "<group>"; };
 		DB5E47A8204E813F00271967 /* ZPZImageManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZPZImageManagerViewController.m; sourceTree = "<group>"; };
 		DB76AC2820479AA40028F038 /* ZPZAssetCollectionRequestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPZAssetCollectionRequestViewController.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				DB76AC2920479AA40028F038 /* ZPZAssetCollectionRequestViewController.m */,
 				DB5E47A7204E813F00271967 /* ZPZImageManagerViewController.h */,
 				DB5E47A8204E813F00271967 /* ZPZImageManagerViewController.m */,
+				DB585035207DA63C008ADDCF /* ZPZAssetAddVedioViewController.h */,
+				DB585036207DA63C008ADDCF /* ZPZAssetAddVedioViewController.m */,
 			);
 			path = ZPZPhotoPractice;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				DB4CBBBF20439BC500A51491 /* ViewController.m in Sources */,
 				DB4CBBCA20439BC500A51491 /* main.m in Sources */,
 				DB2D84CD204534C100D063FC /* ZPZAssetChangeRequestViewController.m in Sources */,
+				DB585037207DA63C008ADDCF /* ZPZAssetAddVedioViewController.m in Sources */,
 				DB4CBBF12043A0C900A51491 /* ZPZAssetCollectionViewController.m in Sources */,
 				DB4CBBF42044013B00A51491 /* ZPZCollectionListViewController.m in Sources */,
 				DB4CBBEE20439C8000A51491 /* ZPZAssetViewController.m in Sources */,
@@ -483,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9XTQKWEYF3;
 				INFOPLIST_FILE = ZPZPhotoPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -497,6 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9XTQKWEYF3;
 				INFOPLIST_FILE = ZPZPhotoPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pengzuzhou.ZPZPhotoPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
